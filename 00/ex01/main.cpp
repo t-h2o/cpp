@@ -11,22 +11,18 @@
 /* ************************************************************************** */
 
 #include	<iostream>
-#include	<string.h>
-
-using namespace std;
 
 int	main(void)
 {
-	string	prompt;
+	std::string	prompt;
 
 	// Prompt
 	while (1)
 	{
-		cout << "80s Book $ ";
-		getline(cin, prompt);
-		if (!strcmp(prompt.c_str(), "quit"))
+		std::cout << "80s Book $ ";
+		std::getline(std::cin, prompt);
+		if (prompt == "quit")
 			break ;
 	}
-
 	return (0);
 }
