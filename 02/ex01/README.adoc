@@ -1,0 +1,82 @@
+= The class `Fixed`
+
+[source,hpp]
+----
+class Fixed
+{
+private:
+    int              _rawBits;
+    static int const _fractBits = 8;
+
+public:
+    Fixed();
+    Fixed(const int n);
+    Fixed(const float f);
+    Fixed(const Fixed &src);
+
+    float    toFloat(void) const;
+    int      toInt(void) const;
+
+    Fixed &operator=(const Fixed &rhs);
+
+    int     getRawBits(void) const;
+    void    setRawBits(const int raw);
+
+    ~Fixed();
+};
+----
+
+== Attributs
+
+* `int _rawBits;`: Save the rawBits in four bytes
+* `static int const _fractBits = 8;`: For each instance from the class `Fixed`.
+
+== Methods
+
+=== To integer
+
+[source,cpp]
+----
+int Fixed::toInt() const
+{
+    return(this->_rawBits >> Fixed::_fractBits);
+}
+----
+
+That will use the bit shifting:
+
+[quote]
+____
+wikipedia: https://en.wikipedia.org/wiki/Bitwise_operation#Bit_shifts[Bit shifting]
+
+----
+ToInt: 10860 >> 8 = 42
+or
+ToInt: 10860 >> 1 = 5430
+ToInt: 5430 >> 1 = 2715
+ToInt: 2715 >> 1 = 1357
+ToInt: 1357 >> 1 = 678
+ToInt: 678 >> 1 = 339
+ToInt: 339 >> 1 = 169
+ToInt: 169 >> 1 = 84
+ToInt: 84 >> 1 = 42
+----
+____
+
+=== To float
+
+[source,cpp]
+----
+float Fixed::toFloat() const
+{
+    return ((float )this->_rawBits / (1 << Fixed::_fractBits));
+}
+----
+
+[quote]
+____
+----
+ToFloat: 10860 / (1 << 8) = 42
+42.4219
+----
+____
