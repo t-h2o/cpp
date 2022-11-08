@@ -1,0 +1,63 @@
+= Rectangle
+
+== Constructor
+
+=== With values
+
+A class rectangle with a constructor
+
+[source,cpp]
+----
+class	rectangle
+{
+	public:
+
+		rectangle(double height = 1, double length = 2);
+};
+
+rectangle::rectangle(double height, double length): _height(height), _length(length)
+{
+	return ;
+}
+----
+
+You can set with three differents ways an object
+
+[source,cpp]
+----
+int	main(void)
+{
+	Rectangle rect1(2.2f, 8.4f);
+	Rectangle rect2(42);
+	Rectangle rect3;
+}
+----
+
+=== Constructor copy
+
+A class rectangle with a constructor
+
+[source,cpp]
+----
+class	rectangle
+{
+	public:
+
+		Rectangle(Rectangle &other);
+};
+
+Rectangle::Rectangle(Rectangle &other): _height(other._height), _length(other._length)
+{
+	return ;
+}
+----
+
+You can set with three differents ways an object
+
+[source,cpp]
+----
+int	main(void)
+{
+	Rectangle rect4(r1);
+}
+----

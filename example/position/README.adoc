@@ -1,0 +1,30 @@
+= Surcharge
+
+https://youtu.be/BCTVnV9Bu28:"video EPFL"
+
+== Surchare
+
+Use surcharge externll
+== class Position
+
+A position with x (abscissa) and y (ordinate) values
+
+[source, cpp]
+----
+class Position
+{
+	private:
+
+		// Attributs
+		double	_abscissa;
+		double	_ordinate;
+}
+----
+
+== Operator+
+
+Do the sum of position
+
+----
+pos3(pos1.x + pos2.x, pos1.y + pos2.y)
+----
