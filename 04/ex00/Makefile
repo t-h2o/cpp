@@ -19,6 +19,7 @@ OFLAGS	=	-fsanitize=address
 SRCD	=	srcs
 
 SRCS	=	$(SRCD)/main.cpp
+SRCS	+=	$(SRCD)/Animal.cpp
 
 
 #	Headers
