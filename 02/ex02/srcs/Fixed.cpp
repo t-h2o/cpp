@@ -42,6 +42,21 @@ Fixed::Fixed(const float value)
 		<< std::endl;
 }
 
+Fixed::Fixed(const Fixed &src)
+{
+	if (VERBOSE)
+	std::cout << "Copy constructor called" << std::endl;
+	this->_rawBits = src._rawBits;
+}
+
+Fixed &Fixed::operator=(const Fixed &number)
+{
+	if (VERBOSE)
+	std::cout << "copy assignation operator called" << std::endl;
+	this->_rawBits = number._rawBits;
+	return *this;
+}
+
 Fixed::~Fixed(void)
 {
 	if (VERBOSE)

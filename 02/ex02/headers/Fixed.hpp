@@ -13,6 +13,8 @@ class Fixed	{
 		Fixed(void);
 		Fixed(const int value);
 		Fixed(const float value);
+		Fixed(const Fixed &src);
+		Fixed &operator=(const Fixed &number);
 		~Fixed(void);
 
 		Fixed	&operator=(const Fixed &number);
