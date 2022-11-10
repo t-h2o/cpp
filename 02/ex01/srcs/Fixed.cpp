@@ -39,6 +39,12 @@ Fixed::Fixed(const float value)
 		<< std::endl;
 }
 
+Fixed::Fixed(const Fixed &src)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	this->_rawBits = src._rawBits;
+}
+
 Fixed::~Fixed(void)
 {
 	std::cout
