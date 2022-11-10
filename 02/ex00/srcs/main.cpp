@@ -1,21 +1,16 @@
-#include	"th2o.hpp"
+#include	"Fixed.hpp"
 
 int	main(void)
 {
-	Fixed	jean;
-	Fixed	paul(jean);
-	Fixed	marc;
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
 
-	marc = jean;
+	c = a;
 
-	std::cout << jean.getRawBits()
-		<< std::endl;
+	a.getRawBits();
+	a.setRawBits(41);
+	a.getRawBits();
 
-	std::cout << paul.getRawBits()
-		<< std::endl;
-
-	std::cout << marc.getRawBits()
-		<< std::endl;
-
-	return 0;
+	return 0; 
 }

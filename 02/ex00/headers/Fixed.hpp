@@ -1,23 +1,30 @@
 #ifndef	FIXED_CLASS_HPP
 # define FIXED_CLASS_HPP
 
+#include	<iostream>
+#include	<cmath>
+
 class Fixed	{
 
-public:
+	public:
 
-	Fixed(void);
-	Fixed(Fixed &fixed);
-	Fixed& operator=(const Fixed& fixed);
-	~Fixed(void);
+		Fixed(void);
+		Fixed(const int value);
+		Fixed(const float value);
+		~Fixed(void);
+		Fixed(const Fixed &src);
 
-	int		getRawBits(void);
-	void	setRawBits(int const raw);
-	
-private:
+		int	getRawBits(void)	const;
+		void	setRawBits(int const raw);
 
-	int	_number;
-	int	_rawBits;
+		Fixed &operator=(const Fixed &number);
 
+	private:
+
+		int              _rawBits;
+		static int const _fractBits = 8;
 };
+
+std::ostream	&operator<<(std::ostream &sortie, Fixed const &rhs);
 
 #endif /* FIXED_CLASS_HPP */

@@ -1,60 +1,80 @@
-#include	"th2o.hpp"
+#include	"Fixed.hpp"
 
-// Constructeur par défaut
 Fixed::Fixed(void)
 {
-	std::cout << "Default constructor called"
-		<< std::endl;
-
-	this->_number = 0;
 	this->_rawBits = 0;
 
-	return ;
+	std::cout
+		<< "Default constructor called"
+		<< std::endl;
 }
 
-// Constructeur de recopie
-Fixed::Fixed(Fixed &fixed)
+Fixed::Fixed(const Fixed &src)
 {
-	std::cout << "Copy constructor called"
-		<< std::endl;
-
-	*this = fixed;
-
-	return ;
+	std::cout << "Copy constructor called" << std::endl;
+	this->_rawBits = src._rawBits;
 }
 
-// Opérateur d’affectation
-Fixed& Fixed::operator=(const Fixed& fixed)
+Fixed::Fixed(const int value)
 {
-	std::cout << "Copy assignment operator called"
+    this->_rawBits = value << Fixed::_fractBits;
+
+	std::cout
+		<< "Call constructor with an integer value: "
+		<< value
+		<< " << "
+		<< Fixed::_fractBits
+		<< " = raw bits: "
+		<< this->_rawBits
 		<< std::endl;
+}
 
-	this->_number = fixed._number;
-	this->_rawBits = fixed._rawBits;
+Fixed::Fixed(const float value)
+{
+    this->_rawBits = roundf(value * (1 << Fixed::_fractBits));
 
+	std::cout
+		<< "Call constructor with a float value: "
+		<< "roundf("
+		<< value
+		<< " * (1 << "
+		<< Fixed::_fractBits
+		<< " ))"
+		<< " = "
+		<< this->_rawBits
+		<< std::endl;
+}
+
+Fixed::~Fixed(void)
+{
+	std::cout
+		<< "Destructor called"
+		<< std::endl;
+}
+
+Fixed &Fixed::operator=(const Fixed &number)
+{
+	std::cout << "copy assignation operator called" << std::endl;
+	this->_rawBits = number._rawBits;
 	return *this;
 }
 
-// Destructeur
-Fixed::~Fixed(void)
+int
+	Fixed::getRawBits(void)	const
 {
-	std::cout << "Destructor called"
-		<< std::endl;
-
-	return ;
-}
-
-// Get the raw value
-int	Fixed::getRawBits(void)
-{
-	std::cout << "getRawBits member function called"
+	std::cout << "Get raw bits: "
+		<< this->_rawBits
 		<< std::endl;
 
 	return this->_rawBits;
 }
 
-// Set the raw value
-void	Fixed::setRawBits(int const raw)
+void
+	Fixed::setRawBits(int const raw)
 {
 	this->_rawBits = raw;
+
+	std::cout << "Set raw bits: "
+		<< this->_rawBits
+		<< std::endl;
 }
