@@ -45,6 +45,13 @@ Fixed::Fixed(const Fixed &src)
 	this->_rawBits = src._rawBits;
 }
 
+Fixed &Fixed::operator=(const Fixed &number)
+{
+	std::cout << "copy assignation operator called" << std::endl;
+	this->_rawBits = number._rawBits;
+	return *this;
+}
+
 Fixed::~Fixed(void)
 {
 	std::cout

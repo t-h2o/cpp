@@ -3,6 +3,7 @@
 int	main(void)
 {
 	Fixed a(42.1f);
+	Fixed b(a);
 
 	a.toFloat();
 	a.toInt();
@@ -17,6 +18,21 @@ int	main(void)
 	std::cout
 		<< "a: "
 		<< a
+		<< std::endl;
+
+	b.toFloat();
+	b.toInt();
+	b.getRawBits();
+
+	b.setRawBits(b.getRawBits() + 1);
+
+	b.toFloat();
+	b.toInt();
+	b.getRawBits();
+
+	std::cout
+		<< "b: "
+		<< b
 		<< std::endl;
 
 	return 0; 
