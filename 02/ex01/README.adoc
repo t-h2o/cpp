@@ -31,6 +31,28 @@ public:
 * `int _rawBits;`: Save the rawBits in four bytes
 * `static int const _fractBits = 8;`: For each instance from the class `Fixed`.
 
+== Constructor
+
+=== float value
+
+[source,cpp]
+----
+Fixed::Fixed(const float value)
+{
+    this->_rawBits = roundf(value * (1 << Fixed::_fractBits));
+}
+----
+
+=== integer value
+
+[source,cpp]
+----
+Fixed::Fixed(const int value)
+{
+    this->_rawBits = value << Fixed::_fractBits;
+}
+----
+
 == Methods
 
 === To integer
