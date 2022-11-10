@@ -7,3 +7,11 @@ Animal::Animal(void)
 
 	return ;
 }
+
+Animal::~Animal(void)
+{
+	std::cout << "Call default destructor"
+		<< std::endl;
+
+	return ;
+}
