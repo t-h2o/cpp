@@ -17,6 +17,16 @@ Animal::Animal(Animal &other)
 	return ;
 }
 
+Animal
+	&Animal::operator=(Animal &other)
+{
+	(void)other;
+	std::cout << "Call operator ="
+		<< std::endl;
+
+	return *this;
+}
+
 Animal::~Animal(void)
 {
 	std::cout << "Call default destructor"
