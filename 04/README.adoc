@@ -1,3 +1,9 @@
 = Module 04
 
-* Exercice 00: https://cdn.intra.42.fr/pdf/pdf/52163/fr.subject.pdf[Subject.fr]
+== Exercie 00
+
+* 42: https://cdn.intra.42.fr/pdf/pdf/52163/fr.subject.pdf[Subject.fr]
+
+== Resource
+
+* EPFL: https://youtu.be/JfsD6AnP2Rs[Classes abstraites]
