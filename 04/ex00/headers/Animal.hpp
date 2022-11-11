@@ -1,5 +1,8 @@
 #include	<iostream>
 
+#ifndef	ANIMAL_HPP
+# define ANIMAL_HPP
+
 class	Animal
 {
 	public:
@@ -12,3 +15,5 @@ class	Animal
 	private:
 		std::string	_type;
 };
+
+# endif	/* ANIMAL_HPP */
