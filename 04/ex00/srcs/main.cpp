@@ -13,6 +13,13 @@ static void
 	cat1.makeSound();
 	cat2.makeSound();
 
+	std::cout << "Type is: "
+		<< cat1.getType() << std::endl;
+	std::cout << "Type is: "
+		<< cat2.getType() << std::endl;
+	std::cout << "Type is: "
+		<< cat3.getType() << std::endl;
+
 	return ;
 }
 
