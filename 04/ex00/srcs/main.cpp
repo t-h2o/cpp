@@ -1,5 +1,6 @@
 #include	"Animal.hpp"
 #include	"Cat.hpp"
+#include	"Dog.hpp"
 
 static void
 	test_constructor_cat(void)
@@ -20,6 +21,29 @@ static void
 		<< cat2.getType() << std::endl;
 	std::cout << "Type is: "
 		<< cat3.getType() << std::endl;
+
+	return ;
+}
+
+static void
+	test_constructor_dog(void)
+{
+
+	Dog	dog1;
+	Dog	dog2(dog1);
+	Dog	dog3;
+
+	dog3 = dog1;
+
+	(void)dog1;
+	(void)dog2;
+
+	std::cout << "Type is: "
+		<< dog1.getType() << std::endl;
+	std::cout << "Type is: "
+		<< dog2.getType() << std::endl;
+	std::cout << "Type is: "
+		<< dog3.getType() << std::endl;
 
 	return ;
 }
@@ -52,6 +76,12 @@ int
 	std::cout << "\tEND TEST CONSTRUCTOR CAT"
 		<< std::endl << std::endl;
 	std::cout << "\tTEST CONSTRUCTOR CAT"
+		<< std::endl;
+
+	test_constructor_dog();
+	std::cout << "\tEND TEST CONSTRUCTOR DOG"
+		<< std::endl << std::endl;
+	std::cout << "\tTEST CONSTRUCTOR DOG"
 		<< std::endl;
 
 	return 0;
