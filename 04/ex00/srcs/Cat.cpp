@@ -2,6 +2,7 @@
 
 Cat::Cat(void)
 {
+	this->_type = "Cat";
 	std::cout << "Cat: Call default constructor"
 		<< std::endl;
 
@@ -10,7 +11,7 @@ Cat::Cat(void)
 
 Cat::Cat(Cat &other) : Animal(other)
 {
-	(void)other;
+	this->_type = other._type;
 	std::cout << "Cat: Call copy constructor"
 		<< std::endl;
 
@@ -20,7 +21,7 @@ Cat::Cat(Cat &other) : Animal(other)
 Cat
 	&Cat::operator=(Cat &other)
 {
-	(void)other;
+	this->_type = other._type;
 	std::cout << "Cat: Call operator ="
 		<< std::endl;
 
