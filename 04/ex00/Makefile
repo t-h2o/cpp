@@ -20,6 +20,7 @@ SRCD	=	srcs
 
 SRCS	=	$(SRCD)/main.cpp
 SRCS	+=	$(SRCD)/Animal.cpp
+SRCS	+=	$(SRCD)/Cat.cpp
 
 
 #	Headers
