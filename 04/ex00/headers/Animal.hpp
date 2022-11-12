@@ -12,7 +12,7 @@ class	Animal
 
 		Animal	&operator=(Animal &other);
 
-	private:
+	protected:
 		std::string	_type;
 };
 
