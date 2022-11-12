@@ -131,7 +131,7 @@ std::ostream &operator<<(std::ostream &sortie, const Fixed &number)
 	return sortie;
 }
 
-Fixed	&Fixed::operator=(const Fixed &number)
+Fixed	&Fixed::operator=(Fixed &number)
 {
 	if (VERBOSE)
 	std::cout << "Copy assignation operator called" << std::endl;
