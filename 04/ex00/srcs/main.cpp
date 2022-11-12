@@ -4,7 +4,6 @@
 static void
 	test_constructor_cat(void)
 {
-
 	Cat	cat1;
 	Cat	cat2(cat1);
 	Cat	cat3;
@@ -21,12 +20,11 @@ static void
 int
 	main(void)
 {
-
+	std::cout << "\tTEST CONSTRUCTOR CAT"
+		<< std::endl;
 	test_constructor_cat();
 	std::cout << "\tEND TEST CONSTRUCTOR CAT"
 		<< std::endl << std::endl;
-	std::cout << "\tTEST CONSTRUCTOR CAT"
-		<< std::endl;
 
 	return 0;
 }
