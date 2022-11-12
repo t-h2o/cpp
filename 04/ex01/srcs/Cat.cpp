@@ -2,6 +2,7 @@
 
 Cat::Cat(void)
 {
+	this->_brain = new Brain();
 	this->_type = "Cat";
 	std::cout << "Cat: Call default constructor"
 		<< std::endl;
@@ -11,7 +12,9 @@ Cat::Cat(void)
 
 Cat::Cat(Cat &other) : Animal(other)
 {
+	this->_brain = new Brain();
 	this->_type = other._type;
+	*this = other;
 	std::cout << "Cat: Call copy constructor"
 		<< std::endl;
 
@@ -30,6 +33,7 @@ Cat
 
 Cat::~Cat(void)
 {
+	delete this->_brain;
 	std::cout << "Cat: Call default destructor"
 		<< std::endl;
 

@@ -20,10 +20,10 @@ static void
 	std::cout << "Brain 3 [99]: "
 		<< brain3.ideas[99] << std::endl;
 
-	std::cout << "Brain 3 [10]: "
-		<< brain3.ideas[10] << std::endl;
-	std::cout << "Brain 3 [99]: "
-		<< brain3.ideas[99] << std::endl;
+	std::cout << "Brain 2 [10]: "
+		<< brain2.ideas[10] << std::endl;
+	std::cout << "Brain 2 [99]: "
+		<< brain2.ideas[99] << std::endl;
 
 	return ;
 }
