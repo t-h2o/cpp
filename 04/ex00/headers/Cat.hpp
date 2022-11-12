@@ -11,6 +11,10 @@ class	Cat : public Animal
 		~Cat(void);
 
 		Cat	&operator=(Cat &other);
+
+		void	makeSound(void) const;
+
+		std::string	getType(void) const;
 };
 
 # endif	/* CAT_HPP */

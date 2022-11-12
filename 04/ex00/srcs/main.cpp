@@ -14,6 +14,13 @@ static void
 	(void)cat1;
 	(void)cat2;
 
+	std::cout << "Type is: "
+		<< cat1.getType() << std::endl;
+	std::cout << "Type is: "
+		<< cat2.getType() << std::endl;
+	std::cout << "Type is: "
+		<< cat3.getType() << std::endl;
+
 	return ;
 }
 
