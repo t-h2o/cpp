@@ -11,6 +11,8 @@ class	Cat : public Animal
 		~Cat(void);
 
 		Cat	&operator=(Cat &other);
+
+		void	makeSound(void) const;
 };
 
 # endif	/* CAT_HPP */

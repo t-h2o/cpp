@@ -12,6 +12,8 @@ class	Animal
 
 		Animal	&operator=(Animal &other);
 
+		virtual void	makeSound(void) const = 0;
+
 	private:
 		std::string	_type;
 };
