@@ -20,6 +20,7 @@ SRCD	=	srcs
 
 SRCS	=	$(SRCD)/main.cpp
 SRCS	+=	$(SRCD)/Animal.cpp
+SRCS	+=	$(SRCD)/Brain.cpp
 SRCS	+=	$(SRCD)/Cat.cpp
 SRCS	+=	$(SRCD)/Dog.cpp
 

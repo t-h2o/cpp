@@ -3,6 +3,32 @@
 #include	"Dog.hpp"
 
 static void
+	test_constructor_brain(void)
+{
+
+	Brain	brain1;
+	Brain	brain3;
+
+	brain1.ideas[10] = "idea 11";
+	brain1.ideas[99] = "idea 100: end array";
+	Brain	brain2(brain1);
+
+	brain3 = brain1;
+
+	std::cout << "Brain 3 [10]: "
+		<< brain3.ideas[10] << std::endl;
+	std::cout << "Brain 3 [99]: "
+		<< brain3.ideas[99] << std::endl;
+
+	std::cout << "Brain 3 [10]: "
+		<< brain3.ideas[10] << std::endl;
+	std::cout << "Brain 3 [99]: "
+		<< brain3.ideas[99] << std::endl;
+
+	return ;
+}
+
+static void
 	test_constructor_cat(void)
 {
 
@@ -72,16 +98,22 @@ int
 	std::cout << "\tEND TEST CONSTRUCTOR ANIMAL"
 		<< std::endl << std::endl;
 
+	std::cout << "\tTEST CONSTRUCTOR CAT"
+		<< std::endl;
 	test_constructor_cat();
 	std::cout << "\tEND TEST CONSTRUCTOR CAT"
 		<< std::endl << std::endl;
-	std::cout << "\tTEST CONSTRUCTOR CAT"
-		<< std::endl;
 
+	std::cout << "\tTEST CONSTRUCTOR DOG"
+		<< std::endl;
 	test_constructor_dog();
 	std::cout << "\tEND TEST CONSTRUCTOR DOG"
 		<< std::endl << std::endl;
-	std::cout << "\tTEST CONSTRUCTOR DOG"
+
+	std::cout << "\tTEST CONSTRUCTOR BRAIN {"
+		<< std::endl;
+	test_constructor_brain();
+	std::cout << "}\t/* END TEST CONSTRUCTOR BRAIN */"
 		<< std::endl;
 
 	return 0;
