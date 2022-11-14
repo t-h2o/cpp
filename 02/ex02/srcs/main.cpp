@@ -16,6 +16,9 @@
 #define	LSS				8	// <  Greater than
 #define	GTR				9	// >  Greater than or equal
 
+#define	MIN				10	// Minimum between two Fixed
+#define	MAX				11	// Maximum between two Fixed
+
 static void
 	calcul(Fixed const &a, Fixed const &b, int type)
 {
@@ -66,6 +69,57 @@ static void
 		calcul(Fixed(2.12345f), Fixed(2.12346f), i);
 		calcul(Fixed(2.89999f), Fixed(2.99999f), i);
 		calcul(Fixed(2.0f), Fixed(2.0f), i);
+		std::cout << std::endl;
+	}
+}
+
+static void
+	max_min(Fixed const &a, Fixed const &b, int type)
+{
+	Fixed	result;
+
+	switch (type)
+	{
+		case MIN:
+			result = Fixed::min(a, b);
+			std::cout << "min("
+				<< a
+				<< ", "
+				<< b
+				<< ")";
+			break ;
+
+		case MAX:
+			result = Fixed::max(a, b);
+			std::cout << "max("
+				<< a
+				<< ", "
+				<< b
+				<< ")";
+			break ;
+
+		default:
+			std::cout <<"badflag" << std::endl;
+			return ;
+	}
+
+	std::cout << b
+		<< " = "
+		<< result;
+
+	std::cout << std::endl;
+}
+
+static void
+	test_max_min(void)
+{
+	for (int i = MIN; i <= MAX; i++)
+	{
+		max_min(Fixed(2.0f), Fixed(2.0f), i);
+		max_min(Fixed(-2.0f), Fixed(2.0f), i);
+		max_min(Fixed(2.12345f), Fixed(2.12346f), i);
+		max_min(Fixed(2.89999f), Fixed(2.99999f), i);
+		max_min(Fixed(8.5f), Fixed(2.1f), i);
 		std::cout << std::endl;
 	}
 }
@@ -141,6 +195,7 @@ int	main(void)
 
 	test_operator();
 	test_comparator();
+	test_max_min();
 
 	a.toFloat();
 	a.toInt();

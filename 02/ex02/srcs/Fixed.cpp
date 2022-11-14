@@ -244,3 +244,31 @@ Fixed	Fixed::operator/(const Fixed &number) const
 			  << " and " << number.getRawBits() << std::endl;
 	return (div);
 }
+
+Fixed	Fixed::min(Fixed &fMin1, Fixed &fMin2)
+{
+	if (fMin1 < fMin2)
+		return (fMin1);
+	return (fMin2);
+}
+
+Fixed	Fixed::min(const Fixed &fMin1, const Fixed &fMin2)
+{
+	if (fMin1 < fMin2)
+		return (fMin1);
+	return (fMin2);
+}
+
+Fixed	Fixed::max(Fixed &fMax1, Fixed &fMax2)
+{
+	if (fMax1 > fMax2)
+		return fMax1;
+	return (fMax2);
+}
+
+Fixed	Fixed::max(const Fixed &fMax1, const Fixed &fMax2)
+{
+	if (fMax1 > fMax2)
+		return fMax1;
+	return (fMax2);
+}

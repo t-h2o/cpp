@@ -39,6 +39,11 @@ class Fixed	{
 		Fixed	operator*(const Fixed &number) const;
 		Fixed	operator/(const Fixed &number) const;
 
+		static Fixed	min(Fixed &fMin1, Fixed &fMin2);
+		static Fixed	max(Fixed &fMax1, Fixed &fMax2);
+		static Fixed	min(const Fixed &fMin1, const Fixed &fMin2);
+		static Fixed	max(const Fixed &fMax1, const Fixed &fMax2);
+
 	private:
 
 		int              _rawBits;
