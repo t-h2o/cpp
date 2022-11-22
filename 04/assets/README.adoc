@@ -31,7 +31,6 @@ setType()
 makeSound()
 }
 
-
 class Dog {
 == Canonical class ==
 .. Default constructor ..
@@ -74,6 +73,26 @@ Animal <|-- Cat
 
 skinparam defaultFontName JetBrains Mono ExtraBold
 
+class Brain {
+== Canonical class ==
+.. Default constructor ..
+Brain(std::string name);
+.. Copy constructor ..
+Brain(const Brain &src);
+.. affectation operator ..
+Brain &operator=(const Brain &src);
+.. destructor ..
+\~Brain(void);
+== Protected ==
+  std::string idea[100];
+== methods ==
+.. getter ..
+std::string getIdea(int n)
+.. setter ..
+void setType(int n, std::string idea)
+}
+
+
 class Animal {
 == Canonical class ==
 .. Default constructor ..
@@ -106,6 +125,8 @@ Dog(const Dog &src);
 Dog &operator=(const Dog &src);
 .. destructor ..
 \~Dog(void);
+== Private ==
+  Brain *brain;
 == methods ==
   makeSound()
 }
@@ -120,6 +141,96 @@ Cat(const Cat &src);
 Cat &operator=(const Cat &src);
 .. destructor ..
 \~Cat(void);
+== Private ==
+  Brain *brain;
+== methods ==
+  makeSound()
+}
+
+Animal <|-- Dog
+Animal <|-- Cat
+
+@enduml
+....
+
+== 02
+
+[plantuml, target=02, format=svg, width=50%]
+....
+@startuml
+
+skinparam defaultFontName JetBrains Mono ExtraBold
+
+class Brain {
+== Canonical class ==
+.. Default constructor ..
+Brain(std::string name);
+.. Copy constructor ..
+Brain(const Brain &src);
+.. affectation operator ..
+Brain &operator=(const Brain &src);
+.. destructor ..
+\~Brain(void);
+== Protected ==
+  std::string idea[100];
+== methods ==
+.. getter ..
+std::string getIdea(int n)
+.. setter ..
+void setType(int n, std::string idea)
+}
+
+
+abstract class Animal {
+== Canonical class ==
+.. Default constructor ..
+Animal(std::string name);
+.. Copy constructor ..
+Animal(const Animal &src);
+.. affectation operator ..
+Animal &operator=(const Animal &src);
+.. destructor ..
+\~Animal(void);
+== Protected ==
+  std::string type;
+== methods ==
+.. getter ..
+getType()
+.. setter ..
+setType()
+.. others ..
+makeSound()
+}
+
+
+class Dog {
+== Canonical class ==
+.. Default constructor ..
+Dog(std::string name);
+.. Copy constructor ..
+Dog(const Dog &src);
+.. affectation operator ..
+Dog &operator=(const Dog &src);
+.. destructor ..
+\~Dog(void);
+== Private ==
+  Brain *brain;
+== methods ==
+  makeSound()
+}
+
+class Cat {
+== Canonical class ==
+.. Default constructor ..
+Cat(std::string name);
+.. Copy constructor ..
+Cat(const Cat &src);
+.. affectation operator ..
+Cat &operator=(const Cat &src);
+.. destructor ..
+\~Cat(void);
+== Private ==
+  Brain *brain;
 == methods ==
   makeSound()
 }
