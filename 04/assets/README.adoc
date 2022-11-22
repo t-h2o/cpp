@@ -24,11 +24,11 @@ Animal &operator=(const Animal &src);
   std::string type;
 == methods ==
 .. getter ..
-  getType()
+getType()
 .. setter ..
-  setType()
+setType()
 .. others ..
-  makeSound()
+MakeSound()
 }
 
 
