@@ -65,3 +65,96 @@ Animal <|-- Cat
 
 @enduml
 ....
+
+== 01
+
+[plantuml, target=01, format=svg, width=50%]
+....
+@startuml
+
+skinparam defaultFontName JetBrains Mono ExtraBold
+
+class Animal {
+== Canonical class ==
+.. Default constructor ..
+Animal(std::string name);
+.. Copy constructor ..
+Animal(const Animal &src);
+.. affectation operator ..
+Animal &operator=(const Animal &src);
+.. destructor ..
+\~Animal(void);
+== Protected ==
+  std::string type;
+== methods ==
+.. getter ..
+getType()
+.. setter ..
+setType()
+.. others ..
+makeSound()
+}
+
+
+class Dog {
+== Canonical class ==
+.. Default constructor ..
+Dog(std::string name);
+.. Copy constructor ..
+Dog(const Dog &src);
+.. affectation operator ..
+Dog &operator=(const Dog &src);
+.. destructor ..
+\~Dog(void);
+== methods ==
+  makeSound()
+}
+
+class Cat {
+== Canonical class ==
+.. Default constructor ..
+Cat(std::string name);
+.. Copy constructor ..
+Cat(const Cat &src);
+.. affectation operator ..
+Cat &operator=(const Cat &src);
+.. destructor ..
+\~Cat(void);
+== methods ==
+  makeSound()
+}
+
+Animal <|-- Dog
+Animal <|-- Cat
+
+@enduml
+....
+
+=== Preview diagram remote
+
+[plantuml, target=preview, format=png, width=50%]
+....
+@startuml
+
+skinparam defaultFontName JetBrains Mono Extra
+
+cloud myserver {
+	folder index.html
+	note left
+		python3 -m http.server 80
+	endnote
+}
+
+cloud 42 {
+	file firefox
+	note left
+		localhost:8080
+	endnote
+}
+
+index.html --> firefox : ssh -p 4242 user@example.com -L 8080:localhost:80
+
+@enduml
+....
+
+
