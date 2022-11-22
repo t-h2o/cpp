@@ -11,6 +11,15 @@
 skinparam defaultFontName JetBrains Mono ExtraBold
 
 class Animal {
+== Canonical class ==
+.. Default constructor ..
+Animal(std::string name);
+.. Copy constructor ..
+Animal(const Animal &src);
+.. affectation operator ..
+Animal &operator=(const Animal &src);
+.. destructor ..
+\~Animal(void);
 == Protected ==
   std::string type;
 == methods ==
@@ -22,11 +31,29 @@ class Animal {
 
 
 class Dog {
+== Canonical class ==
+.. Default constructor ..
+Dog(std::string name);
+.. Copy constructor ..
+Dog(const Dog &src);
+.. affectation operator ..
+Dog &operator=(const Dog &src);
+.. destructor ..
+\~Dog(void);
 == methods ==
   makeSound()
 }
 
 class Cat {
+== Canonical class ==
+.. Default constructor ..
+Cat(std::string name);
+.. Copy constructor ..
+Cat(const Cat &src);
+.. affectation operator ..
+Cat &operator=(const Cat &src);
+.. destructor ..
+\~Cat(void);
 == methods ==
   makeSound()
 }
