@@ -27,6 +27,8 @@ Animal &operator=(const Animal &src);
   getType()
 .. setter ..
   setType()
+.. others ..
+  makeSound()
 }
 
 
@@ -57,6 +59,7 @@ Cat &operator=(const Cat &src);
 == methods ==
   makeSound()
 }
+
 Animal <|-- Dog
 Animal <|-- Cat
 
