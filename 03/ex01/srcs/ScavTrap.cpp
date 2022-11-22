@@ -1,21 +1,29 @@
 #include	"ScavTrap.hpp"
+#include	"ClapTrap.hpp"
 
-// Constructor
-ScavTrap::ScavTrap(std::string name): ClapTrap(name)
+// Default constructor
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 
+	if (VERBOSE)
+	std::cout
+		<< "ScavTrap: default constructor on "
+		<< this->_name
+		<< std::endl;
+
 	return ;
 }
 
-// Constructor
+// Destructor
 ScavTrap::~ScavTrap(void)
 {
+	if (VERBOSE)
 	std::cout
+		<< "ScavTrap: destructor on "
 		<< this->_name
-		<< " scav deleted"
 		<< std::endl;
 
 	return ;
@@ -23,8 +31,11 @@ ScavTrap::~ScavTrap(void)
 
 void ScavTrap::attack(const std::string& target)
 {
+	if (this->isDead() || this->hasEnergy())
+		return ;
+
 	std::cout
-		<< "ScavTrap "
+		<< "ScavTrap: "
 		<< this->_name
 		<< " attacks "
 		<< target
@@ -33,44 +44,16 @@ void ScavTrap::attack(const std::string& target)
 		<< " points of damage!"
 		<< std::endl;
 
-	return ;
-}
-
-void ScavTrap::takeDamage(unsigned int amount)
-{
-	std::cout
-		<< "ScavTrap "
-		<< this->_name
-		<< " take Damage"
-		<< ", causing "
-		<< amount
-		<< " points of damage!"
-		<< std::endl;
+	--this->_energyPoints;
 
 	return ;
 }
 
-void ScavTrap::beRepaired(unsigned int amount)
+void ScavTrap::guardGate(void) const
 {
 	std::cout
-		<< "ScavTrap "
+		<< "ScavTrap: "
 		<< this->_name
-		<< " be repaired"
-		<< ", causing "
-		<< amount
-		<< " points of life!"
+		<< " is into Gate keeper mode"
 		<< std::endl;
-
-	return ;
-}
-
-void ScavTrap::guardGate()
-{
-	std::cout
-		<< this->_name
-		<< " is Gate keeper!"
-		<< std::endl;
-
-	return ;
-
 }

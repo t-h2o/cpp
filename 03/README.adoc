@@ -3,3 +3,10 @@
 ____
 https://cdn.intra.42.fr/pdf/pdf/52159/fr.subject.pdf[Subject]
 ____
+
+== Post evalution
+
+=== TODO
+
+* [ ] Canonical class
+* [ ] Heriterance of `ClapTrap` for member function `ScavTrap` and `FragTrap`

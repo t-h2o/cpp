@@ -25,8 +25,8 @@ SRCD	=	srcs
 
 SRCS	=	$(SRCD)/main.cpp
 SRCS	+=	$(SRCD)/ClapTrap.cpp
-SRCS	+=	$(SRCD)/ScavTrap.cpp
 SRCS	+=	$(SRCD)/FragTrap.cpp
+SRCS	+=	$(SRCD)/ScavTrap.cpp
 
 
 #	Objets

@@ -3,20 +3,20 @@
 
 # include	<sstream>
 # include	<iostream>
+
 # include	"ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
-{ 
-	public:
+# define	VERBOSE	1
 
+class FragTrap : public ClapTrap
+{
+	public:
 		FragTrap(std::string name);
 		~FragTrap(void);
 
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void	attack(const std::string& target);
 
-		void highFivesGuy(void);
+		void	highFivesGuys(void) const;
 };
 
 #endif /* FRAGTRAP_CLASS_HPP */

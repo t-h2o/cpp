@@ -1,21 +1,29 @@
 #include	"FragTrap.hpp"
+#include	"ClapTrap.hpp"
 
-// Constructor
-FragTrap::FragTrap(std::string name): ClapTrap(name)
+// Default constructor
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
+
+	if (VERBOSE)
+	std::cout
+		<< "FragTrap: default constructor on "
+		<< this->_name
+		<< std::endl;
 
 	return ;
 }
 
-// Constructor
+// Destructor
 FragTrap::~FragTrap(void)
 {
+	if (VERBOSE)
 	std::cout
+		<< "FragTrap: destructor on "
 		<< this->_name
-		<< " Frag deleted"
 		<< std::endl;
 
 	return ;
@@ -23,8 +31,11 @@ FragTrap::~FragTrap(void)
 
 void FragTrap::attack(const std::string& target)
 {
+	if (this->isDead() || this->hasEnergy())
+		return ;
+
 	std::cout
-		<< "FragTrap "
+		<< "FragTrap: "
 		<< this->_name
 		<< " attacks "
 		<< target
@@ -33,44 +44,15 @@ void FragTrap::attack(const std::string& target)
 		<< " points of damage!"
 		<< std::endl;
 
-	return ;
-}
-
-void FragTrap::takeDamage(unsigned int amount)
-{
-	std::cout
-		<< "FragTrap "
-		<< this->_name
-		<< " take Damage"
-		<< ", causing "
-		<< amount
-		<< " points of damage!"
-		<< std::endl;
+	--this->_energyPoints;
 
 	return ;
 }
 
-void FragTrap::beRepaired(unsigned int amount)
+void FragTrap::highFivesGuys(void) const
 {
-	std::cout
-		<< "FragTrap "
+	std::cout << "FragTrap: "
 		<< this->_name
-		<< " be repaired"
-		<< ", causing "
-		<< amount
-		<< " points of life!"
+		<< " highFivesGuys"
 		<< std::endl;
-
-	return ;
-}
-
-void FragTrap::highFivesGuy()
-{
-	std::cout
-		<< this->_name
-		<< " High five!"
-		<< std::endl;
-
-	return ;
-
 }

@@ -1,0 +1,101 @@
+diff --git a/ex00/Makefile b/ex00/Makefile
+index 68e694a..90dabac 100644
+--- a/ex00/Makefile
++++ b/ex00/Makefile
+@@ -9,7 +9,7 @@ CFLAGS	=	-Wall
+ CFLAGS	+=	-Wextra
+ CFLAGS	+=	-Werror
+ CFLAGS	+=	-g
+-#CFLAGS	+=	-std=c++98
++CFLAGS	+=	-std=c++98
+ 
+ OFLAGS	=	-fsanitize=address
+ 
+diff --git a/ex00/srcs/ClapTrap.cpp b/ex00/srcs/ClapTrap.cpp
+index 1f835c2..9358c4c 100644
+--- a/ex00/srcs/ClapTrap.cpp
++++ b/ex00/srcs/ClapTrap.cpp
+@@ -12,7 +12,7 @@ ClapTrap::ClapTrap(std::string name)
+ 
+ 	this->_hitPoints = 10;
+ 	this->_energyPoints = 10;
+-	this->_attackDamage = 0;
++	this->_attackDamage = 5;
+ 
+ 	return ;
+ }
+@@ -29,6 +29,16 @@ ClapTrap::~ClapTrap(void)
+ 
+ void ClapTrap::attack(const std::string& target)
+ {
++	if (!this->_energyPoints)
++	{
++		std::cout << "No more energy" << std::endl;
++		return ;
++	}
++	if (this->_hitPoints <= 0)
++	{
++		std::cout << "Not enough hit Points" << std::endl;
++		return ;
++	}
+ 	std::cout
+ 		<< "ClapTrap "
+ 		<< this->_name
+@@ -39,6 +49,8 @@ void ClapTrap::attack(const std::string& target)
+ 		<< " points of damage!"
+ 		<< std::endl;
+ 
++	--this->_energyPoints;
++
+ 	return ;
+ }
+ 
+@@ -53,11 +65,23 @@ void ClapTrap::takeDamage(unsigned int amount)
+ 		<< " points of damage!"
+ 		<< std::endl;
+ 
++	this->_hitPoints -= amount;
++
+ 	return ;
+ }
+ 
+ void ClapTrap::beRepaired(unsigned int amount)
+ {
++	if (!this->_energyPoints)
++	{
++		std::cout << "No more energy" << std::endl;
++		return ;
++	}
++	if (this->_hitPoints <= 0)
++	{
++		std::cout << "Not enough hit Points" << std::endl;
++		return ;
++	}
+ 	std::cout
+ 		<< "ClapTrap "
+ 		<< this->_name
+@@ -67,5 +91,8 @@ void ClapTrap::beRepaired(unsigned int amount)
+ 		<< " points of life!"
+ 		<< std::endl;
+ 
++	this->_hitPoints += amount;
++	--this->_energyPoints;
++
+ 	return ;
+ }
+diff --git a/ex00/srcs/main.cpp b/ex00/srcs/main.cpp
+index 1eb3ee7..de32c43 100644
+--- a/ex00/srcs/main.cpp
++++ b/ex00/srcs/main.cpp
+@@ -7,8 +7,9 @@ int	main(void)
+ 	ClapTrap	marc("marc");
+ 
+ 	jean.attack("marc");
+-	jean.takeDamage(42);
+-	jean.beRepaired(21);
++	marc.takeDamage(5);
++
++	marc.beRepaired(10);
+ 
+ 	return 0;
+ }
