@@ -15,6 +15,10 @@
 
 image::assets/00.svg[main]
 
+=== 01
+
+image::assets/01.svg[main]
+
 == preview
 
 image::assets/preview.svg[main]
