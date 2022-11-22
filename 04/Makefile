@@ -12,3 +12,6 @@ fclean:
 
 re:
 	@$(foreach var,$(FOLDER),make re -C $(var);)
+
+doc:
+	asciidoctor -r asciidoctor-diagram assets/README.adoc -o assets/index.html
