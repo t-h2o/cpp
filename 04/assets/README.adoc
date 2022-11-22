@@ -1,0 +1,18 @@
+= Diagram
+:toc:
+:nofooter:
+
+== 00
+
+[plantuml, target=00, format=svg, width=50%]
+....
+@startuml
+
+skinparam defaultFontName JetBrains Mono ExtraBold
+
+class Animal {
+== Protected ==
+  std::string type;
+}
+@enduml
+....
