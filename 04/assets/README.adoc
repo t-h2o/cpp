@@ -13,6 +13,25 @@ skinparam defaultFontName JetBrains Mono ExtraBold
 class Animal {
 == Protected ==
   std::string type;
+== methods ==
+.. getter ..
+  getType()
+.. setter ..
+  setType()
 }
+
+
+class Dog {
+== methods ==
+  makeSound()
+}
+
+class Cat {
+== methods ==
+  makeSound()
+}
+Animal <|-- Dog
+Animal <|-- Cat
+
 @enduml
 ....
