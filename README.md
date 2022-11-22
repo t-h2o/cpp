@@ -37,3 +37,7 @@
 ## Module 03
 
 * Wikipedia: [Multiple inheritance](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)
+
+## Resource
+
+* A student made this [wiki](https://github.com/qingqingqingli/CPP/wiki)
