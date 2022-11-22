@@ -28,7 +28,7 @@ getType()
 .. setter ..
 setType()
 .. others ..
-MakeSound()
+makeSound()
 }
 
 
