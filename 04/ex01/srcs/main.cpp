@@ -2,119 +2,283 @@
 #include	"Cat.hpp"
 #include	"Dog.hpp"
 
+#include	"WrongAnimal.hpp"
+#include	"WrongCat.hpp"
+#include	"WrongDog.hpp"
+
+#include	"Brain.hpp"
+
+#define		COL_RED		"\033[31;1m"
+#define		COL_GRE		"\033[32;1m"
+#define		COL_RES		"\033[0m"
+
+#define		NEWLINE		std::cout << std::endl
+
 static void
-	test_constructor_brain(void)
+	print_color(std::string color, std::string text)
 {
+	std::cout
+		<< color
+		<< text
+		<< COL_RES;
+}
 
-	Brain	brain1;
-	Brain	brain3;
+static void	animal_show_idea(Animal &animal, int number)
+{
+	std::string	idea;
 
-	brain1.ideas[10] = "idea 11";
-	brain1.ideas[99] = "idea 100: end array";
-	Brain	brain2(brain1);
+	idea = animal.getIdea(number);
 
-	brain3 = brain1;
+	std::cout
+		<< "Get the idea number "
+		<< number
+		<< " : "
+		<< idea
+		<< std::endl;
+}
 
-	std::cout << "Brain 3 [10]: "
-		<< brain3.ideas[10] << std::endl;
-	std::cout << "Brain 3 [99]: "
-		<< brain3.ideas[99] << std::endl;
+static void	brain_show_idea(Brain &brain, int number)
+{
+	std::string	idea;
 
-	std::cout << "Brain 2 [10]: "
-		<< brain2.ideas[10] << std::endl;
-	std::cout << "Brain 2 [99]: "
-		<< brain2.ideas[99] << std::endl;
+	idea = brain.getIdea(number);
 
+	std::cout
+		<< "Get the idea number "
+		<< number
+		<< " : "
+		<< idea
+		<< std::endl;
+}
+
+static void
+	print_animal_ref(Animal &animal, std::string message)
+{
+	NEWLINE;
+	print_color(COL_GRE, "Display: " + message + "\n");
+	std::cout << "makeSound: " ; animal.makeSound();
+	std::cout << "getType: " << animal.getType();
+	NEWLINE;
+	NEWLINE;
+}
+
+static void
+	print_animal_ptr(Animal *animal, std::string message)
+{
+	NEWLINE;
+	print_color(COL_GRE, "Display: " + message + "\n");
+	std::cout << "makeSound: " ; animal->makeSound();
+	std::cout << "getType: " << animal->getType();
+	NEWLINE;
+	NEWLINE;
+}
+
+static void
+	test_animals(void)
+{
+	// Constructor
+	NEWLINE; print_color(COL_GRE, "\tConstructor..."); NEWLINE; NEWLINE;
+	
+	Animal	animal;
+	Cat		garfield;
+	Dog		milou;
+
+	// MakeSound
+	NEWLINE; print_color(COL_GRE, "\tMake sound..."); NEWLINE; NEWLINE;
+	std::cout << "make sound:  animal: "; animal.makeSound();
+	std::cout << "make sound: garfield: "; garfield.makeSound();
+	std::cout << "make sound:   milou: "; milou.makeSound();
+
+	// Set idea
+	NEWLINE; print_color(COL_GRE, "\tSet ideas..."); NEWLINE; NEWLINE;
+	animal.setIdea(2, "animal idea 2222");
+	animal.setIdea(100, "OVERRANGEEEE");
+	animal.setIdea(-1, "OVERRANGE---");
+
+	garfield.setIdea(5, "garfiel is orange");
+	milou.setIdea(5, "milou is white");
+
+	// Get idea
+	NEWLINE; print_color(COL_GRE, "\tGet ideas..."); NEWLINE; NEWLINE;
+	animal_show_idea(animal, 2);
+	animal_show_idea(milou, 5);
+	animal_show_idea(garfield, 5);
+
+	// Pointer
+	NEWLINE; print_color(COL_GRE, "\tPointer..."); NEWLINE;
+	print_animal_ptr(&garfield, "garfield");
+	print_animal_ptr(&milou, "milou");
+	print_animal_ptr(&animal, "animal");
+
+	// Reference
+	NEWLINE; print_color(COL_GRE, "\tReference..."); NEWLINE;
+	print_animal_ref(garfield, "garfield");
+	print_animal_ref(milou, "milou");
+	print_animal_ref(animal, "animal");
+
+	// Operator =
+	NEWLINE; print_color(COL_GRE, "\toperator=..."); NEWLINE; NEWLINE;
+	// Animal = Dog
+	print_color(COL_GRE, "animal = milou;"); NEWLINE;
+	animal = milou;
+	print_animal_ptr(&animal, "animal");
+
+	// Animal = Cat
+	print_color(COL_GRE, "animal = garfield;"); NEWLINE;
+	animal = garfield;
+	print_animal_ptr(&animal, "animal");
+
+	// Copy constructor
+	NEWLINE; print_color(COL_GRE, "\tcopy constructor..."); NEWLINE; NEWLINE;
+	print_color(COL_GRE, "Animal copy1(milou);"); NEWLINE;
+	Animal copy1(milou);
+	print_animal_ptr(&copy1, "copy1");
+	
+	print_color(COL_GRE, "Animal copy2(garfield);"); NEWLINE;
+	Animal copy2(garfield);
+	print_animal_ptr(&copy2, "copy2");
+
+	// Call destructor
+	print_color(COL_GRE, "\tDestructor..."); NEWLINE; NEWLINE;
 	return ;
 }
 
 static void
-	test_constructor_cat(void)
+	test_makeSound_ptr(void)
 {
+	// Constructor
+	NEWLINE; print_color(COL_GRE, "\tConstructor (with new)..."); NEWLINE; NEWLINE;
+	
+	Animal	*animal = new Animal();
+	const Animal	*milou = new Dog();
+	const Animal	*garfield = new Cat();
 
-	Cat	cat1;
-	Cat	cat2(cat1);
-	Cat	cat3;
+	// MakeSound
+	NEWLINE; print_color(COL_GRE, "\tMake sound..."); NEWLINE; NEWLINE;
 
-	cat3 = cat1;
+	animal->makeSound();
+	milou->makeSound();
+	garfield->makeSound();
 
-	(void)cat1;
-	(void)cat2;
+	// Operator =
+	NEWLINE; print_color(COL_GRE, "\toperator=..."); NEWLINE; NEWLINE;
 
-	std::cout << "Type is: "
-		<< cat1.getType() << std::endl;
-	std::cout << "Type is: "
-		<< cat2.getType() << std::endl;
-	std::cout << "Type is: "
-		<< cat3.getType() << std::endl;
+	// Animal = Dog
+	print_color(COL_GRE, "*animal = *milou;"); NEWLINE;
+	*animal = *milou;
+	std::cout << "type: " <<animal->getType() << std::endl;
 
-	return ;
+	// Animal = Cat
+	NEWLINE; print_color(COL_GRE, "*animal = *garfield;"); NEWLINE;
+	*animal = *garfield;
+	std::cout << "type: " <<animal->getType() << std::endl;
+
+	// Call destructor
+	NEWLINE; print_color(COL_GRE, "\tDestructor (with delete)..."); NEWLINE; NEWLINE;
+	delete animal;
+	delete milou;
+	delete garfield;
 }
 
-static void
-	test_constructor_dog(void)
+static void	test_brain(void)
 {
+	NEWLINE; print_color(COL_GRE, "\tBrain"); NEWLINE; NEWLINE;
 
-	Dog	dog1;
-	Dog	dog2(dog1);
-	Dog	dog3;
+	Brain	brain;
 
-	dog3 = dog1;
+	brain.setIdea(-14, "number -14");
+	brain.setIdea(0, "My first idea");
+	brain.setIdea(4, "eat a bone");
+	brain.setIdea(99, "My last idea");
+	brain.setIdea(100, "overrange");
+	brain_show_idea(brain, -14);
+	brain_show_idea(brain, 0);
+	brain_show_idea(brain, 4);
+	brain_show_idea(brain, 98);
+	brain_show_idea(brain, 99);
+	brain_show_idea(brain, 100);
 
-	(void)dog1;
-	(void)dog2;
+	NEWLINE; print_color(COL_GRE, "\toperator=..."); NEWLINE; NEWLINE;
+	{
+		Brain	braincopy;
 
-	std::cout << "Type is: "
-		<< dog1.getType() << std::endl;
-	std::cout << "Type is: "
-		<< dog2.getType() << std::endl;
-	std::cout << "Type is: "
-		<< dog3.getType() << std::endl;
+		braincopy = brain;
 
-	return ;
+		brain_show_idea(braincopy, -14);
+		brain_show_idea(braincopy, 0);
+		brain_show_idea(braincopy, 4);
+		brain_show_idea(braincopy, 98);
+		brain_show_idea(braincopy, 99);
+		brain_show_idea(braincopy, 100);
+	}
+
+	NEWLINE; print_color(COL_GRE, "\tCopy constructor()"); NEWLINE; NEWLINE;
+	{
+		Brain	braincopy(brain);
+
+		brain_show_idea(braincopy, -14);
+		brain_show_idea(braincopy, 0);
+		brain_show_idea(braincopy, 4);
+		brain_show_idea(braincopy, 98);
+		brain_show_idea(braincopy, 99);
+		brain_show_idea(braincopy, 100);
+	}
 }
 
-static void
-	test_constructor_animal(void)
+static void	test_subject(void)
 {
-	Animal	animal1;
-	Animal	animal2(animal1);
-	Animal	animal3;
+	NEWLINE; print_color(COL_GRE, "\tGood animal"); NEWLINE; NEWLINE;
 
-	animal3 = animal1;
+	{
+		const Animal*	meta = new Animal();
+		const Animal*	j = new Dog();
+		const Animal*	i = new Cat();
 
-	(void)animal1;
-	(void)animal2;
+		std::cout << j->getType() << " " << std::endl;
+		std::cout << i->getType() << " " << std::endl;
+		i->makeSound(); //will output the cat sound!
+		j->makeSound();
+		meta->makeSound();
 
-	return ;
+		delete meta;
+		delete i;
+		delete j;
+	}
+
+	NEWLINE; print_color(COL_GRE, "\tWrong animal"); NEWLINE; NEWLINE;
+
+	{
+		const WrongAnimal*	meta = new WrongAnimal();
+		const WrongAnimal*	j = new WrongDog();
+		const WrongAnimal*	i = new WrongCat();
+
+		std::cout << j->getType() << " " << std::endl;
+		std::cout << i->getType() << " " << std::endl;
+		i->makeSound(); //will output the cat sound!
+		j->makeSound();
+		meta->makeSound();
+
+		delete meta;
+		delete i;
+		delete j;
+	}
+}
+
+static void	test_message(std::string message, void (*f)(void))
+{
+	print_color(COL_GRE, "START of " + message + "\n");
+	f();
+	print_color(COL_RED, "END of " + message + "\n\n");
 }
 
 int
 	main(void)
 {
-	std::cout << "\tTEST CONSTRUCTOR ANIMAL"
-		<< std::endl;
-	test_constructor_animal();
-	std::cout << "\tEND TEST CONSTRUCTOR ANIMAL"
-		<< std::endl << std::endl;
-
-	std::cout << "\tTEST CONSTRUCTOR CAT"
-		<< std::endl;
-	test_constructor_cat();
-	std::cout << "\tEND TEST CONSTRUCTOR CAT"
-		<< std::endl << std::endl;
-
-	std::cout << "\tTEST CONSTRUCTOR DOG"
-		<< std::endl;
-	test_constructor_dog();
-	std::cout << "\tEND TEST CONSTRUCTOR DOG"
-		<< std::endl << std::endl;
-
-	std::cout << "\tTEST CONSTRUCTOR BRAIN {"
-		<< std::endl;
-	test_constructor_brain();
-	std::cout << "}\t/* END TEST CONSTRUCTOR BRAIN */"
-		<< std::endl;
+	test_message("Test subjet", &test_subject);
+	test_message("Test animals", &test_animals);
+	test_message("Test animals with \"new\" & \"delete\"", &test_makeSound_ptr);
+	
+	test_message("Test brain", &test_brain);
 
 	return 0;
 }

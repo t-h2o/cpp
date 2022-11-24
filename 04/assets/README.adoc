@@ -83,7 +83,7 @@ Brain(const Brain &src);
 Brain &operator=(const Brain &src);
 .. destructor ..
 \~Brain(void);
-== Protected ==
+== Private ==
   std::string idea[100];
 == methods ==
 .. getter ..
