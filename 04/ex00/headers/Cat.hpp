@@ -11,7 +11,7 @@ class	Cat : public Animal
 		~Cat(void);
 
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 # endif	/* CAT_HPP */

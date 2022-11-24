@@ -12,7 +12,7 @@ class	WrongDog : public WrongAnimal
 
 		WrongDog	&operator=(WrongDog &other);
 
-		virtual	void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 # endif	/* WRONGDOG_HPP */

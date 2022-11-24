@@ -50,12 +50,6 @@ std::string	Animal::getType(void) const
 	return this->_type;
 }
 
-void	Animal::makeSound(void) const
-{
-	std::cout << "\"Animal sound\""
-		<< std::endl;
-}
-
 void	Animal::setIdea(int number, std::string idea) const
 {
 	this->_brain->setIdea(number, idea);
