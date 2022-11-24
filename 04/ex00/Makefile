@@ -23,6 +23,10 @@ SRCS	+=	$(SRCD)/Animal.cpp
 SRCS	+=	$(SRCD)/Cat.cpp
 SRCS	+=	$(SRCD)/Dog.cpp
 
+SRCS	+=	$(SRCD)/WrongAnimal.cpp
+SRCS	+=	$(SRCD)/WrongCat.cpp
+SRCS	+=	$(SRCD)/WrongDog.cpp
+
 
 #	Headers
 

@@ -2,87 +2,191 @@
 #include	"Cat.hpp"
 #include	"Dog.hpp"
 
+#include	"WrongAnimal.hpp"
+#include	"WrongCat.hpp"
+#include	"WrongDog.hpp"
+
+#define		COL_RED		"\033[31;1m"
+#define		COL_GRE		"\033[32;1m"
+#define		COL_RES		"\033[0m"
+
+#define		NEWLINE		std::cout << std::endl
+
 static void
-	test_constructor_cat(void)
+	print_color(std::string color, std::string text)
 {
+	std::cout
+		<< color
+		<< text
+		<< COL_RES;
+}
 
-	Cat	cat1;
-	Cat	cat2(cat1);
-	Cat	cat3;
+static void
+	print_animal_ref(Animal &animal, std::string message)
+{
+	NEWLINE;
+	print_color(COL_GRE, "Display: " + message + "\n");
+	std::cout << "makeSound: " ; animal.makeSound();
+	std::cout << "getType: " << animal.getType();
+	NEWLINE;
+	NEWLINE;
+}
 
-	cat3 = cat1;
+static void
+	print_animal_ptr(Animal *animal, std::string message)
+{
+	NEWLINE;
+	print_color(COL_GRE, "Display: " + message + "\n");
+	std::cout << "makeSound: " ; animal->makeSound();
+	std::cout << "getType: " << animal->getType();
+	NEWLINE;
+	NEWLINE;
+}
 
-	(void)cat1;
-	(void)cat2;
+static void
+	test_animals(void)
+{
+	// Constructor
+	NEWLINE; print_color(COL_GRE, "\tConstructor..."); NEWLINE; NEWLINE;
+	
+	Animal	animal;
+	Cat		garfield;
+	Dog		milou;
 
-	std::cout << "Type is: "
-		<< cat1.getType() << std::endl;
-	std::cout << "Type is: "
-		<< cat2.getType() << std::endl;
-	std::cout << "Type is: "
-		<< cat3.getType() << std::endl;
+	// MakeSound
+	NEWLINE; print_color(COL_GRE, "\tMake sound..."); NEWLINE; NEWLINE;
+	std::cout << "make sound:  animal: "; animal.makeSound();
+	std::cout << "make sound: garfield: "; garfield.makeSound();
+	std::cout << "make sound:   milou: "; milou.makeSound();
 
+	// Pointer
+	NEWLINE; print_color(COL_GRE, "\tPointer..."); NEWLINE;
+	print_animal_ptr(&garfield, "garfield");
+	print_animal_ptr(&milou, "milou");
+	print_animal_ptr(&animal, "animal");
+
+	// Reference
+	NEWLINE; print_color(COL_GRE, "\tReference..."); NEWLINE;
+	print_animal_ref(garfield, "garfield");
+	print_animal_ref(milou, "milou");
+	print_animal_ref(animal, "animal");
+
+	// Operator =
+	NEWLINE; print_color(COL_GRE, "\toperator=..."); NEWLINE; NEWLINE;
+	// Animal = Dog
+	print_color(COL_GRE, "animal = milou;"); NEWLINE;
+	animal = milou;
+	print_animal_ptr(&animal, "animal");
+
+	// Animal = Cat
+	print_color(COL_GRE, "animal = garfield;"); NEWLINE;
+	animal = garfield;
+	print_animal_ptr(&animal, "animal");
+
+	// Copy constructor
+	NEWLINE; print_color(COL_GRE, "\tcopy constructor..."); NEWLINE; NEWLINE;
+	print_color(COL_GRE, "Animal copy1(milou);"); NEWLINE;
+	Animal copy1(milou);
+	print_animal_ptr(&copy1, "copy1");
+	
+	print_color(COL_GRE, "Animal copy2(garfield);"); NEWLINE;
+	Animal copy2(garfield);
+	print_animal_ptr(&copy2, "copy2");
+
+	// Call destructor
+	print_color(COL_GRE, "\tDestructor..."); NEWLINE; NEWLINE;
 	return ;
 }
 
 static void
-	test_constructor_dog(void)
+	test_makeSound_ptr(void)
 {
+	// Constructor
+	NEWLINE; print_color(COL_GRE, "\tConstructor (with new)..."); NEWLINE; NEWLINE;
+	
+	Animal	*animal = new Animal();
+	const Animal	*milou = new Dog();
+	const Animal	*garfield = new Cat();
 
-	Dog	dog1;
-	Dog	dog2(dog1);
-	Dog	dog3;
+	// MakeSound
+	NEWLINE; print_color(COL_GRE, "\tMake sound..."); NEWLINE; NEWLINE;
 
-	dog3 = dog1;
+	animal->makeSound();
+	milou->makeSound();
+	garfield->makeSound();
 
-	(void)dog1;
-	(void)dog2;
+	// Operator =
+	NEWLINE; print_color(COL_GRE, "\toperator=..."); NEWLINE; NEWLINE;
 
-	std::cout << "Type is: "
-		<< dog1.getType() << std::endl;
-	std::cout << "Type is: "
-		<< dog2.getType() << std::endl;
-	std::cout << "Type is: "
-		<< dog3.getType() << std::endl;
+	// Animal = Dog
+	print_color(COL_GRE, "*animal = *milou;"); NEWLINE;
+	*animal = *milou;
+	std::cout << "type: " <<animal->getType() << std::endl;
 
-	return ;
+	// Animal = Cat
+	NEWLINE; print_color(COL_GRE, "*animal = *garfield;"); NEWLINE;
+	*animal = *garfield;
+	std::cout << "type: " <<animal->getType() << std::endl;
+
+	// Call destructor
+	NEWLINE; print_color(COL_GRE, "\tDestructor (with delete)..."); NEWLINE; NEWLINE;
+	delete animal;
+	delete milou;
+	delete garfield;
 }
 
-static void
-	test_constructor_animal(void)
+static void	test_subject(void)
 {
-	Animal	animal1;
-	Animal	animal2(animal1);
-	Animal	animal3;
+	NEWLINE; print_color(COL_GRE, "\tGood animal"); NEWLINE; NEWLINE;
 
-	animal3 = animal1;
+	{
+		const Animal*	meta = new Animal();
+		const Animal*	j = new Dog();
+		const Animal*	i = new Cat();
 
-	(void)animal1;
-	(void)animal2;
+		std::cout << j->getType() << " " << std::endl;
+		std::cout << i->getType() << " " << std::endl;
+		i->makeSound(); //will output the cat sound!
+		j->makeSound();
+		meta->makeSound();
 
-	return ;
+		delete meta;
+		delete i;
+		delete j;
+	}
+
+	NEWLINE; print_color(COL_GRE, "\tWrong animal"); NEWLINE; NEWLINE;
+
+	{
+		const WrongAnimal*	meta = new WrongAnimal();
+		const WrongAnimal*	j = new WrongDog();
+		const WrongAnimal*	i = new WrongCat();
+
+		std::cout << j->getType() << " " << std::endl;
+		std::cout << i->getType() << " " << std::endl;
+		i->makeSound(); //will output the cat sound!
+		j->makeSound();
+		meta->makeSound();
+
+		delete meta;
+		delete i;
+		delete j;
+	}
+}
+
+static void	test_message(std::string message, void (*f)(void))
+{
+	print_color(COL_GRE, "START of " + message + "\n");
+	f();
+	print_color(COL_RED, "END of " + message + "\n\n");
 }
 
 int
 	main(void)
 {
-	std::cout << "\tTEST CONSTRUCTOR ANIMAL"
-		<< std::endl;
-	test_constructor_animal();
-	std::cout << "\tEND TEST CONSTRUCTOR ANIMAL"
-		<< std::endl << std::endl;
-
-	test_constructor_cat();
-	std::cout << "\tEND TEST CONSTRUCTOR CAT"
-		<< std::endl << std::endl;
-	std::cout << "\tTEST CONSTRUCTOR CAT"
-		<< std::endl;
-
-	test_constructor_dog();
-	std::cout << "\tEND TEST CONSTRUCTOR DOG"
-		<< std::endl << std::endl;
-	std::cout << "\tTEST CONSTRUCTOR DOG"
-		<< std::endl;
+	test_message("Test subjet", &test_subject);
+	test_message("Test animals", &test_animals);
+	test_message("Test animals with \"new\" & \"delete\"", &test_makeSound_ptr);
 
 	return 0;
 }

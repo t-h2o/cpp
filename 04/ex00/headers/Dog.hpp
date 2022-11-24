@@ -10,11 +10,8 @@ class	Dog : public Animal
 		Dog(Dog &other);
 		~Dog(void);
 
-		Dog	&operator=(Dog &other);
 
-		void	makeSound(void) const;
-
-		std::string	getType(void) const;
+		virtual	void	makeSound(void) const;
 };
 
 # endif	/* DOG_HPP */
