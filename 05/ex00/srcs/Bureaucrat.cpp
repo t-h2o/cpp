@@ -4,3 +4,8 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(
 {
 	return ;
 }
+
+int	Bureaucrat::getGrade(void) const
+{
+	return this->_grade;
+}

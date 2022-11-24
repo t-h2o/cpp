@@ -6,4 +6,8 @@ int	main(void)
 		<< std::endl;
 
 	Bureaucrat	paul("Paul", 42);
+
+	std::cout
+		<< paul.getGrade()
+		<< std::endl;
 }
