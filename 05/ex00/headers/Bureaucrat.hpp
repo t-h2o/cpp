@@ -5,6 +5,7 @@ class	Bureaucrat
 	public:
 
 		Bureaucrat(std::string const name, int grade);
+		~Bureaucrat(void);
 
 		int			getGrade(void) const;
 		std::string	getName(void) const;

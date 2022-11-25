@@ -38,6 +38,8 @@ static void	test_bureaucrat(void)
 
 	section_message("Operator<<");
 	std::cout << paul;
+
+	section_message("Destructor");
 }
 
 static void	test_message(std::string message, void (*f)(void))

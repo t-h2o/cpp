@@ -9,6 +9,16 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(
 	return ;
 }
 
+Bureaucrat::~Bureaucrat(void)
+{
+	std::cout
+		<< *this
+		<< "Bureaucrat: destructor"
+		<< std::endl;
+
+	return ;
+}
+
 std::string	Bureaucrat::getName(void) const
 {
 	return this->_name;
