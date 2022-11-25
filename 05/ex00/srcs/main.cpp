@@ -15,19 +15,36 @@ static void
 		<< COL_RES;
 }
 
+static void
+	section_message(std::string section)
+{
+	NEWLINE;
+	NEWLINE;
+	print_color(COL_GRE, "\t" + section + "...");
+	NEWLINE;
+	NEWLINE;
+}
+
 static void	test_bureaucrat(void)
 {
 	Bureaucrat	paul("Paul", 42);
 
+	section_message("Get grade");
 	std::cout << paul.getGrade();
-	NEWLINE;
+
+	section_message("Operator<<");
+	std::cout << paul;
 }
 
 static void	test_message(std::string message, void (*f)(void))
 {
-	print_color(COL_GRE, "START of " + message + "\n");
+	print_color(COL_GRE, "START of " + message);
+	NEWLINE;
 	f();
-	print_color(COL_RED, "END of " + message + "\n\n");
+	NEWLINE;
+	NEWLINE;
+	print_color(COL_RED, "END of " + message);
+	NEWLINE;
 }
 
 int	main(void)
