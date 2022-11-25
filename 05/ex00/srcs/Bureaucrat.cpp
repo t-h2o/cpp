@@ -3,7 +3,8 @@
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade)
 {
 	std::cout
-		<< "Bureaucrat: default constructor"
+		<< "Bureaucrat: default constructor --> "
+		<< *this
 		<< std::endl;
 
 	return ;
@@ -12,8 +13,8 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(
 Bureaucrat::~Bureaucrat(void)
 {
 	std::cout
+		<< "Bureaucrat: destructor --> "
 		<< *this
-		<< "Bureaucrat: destructor"
 		<< std::endl;
 
 	return ;

@@ -37,7 +37,7 @@ static void	test_bureaucrat(void)
 	std::cout << paul.getGrade();
 
 	section_message("Operator<<");
-	std::cout << paul;
+	std::cout << paul; NEWLINE;
 
 	section_message("Destructor");
 }
@@ -56,6 +56,7 @@ static void	test_message(std::string message, void (*f)(void))
 int	main(void)
 {
 	print_color(COL_GRE, "Module 05 Exercice 00"); NEWLINE;
+	NEWLINE;
 
 	test_message("Test bureaucrat", &test_bureaucrat);
 }
