@@ -30,6 +30,24 @@ int	Bureaucrat::getGrade(void) const
 	return this->_grade;
 }
 
+void	Bureaucrat::decGrade(int level)
+{
+	int	before;
+
+	before = this->_grade;
+
+	this->_grade += level;
+
+	std::cout
+		<< *this
+		<< " (Level before: "
+		<< before
+		<< ", decrease of "
+		<< level
+		<< ")"
+		<< std::endl;
+}
+
 void	Bureaucrat::incGrade(int level)
 {
 	int	before;

@@ -39,6 +39,9 @@ static void	test_bureaucrat(void)
 	section_message("increase grade");
 	paul.incGrade(5);
 
+	section_message("decrease grade");
+	paul.decGrade(12);
+
 	section_message("Operator<<");
 	std::cout << paul; NEWLINE;
 

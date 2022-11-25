@@ -11,6 +11,7 @@ class	Bureaucrat
 		std::string	getName(void) const;
 
 		void	incGrade(int level);
+		void	decGrade(int level);
 
 	private:
 
