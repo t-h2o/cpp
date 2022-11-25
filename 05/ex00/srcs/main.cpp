@@ -27,6 +27,7 @@ static void
 
 static void	test_bureaucrat(void)
 {
+	section_message("Contructor");
 	Bureaucrat	paul("Paul", 42);
 
 	section_message("Get grade");
