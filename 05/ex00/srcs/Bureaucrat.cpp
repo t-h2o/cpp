@@ -30,6 +30,24 @@ int	Bureaucrat::getGrade(void) const
 	return this->_grade;
 }
 
+void	Bureaucrat::incGrade(int level)
+{
+	int	before;
+
+	before = this->_grade;
+
+	this->_grade -= level;
+
+	std::cout
+		<< *this
+		<< " (Level before: "
+		<< before
+		<< ", increase of "
+		<< level
+		<< ")"
+		<< std::endl;
+}
+
 std::ostream &operator<<(std::ostream &sortie, const Bureaucrat &bureaucrat)
 {
 	sortie
