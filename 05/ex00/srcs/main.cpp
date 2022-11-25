@@ -30,6 +30,9 @@ static void	test_bureaucrat(void)
 	section_message("Contructor");
 	Bureaucrat	paul("Paul", 42);
 
+	section_message("Get name");
+	std::cout << paul.getName();
+
 	section_message("Get grade");
 	std::cout << paul.getGrade();
 
