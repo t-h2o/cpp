@@ -6,7 +6,8 @@ class	Bureaucrat
 
 		Bureaucrat(std::string const name, int grade);
 
-		int	getGrade(void) const;
+		int			getGrade(void) const;
+		std::string	getName(void) const;
 
 	private:
 
