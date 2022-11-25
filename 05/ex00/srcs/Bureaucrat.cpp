@@ -18,7 +18,7 @@ int	Bureaucrat::getGrade(void) const
 std::ostream &operator<<(std::ostream &sortie, const Bureaucrat &bureaucrat)
 {
 	sortie
-		<< bureaucrat.getGrade()
+		<< bureaucrat.getName()
 		<< ", bureaucrat grade "
 		<< bureaucrat.getGrade()
 		<< ".";
