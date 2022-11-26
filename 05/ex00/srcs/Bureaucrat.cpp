@@ -3,7 +3,7 @@
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade)
 {
 	if (this->_grade < 1)
-		throw "Cannot init with a grade greater than 1";
+		throw Bureaucrat::ExceptionGradeTooLow();
 
 	std::cout
 		<< "Bureaucrat: default constructor --> "
