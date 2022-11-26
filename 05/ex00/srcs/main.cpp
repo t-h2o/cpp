@@ -28,7 +28,7 @@ static void
 static void	test_bureaucrat(void)
 {
 	section_message("Contructor");
-	Bureaucrat	paul("Paul", 42);
+	Bureaucrat	paul("Paul", -1);
 
 	section_message("Get name");
 	std::cout << paul.getName();
