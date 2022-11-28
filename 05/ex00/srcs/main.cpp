@@ -43,8 +43,16 @@ static void	test_bureaucrat(void)
 	paul.decGrade(12);
 	arnolde.decGrade(50);
 
-	section_message("Operator<<");
+	section_message("Display before with the operator <<");
 	std::cout << paul; NEWLINE;
+	std::cout << arnolde; NEWLINE;
+
+	section_message("Operator =");
+	paul = arnolde;
+
+	section_message("Display after with the operator <<");
+	std::cout << paul; NEWLINE;
+	std::cout << arnolde; NEWLINE;
 
 	section_message("Destructor");
 }
