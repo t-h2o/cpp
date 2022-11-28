@@ -13,7 +13,6 @@ class	Form
 
 		int			getGrade(void) const;
 		std::string	getName(void) const;
-		Form &operator=(Form const &bureaucrat);
 
 		void	incGrade(int level);
 		void	decGrade(int level);
