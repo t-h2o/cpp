@@ -1,9 +1,5 @@
 #include	"Bureaucrat.hpp"
 
-#define		COL_RED		"\033[31;1m"
-#define		COL_GRE		"\033[32;1m"
-#define		COL_RES		"\033[0m"
-
 #define		NEWLINE		std::cout << std::endl
 
 static void
