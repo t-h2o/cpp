@@ -56,6 +56,19 @@ Bureaucrat::~Bureaucrat(void)
 	return ;
 }
 
+Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &bureaucrat)
+{
+	std::cout << "Set the grade of "
+		<< bureaucrat._name
+		<< " into "
+		<< this->_name
+		<< std::endl;
+
+	this->_grade = bureaucrat._grade;
+
+	return *this;
+}
+
 std::string	Bureaucrat::getName(void) const
 {
 	return this->_name;

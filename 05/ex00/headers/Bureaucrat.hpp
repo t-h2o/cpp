@@ -13,6 +13,7 @@ class	Bureaucrat
 
 		int			getGrade(void) const;
 		std::string	getName(void) const;
+		Bureaucrat &operator=(Bureaucrat const &bureaucrat);
 
 		void	incGrade(int level);
 		void	decGrade(int level);
