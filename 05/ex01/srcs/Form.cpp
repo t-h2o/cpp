@@ -69,6 +69,11 @@ int		Form::getGradeExec(void) const
 	return this->_grade_to_exec;
 }
 
+void	Form::sign(void)
+{
+	return this->_form_signed = true;
+}
+
 bool	Form::isSigned(void) const
 {
 	return this->_form_signed;

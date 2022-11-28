@@ -17,6 +17,8 @@ class	Bureaucrat
 
 		void	incGrade(int level);
 		void	decGrade(int level);
+		
+		void	signForm(Form &form);
 
 		class ExceptionGradeTooLow : public std::exception
 		{
