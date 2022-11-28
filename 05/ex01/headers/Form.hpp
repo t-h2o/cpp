@@ -8,14 +8,13 @@ class	Form
 {
 	public:
 
-		Form(std::string const name, int grade);
+		Form(std::string const name, int const grade_to_sign, int const grade_to_exec);
 		~Form(void);
 
-		int			getGrade(void) const;
 		std::string	getName(void) const;
-
-		void	incGrade(int level);
-		void	decGrade(int level);
+		int			getGradeSign(void) const;
+		int			getGradeExec(void) const;
+		bool		isSigned(void) const;
 
 		class ExceptionGradeTooLow : public std::exception
 		{
@@ -40,7 +39,9 @@ class	Form
 		void	_check_grade(void);
 
 		const std::string	_name;
-		int					_grade;
+		const int			_grade_to_sign;
+		const int			_grade_to_exec;
+		bool				_form_signed;
 };
 
 std::ostream	&operator<<(std::ostream &sortie, Form const &rhs);

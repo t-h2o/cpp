@@ -16,24 +16,22 @@ void	Form::_check_grade(void)
 {
 	try
 	{
-		if (this->_grade > 150)
+		if (this->_grade_to_sign > 150)
 			throw Form::ExceptionGradeTooLow();
-		if (this->_grade < 1)
+		if (this->_grade_to_sign < 1)
 			throw Form::ExceptionGradeTooHigh();
 	}
 	catch (const Form::ExceptionGradeTooLow &e)
 	{
-		print_exception(e, this->_grade);
-		this->_grade = 150;
+		print_exception(e, this->_grade_to_sign);
 	}
 	catch (const Form::ExceptionGradeTooHigh &e)
 	{
-		print_exception(e, this->_grade);
-		this->_grade = 1;
+		print_exception(e, this->_grade_to_sign);
 	}
 }
 
-Form::Form(std::string const name, int grade) : _name(name), _grade(grade)
+Form::Form(std::string const name, int const grade_to_sign, int const grade_to_exec) : _name(name), _grade_to_sign(grade_to_sign), _grade_to_exec(grade_to_exec), _form_signed(false)
 {
 
 	this->_check_grade();
@@ -61,58 +59,42 @@ std::string	Form::getName(void) const
 	return this->_name;
 }
 
-int	Form::getGrade(void) const
+int		Form::getGradeSign(void) const
 {
-	return this->_grade;
+	return this->_grade_to_sign;
 }
 
-void	Form::decGrade(int level)
+int		Form::getGradeExec(void) const
 {
-	int	before;
-
-	before = this->_grade;
-
-	this->_grade += level;
-
-	this->_check_grade();
-
-	std::cout
-		<< *this
-		<< " (Level before: "
-		<< before
-		<< ", decrease of "
-		<< level
-		<< ")"
-		<< std::endl;
+	return this->_grade_to_exec;
 }
 
-void	Form::incGrade(int level)
+bool	Form::isSigned(void) const
 {
-	int	before;
-
-	before = this->_grade;
-
-	this->_grade -= level;
-
-	this->_check_grade();
-
-	std::cout
-		<< *this
-		<< " (Level before: "
-		<< before
-		<< ", increase of "
-		<< level
-		<< ")"
-		<< std::endl;
+	return this->_form_signed;
 }
 
-std::ostream &operator<<(std::ostream &sortie, const Form &bureaucrat)
+std::ostream &operator<<(std::ostream &sortie, const Form &form)
 {
 	sortie
-		<< bureaucrat.getName()
-		<< ", bureaucrat grade "
-		<< bureaucrat.getGrade()
-		<< ".";
+		<< "Form: \""
+		<< form.getName()
+		<< "\" ";
+
+	if (form.isSigned())
+		sortie
+			<< "is";
+	else
+		sortie
+			<< "isn't";
+
+	sortie
+		<< " signed "
+		<< " ["
+		<< form.getGradeSign()
+		<< ", "
+		<< form.getGradeExec()
+		<< "]";
 
 	return sortie;
 }
