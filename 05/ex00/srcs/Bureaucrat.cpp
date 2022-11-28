@@ -1,0 +1,131 @@
+#include	"Bureaucrat.hpp"
+
+static void	print_exception(std::exception const &e, int grade)
+{
+	std::cout
+		<< COL_RED
+		<< "Cannot set : "
+		<< grade
+		<< ", "
+		<< e.what()
+		<< COL_RES
+		<< std::endl;
+}
+
+void	Bureaucrat::_check_grade(void)
+{
+	try
+	{
+		if (this->_grade > 150)
+			throw Bureaucrat::ExceptionGradeTooLow();
+		if (this->_grade < 1)
+			throw Bureaucrat::ExceptionGradeTooHigh();
+	}
+	catch (const Bureaucrat::ExceptionGradeTooLow &e)
+	{
+		print_exception(e, this->_grade);
+		this->_grade = 150;
+	}
+	catch (const Bureaucrat::ExceptionGradeTooHigh &e)
+	{
+		print_exception(e, this->_grade);
+		this->_grade = 1;
+	}
+}
+
+Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade)
+{
+
+	this->_check_grade();
+
+	std::cout
+		<< "Bureaucrat: default constructor --> "
+		<< *this
+		<< std::endl;
+
+	return ;
+}
+
+Bureaucrat::~Bureaucrat(void)
+{
+	std::cout
+		<< "Bureaucrat: destructor --> "
+		<< *this
+		<< std::endl;
+
+	return ;
+}
+
+Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &bureaucrat)
+{
+	std::cout << "Set the grade of "
+		<< bureaucrat._name
+		<< " into "
+		<< this->_name
+		<< std::endl;
+
+	this->_grade = bureaucrat._grade;
+
+	return *this;
+}
+
+std::string	Bureaucrat::getName(void) const
+{
+	return this->_name;
+}
+
+int	Bureaucrat::getGrade(void) const
+{
+	return this->_grade;
+}
+
+void	Bureaucrat::decGrade(int level)
+{
+	int	before;
+
+	before = this->_grade;
+
+	this->_grade += level;
+
+	this->_check_grade();
+
+	std::cout
+		<< *this
+		<< " (Level before: "
+		<< before
+		<< ", decrease of "
+		<< level
+		<< ")"
+		<< std::endl;
+}
+
+void	Bureaucrat::incGrade(int level)
+{
+	int	before;
+
+	before = this->_grade;
+
+	this->_grade -= level;
+
+	this->_check_grade();
+
+	std::cout
+		<< *this
+		<< " (Level before: "
+		<< before
+		<< ", increase of "
+		<< level
+		<< ")"
+		<< std::endl;
+}
+
+std::ostream &operator<<(std::ostream &sortie, const Bureaucrat &bureaucrat)
+{
+	sortie
+		<< bureaucrat.getName()
+		<< ", bureaucrat grade "
+		<< bureaucrat.getGrade()
+		<< ".";
+
+	return sortie;
+}
