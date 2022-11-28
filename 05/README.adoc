@@ -1,6 +1,23 @@
 = Module 05
 :toc:
+:nofooter:
+:table-caption:
 
 == Subject
 
 * 42: https://cdn.intra.42.fr/pdf/pdf/67417/fr.subject.pdf[Subject.fr]
+
+== Exercice 00
+
+[caption=]
+.Check list for grade exception
+[cols="1,1,1"]
+|===
+|Check to high exception (< 1)
+|Constructor
+|Increase grade
+
+|Check to low exception (> 150)
+|Constructor
+|Decrease grade
+|===
