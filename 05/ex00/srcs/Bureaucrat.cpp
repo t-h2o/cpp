@@ -4,9 +4,9 @@ static void	print_exception(std::exception const &e, int grade)
 {
 	std::cout
 		<< COL_RED
-		<< "Cannot set grade: "
+		<< "Cannot set : "
 		<< grade
-		<< " | "
+		<< ", "
 		<< e.what()
 		<< COL_RES
 		<< std::endl;
