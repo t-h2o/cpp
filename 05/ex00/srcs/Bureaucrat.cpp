@@ -1,5 +1,14 @@
 #include	"Bureaucrat.hpp"
 
+static void	print_exception(std::exception const &e)
+{
+	std::cout
+		<< COL_RED
+		<< e.what()
+		<< COL_RES
+		<< std::endl;
+}
+
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade)
 {
 	try
@@ -9,7 +18,7 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(
 	}
 	catch (const Bureaucrat::ExceptionGradeTooLow &e)
 	{
-		std::cout << e.what() << std::endl;
+		print_exception(e);
 		_grade = 1;
 	}
 
