@@ -2,8 +2,16 @@
 
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade)
 {
-	if (this->_grade < 1)
-		throw Bureaucrat::ExceptionGradeTooLow();
+	try
+	{
+		if (this->_grade < 1)
+			throw Bureaucrat::ExceptionGradeTooLow();
+	}
+	catch (const Bureaucrat::ExceptionGradeTooLow &e)
+	{
+		std::cout << e.what() << std::endl;
+		_grade = 1;
+	}
 
 	std::cout
 		<< "Bureaucrat: default constructor --> "
