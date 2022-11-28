@@ -74,6 +74,8 @@ void	Bureaucrat::decGrade(int level)
 
 	this->_grade += level;
 
+	this->_check_grade();
+
 	std::cout
 		<< *this
 		<< " (Level before: "
@@ -91,6 +93,8 @@ void	Bureaucrat::incGrade(int level)
 	before = this->_grade;
 
 	this->_grade -= level;
+
+	this->_check_grade();
 
 	std::cout
 		<< *this
