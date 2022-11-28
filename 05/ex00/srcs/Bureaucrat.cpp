@@ -12,7 +12,7 @@ static void	print_exception(std::exception const &e, int grade)
 		<< std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade)
+void	Bureaucrat::_check_grade(void)
 {
 	try
 	{
@@ -23,14 +23,20 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(
 	}
 	catch (const Bureaucrat::ExceptionGradeTooLow &e)
 	{
-		print_exception(e, grade);
-		_grade = 150;
+		print_exception(e, this->_grade);
+		this->_grade = 150;
 	}
 	catch (const Bureaucrat::ExceptionGradeTooHigh &e)
 	{
-		print_exception(e, grade);
-		_grade = 1;
+		print_exception(e, this->_grade);
+		this->_grade = 1;
 	}
+}
+
+Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade)
+{
+
+	this->_check_grade();
 
 	std::cout
 		<< "Bureaucrat: default constructor --> "
