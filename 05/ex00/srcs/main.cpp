@@ -1,4 +1,5 @@
 #include	"Bureaucrat.hpp"
+#include	"Form.hpp"
 
 #define		NEWLINE		std::cout << std::endl
 
@@ -57,6 +58,16 @@ static void	test_bureaucrat(void)
 	section_message("Destructor");
 }
 
+static void	test_form(void)
+{
+	section_message("Contructor");
+
+	Form form;
+
+	section_message("Display form with the operator <<");
+	std::cout << form;
+}
+
 static void	test_message(std::string message, void (*f)(void))
 {
 	print_color(COL_GRE, "START of " + message);
@@ -74,4 +85,5 @@ int	main(void)
 	NEWLINE;
 
 	test_message("Test bureaucrat", &test_bureaucrat);
+	test_message("Test Form", &test_form);
 }
