@@ -22,7 +22,7 @@ class	Bureaucrat
 			public:
 				const char *what() const throw()
 				{
-					return ("Init with grade = 1");
+					return ("Init with grade = 150");
 				}
 		};
 
@@ -31,7 +31,7 @@ class	Bureaucrat
 			public:
 				const char *what() const throw()
 				{
-					return ("Init with grade = 150");
+					return ("Init with grade = 1");
 				}
 		};
 

@@ -16,20 +16,20 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(
 {
 	try
 	{
-		if (this->_grade < 1)
-			throw Bureaucrat::ExceptionGradeTooLow();
 		if (this->_grade > 150)
+			throw Bureaucrat::ExceptionGradeTooLow();
+		if (this->_grade < 1)
 			throw Bureaucrat::ExceptionGradeTooHigh();
 	}
 	catch (const Bureaucrat::ExceptionGradeTooLow &e)
 	{
 		print_exception(e, grade);
-		_grade = 1;
+		_grade = 150;
 	}
 	catch (const Bureaucrat::ExceptionGradeTooHigh &e)
 	{
 		print_exception(e, grade);
-		_grade = 150;
+		_grade = 1;
 	}
 
 	std::cout
