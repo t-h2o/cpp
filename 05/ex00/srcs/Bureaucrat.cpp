@@ -18,11 +18,18 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(
 	{
 		if (this->_grade < 1)
 			throw Bureaucrat::ExceptionGradeTooLow();
+		if (this->_grade > 150)
+			throw Bureaucrat::ExceptionGradeTooHigh();
 	}
 	catch (const Bureaucrat::ExceptionGradeTooLow &e)
 	{
 		print_exception(e, grade);
 		_grade = 1;
+	}
+	catch (const Bureaucrat::ExceptionGradeTooHigh &e)
+	{
+		print_exception(e, grade);
+		_grade = 150;
 	}
 
 	std::cout

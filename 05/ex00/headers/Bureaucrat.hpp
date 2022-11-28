@@ -26,6 +26,15 @@ class	Bureaucrat
 				}
 		};
 
+		class ExceptionGradeTooHigh : public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+					return ("Init with grade = 150");
+				}
+		};
+
 	private:
 
 		const std::string	_name;
