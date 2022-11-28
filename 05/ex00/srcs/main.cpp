@@ -26,6 +26,9 @@ static void	test_bureaucrat(void)
 	section_message("Contructor");
 	Bureaucrat	paul("Paul", -1);
 
+	section_message("Contructor");
+	Bureaucrat	arnolde("Arnolde", 151);
+
 	section_message("Get name");
 	std::cout << paul.getName();
 
@@ -34,9 +37,11 @@ static void	test_bureaucrat(void)
 
 	section_message("increase grade");
 	paul.incGrade(5);
+	arnolde.incGrade(5);
 
 	section_message("decrease grade");
 	paul.decGrade(12);
+	arnolde.decGrade(50);
 
 	section_message("Operator<<");
 	std::cout << paul; NEWLINE;
