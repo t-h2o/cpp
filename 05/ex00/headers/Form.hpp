@@ -6,7 +6,7 @@
 class Form
 {
 	public:
-		Form(int gradeToSign);
+		Form(std::string name, int gradeToSign);
 
 		std::string	getName(void) const;
 		bool		isSign(void) const;

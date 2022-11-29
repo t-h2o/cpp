@@ -62,7 +62,7 @@ static void	test_form(void)
 {
 	section_message("Contructor");
 
-	Form form(42);
+	Form form("My form", 42);
 
 	section_message("Display form with the operator <<");
 	std::cout << form;

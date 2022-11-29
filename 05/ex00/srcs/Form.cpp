@@ -1,6 +1,6 @@
 #include	"Form.hpp"
 
-Form::Form(int gradeToSign) : _name("Name"),
+Form::Form(std::string name, int gradeToSign) : _name(name),
 	_isSigned(false),
 	_gradeToSign(gradeToSign)
 {
