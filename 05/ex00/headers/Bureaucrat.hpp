@@ -1,5 +1,8 @@
 #include	<iostream>
 
+#ifndef	BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
+
 #define		COL_RED		"\033[31;1m"
 #define		COL_GRE		"\033[32;1m"
 #define		COL_RES		"\033[0m"
@@ -23,7 +26,7 @@ class	Bureaucrat
 			public:
 				const char *what() const throw()
 				{
-					return ("Init with grade = 150");
+					return ("Grade too low");
 				}
 		};
 
@@ -32,7 +35,7 @@ class	Bureaucrat
 			public:
 				const char *what() const throw()
 				{
-					return ("Init with grade = 1");
+					return ("Grade too high");
 				}
 		};
 
@@ -45,3 +48,5 @@ class	Bureaucrat
 };
 
 std::ostream	&operator<<(std::ostream &sortie, Bureaucrat const &rhs);
+
+#endif /* BUREAUCRAT_HPP */
