@@ -71,6 +71,7 @@ static void	test_form(void)
 
 	section_message("Sign the form");
 	form.beSigned(arnolde);
+	arnolde.signForm(form);
 	form.beSigned(paul);
 	form.beSigned(paul);
 
