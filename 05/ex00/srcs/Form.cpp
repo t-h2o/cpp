@@ -11,6 +11,16 @@ std::string	Form::getName(void) const
 	return this->_name;
 }
 
+void		Form::sign(void)
+{
+	std::cout << "Form \""
+		<< this->getName()
+		<< "\" is getting sign"
+		<< std::endl;
+
+	this->_isSigned = true;
+}
+
 bool		Form::isSign(void) const
 {
 	return this->_isSigned;

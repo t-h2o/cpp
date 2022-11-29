@@ -10,6 +10,7 @@ class Form
 
 		std::string	getName(void) const;
 		bool		isSign(void) const;
+		void		sign(void);
 
 	private:
 		const std::string	_name;
