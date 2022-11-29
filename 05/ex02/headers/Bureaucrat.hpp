@@ -1,4 +1,5 @@
 #include	<iostream>
+#include	<cstdlib>
 
 #ifndef	BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
