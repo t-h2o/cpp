@@ -21,6 +21,7 @@ SRCD	=	srcs
 SRCS	=	$(SRCD)/main.cpp
 SRCS	+=	$(SRCD)/Bureaucrat.cpp
 SRCS	+=	$(SRCD)/Form.cpp
+SRCS	+=	$(SRCD)/ShrubberyCreationForm.cpp
 
 
 #	Headers

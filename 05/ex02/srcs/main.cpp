@@ -1,6 +1,8 @@
 #include	"Bureaucrat.hpp"
 #include	"Form.hpp"
 
+#include	"ShrubberyCreationForm.hpp"
+
 #define		NEWLINE		std::cout << std::endl
 
 static void
@@ -79,6 +81,11 @@ static void	test_form(void)
 	std::cout << form;
 }
 
+static void	test_shurbbery(void)
+{
+	ShrubberyCreationForm	tree("My tree", 42, 84);
+}
+
 static void	test_message(std::string message, void (*f)(void))
 {
 	print_color(COL_GRE, "START of " + message);
@@ -99,5 +106,6 @@ int	main(void)
 
 	test_message("Test bureaucrat", &test_bureaucrat);
 	test_message("Test Form", &test_form);
+	test_message("Test ShrubberyCreationForm", &test_shurbbery);
 	print_color(COL_GRE, "end Module 05 Exercice 01"); NEWLINE;
 }

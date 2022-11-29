@@ -44,9 +44,11 @@ class	Bureaucrat
 				}
 		};
 
-	private:
+	protected:
 
 		void	_check_grade(void);
+
+	private:
 
 		const std::string	_name;
 		int					_grade;
