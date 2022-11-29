@@ -7,6 +7,8 @@
 #define		COL_GRE		"\033[32;1m"
 #define		COL_RES		"\033[0m"
 
+class	Form;
+
 class	Bureaucrat
 {
 	public:
