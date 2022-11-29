@@ -25,10 +25,10 @@ static void
 static void	test_bureaucrat(void)
 {
 	section_message("Contructor");
-	Bureaucrat	paul("Paul", -1);
+	Bureaucrat	paul("Paul", 10);
 
 	section_message("Contructor");
-	Bureaucrat	arnolde("Arnolde", 151);
+	Bureaucrat	arnolde("Arnolde", 80);
 
 	section_message("Get name");
 	std::cout << paul.getName();
@@ -65,12 +65,6 @@ static void	test_form(void)
 	Bureaucrat	paul("Paul", 1);
 	Bureaucrat	arnolde("Arnolde", 150);
 	Form		form("My form", 42, 84);
-	{
-		Form	overmax1("over", 151, 84);
-		Form	overmax2("over", 42, 151);
-		Form	overmin1("over", 0, 84);
-		Form	overmin2("over", 42, 0);
-	}
 
 	section_message("Display form with the operator <<");
 	std::cout << form;
@@ -94,13 +88,16 @@ static void	test_message(std::string message, void (*f)(void))
 	NEWLINE;
 	print_color(COL_RED, "END of " + message);
 	NEWLINE;
+	NEWLINE;
+	NEWLINE;
 }
 
 int	main(void)
 {
-	print_color(COL_GRE, "Module 05 Exercice 00"); NEWLINE;
+	print_color(COL_GRE, "Module 05 Exercice 01"); NEWLINE;
 	NEWLINE;
 
 	test_message("Test bureaucrat", &test_bureaucrat);
 	test_message("Test Form", &test_form);
+	print_color(COL_GRE, "end Module 05 Exercice 01"); NEWLINE;
 }
