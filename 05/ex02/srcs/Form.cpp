@@ -16,9 +16,9 @@ void	Form::_check_grade(void) const
 {
 	try
 	{
-		if (this->_gradeToSign > 150 || this->_gradeToExec > 150)
+		if (this->getGradeToSign() > 150 || this->getGradeToExec() > 150)
 			throw Form::ExceptionGradeTooLow();
-		if (this->_gradeToSign < 1 || this->_gradeToExec < 1)
+		if (this->getGradeToSign() < 1 || this->getGradeToExec() < 1)
 			throw Form::ExceptionGradeTooHigh();
 	}
 	catch (const Form::ExceptionGradeTooLow &e)
