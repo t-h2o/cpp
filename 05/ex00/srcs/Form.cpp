@@ -1,8 +1,9 @@
 #include	"Form.hpp"
 
-Form::Form(std::string name, int gradeToSign) : _name(name),
+Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name(name),
 	_isSigned(false),
-	_gradeToSign(gradeToSign)
+	_gradeToSign(gradeToSign),
+	_gradeToExec(gradeToExec)
 {
 	return ;
 }
@@ -32,6 +33,11 @@ int			Form::getGradeToSign(void) const
 	return this->_gradeToSign;
 }
 
+int			Form::getGradeToExec(void) const
+{
+	return this->_gradeToExec;
+}
+
 std::ostream &operator<<(std::ostream &output, Form &form)
 {
 	output << "Form \""
@@ -46,6 +52,8 @@ std::ostream &operator<<(std::ostream &output, Form &form)
 	output
 		<< " (Grade to sign: "
 		<< form.getGradeToSign()
+		<< ", grade to execute: "
+		<< form.getGradeToExec()
 		<< ")"
 		<< std::endl;
 
