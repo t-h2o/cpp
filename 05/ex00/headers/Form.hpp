@@ -9,9 +9,11 @@ class Form
 		Form(void);
 
 		std::string	getName(void) const;
+		bool		isSign(void) const;
 
 	private:
 		const std::string	_name;
+		bool				_isSigned;
 };
 
 std::ostream &operator<<(std::ostream &output, Form &form);
