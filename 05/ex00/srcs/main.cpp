@@ -65,6 +65,12 @@ static void	test_form(void)
 	Bureaucrat	paul("Paul", 1);
 	Bureaucrat	arnolde("Arnolde", 150);
 	Form		form("My form", 42, 84);
+	{
+		Form	overmax1("over", 151, 84);
+		Form	overmax2("over", 42, 151);
+		Form	overmin1("over", 0, 84);
+		Form	overmin2("over", 42, 0);
+	}
 
 	section_message("Display form with the operator <<");
 	std::cout << form;

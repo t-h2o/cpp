@@ -1,10 +1,43 @@
 #include	"Form.hpp"
 
+static void	print_exception(std::exception const &e)
+{
+	std::cout
+		<< COL_RED
+		<< "grade error : "
+		<< ", "
+		<< e.what()
+		<< COL_RES
+		<< std::endl;
+}
+
+void	Form::_check_grade(void) const
+{
+	try
+	{
+		if (this->_gradeToSign > 150 || this->_gradeToExec > 150)
+			throw Form::ExceptionGradeTooLow();
+		if (this->_gradeToSign < 1 || this->_gradeToExec < 1)
+			throw Form::ExceptionGradeTooHigh();
+	}
+	catch (const Form::ExceptionGradeTooLow &e)
+	{
+		print_exception(e);
+	}
+	catch (const Form::ExceptionGradeTooHigh &e)
+	{
+		print_exception(e);
+	}
+}
+
+
 Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name(name),
 	_isSigned(false),
 	_gradeToSign(gradeToSign),
 	_gradeToExec(gradeToExec)
 {
+	this->_check_grade();
+
 	return ;
 }
 

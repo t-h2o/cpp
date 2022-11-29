@@ -17,11 +17,31 @@ class Form
 
 		void		beSigned(Bureaucrat &bureaucrat);
 
+		class ExceptionGradeTooLow : public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+					return ("Init with grade = 150");
+				}
+		};
+
+		class ExceptionGradeTooHigh : public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+					return ("Init with grade = 1");
+				}
+		};
+
 	private:
 		const std::string	_name;
 		bool				_isSigned;
 		const int			_gradeToSign;
 		const int			_gradeToExec;
+
+		void	_check_grade(void)const;
 };
 
 std::ostream &operator<<(std::ostream &output, Form &form);
