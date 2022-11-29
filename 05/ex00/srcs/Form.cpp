@@ -13,7 +13,7 @@ std::string	Form::getName(void) const
 	return this->_name;
 }
 
-void		Form::sign(void)
+void		Form::beSigned(void)
 {
 	std::cout << "Form \""
 		<< this->getName()

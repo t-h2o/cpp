@@ -68,7 +68,7 @@ static void	test_form(void)
 	std::cout << form;
 
 	section_message("Sign the form");
-	form.sign();
+	form.beSigned();
 
 	section_message("Display form with the operator <<");
 	std::cout << form;
