@@ -1,8 +1,13 @@
 #include	<iostream>
 
+#ifndef	BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
+
 #define		COL_RED		"\033[31;1m"
 #define		COL_GRE		"\033[32;1m"
 #define		COL_RES		"\033[0m"
+
+class	Form;
 
 class	Bureaucrat
 {
@@ -17,6 +22,8 @@ class	Bureaucrat
 
 		void	incGrade(int level);
 		void	decGrade(int level);
+
+		void	signForm(Form &form);
 
 		class ExceptionGradeTooLow : public std::exception
 		{
@@ -45,3 +52,5 @@ class	Bureaucrat
 };
 
 std::ostream	&operator<<(std::ostream &sortie, Bureaucrat const &rhs);
+
+#endif /* BUREAUCRAT_HPP */
