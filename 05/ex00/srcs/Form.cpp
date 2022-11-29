@@ -13,14 +13,46 @@ std::string	Form::getName(void) const
 	return this->_name;
 }
 
-void		Form::beSigned(void)
+void		Form::beSigned(Bureaucrat &bureaucrat)
 {
-	std::cout << "Form \""
-		<< this->getName()
-		<< "\" is getting sign"
-		<< std::endl;
+	if (this->isSign())
+	{
+		std::cout
+			<< "The form \""
+			<< this->getName()
+			<< "\" is already signed"
+			<< std::endl;
 
-	this->_isSigned = true;
+		return ;
+	}
+
+	if (bureaucrat.getGrade() > this->getGradeToSign())
+		std::cout << "Bureaucrat \""
+			<< bureaucrat.getName()
+			<< "\" (grade: "
+			<< bureaucrat.getGrade()
+			<< ") can't sign the form \""
+			<< this->getName()
+			<< "\" (grade to sign: "
+			<< this->getGradeToSign()
+			<< ")"
+			<< std::endl;
+	else
+	{
+		std::cout << "Bureaucrat \""
+			<< bureaucrat.getName()
+			<< "\" (grade: "
+			<< bureaucrat.getGrade()
+			<< ") is signing the form \""
+			<< this->getName()
+			<< "\" (grade to sign: "
+			<< this->getGradeToSign()
+			<< ")"
+			<< std::endl;
+
+		this->_isSigned = true;
+	}
+
 }
 
 bool		Form::isSign(void) const

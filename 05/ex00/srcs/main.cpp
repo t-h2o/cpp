@@ -62,13 +62,17 @@ static void	test_form(void)
 {
 	section_message("Contructor");
 
-	Form form("My form", 42, 84);
+	Bureaucrat	paul("Paul", 1);
+	Bureaucrat	arnolde("Arnolde", 150);
+	Form		form("My form", 42, 84);
 
 	section_message("Display form with the operator <<");
 	std::cout << form;
 
 	section_message("Sign the form");
-	form.beSigned();
+	form.beSigned(arnolde);
+	form.beSigned(paul);
+	form.beSigned(paul);
 
 	section_message("Display form with the operator <<");
 	std::cout << form;

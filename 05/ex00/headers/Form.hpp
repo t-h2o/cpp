@@ -1,4 +1,5 @@
 #include	<iostream>
+#include	"Bureaucrat.hpp"
 
 #ifndef	FORM_HPP
 # define FORM_HPP
@@ -13,7 +14,7 @@ class Form
 		int			getGradeToSign(void) const;
 		int			getGradeToExec(void) const;
 
-		void		beSigned(void);
+		void		beSigned(Bureaucrat &bureaucrat);
 
 	private:
 		const std::string	_name;
