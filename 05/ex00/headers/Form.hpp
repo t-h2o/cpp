@@ -3,9 +3,9 @@
 #ifndef	FORM_HPP
 # define FORM_HPP
 
-# include	"Bureaucrat.hpp"
+class	Bureaucrat;
 
-class Form
+class	Form
 {
 	public:
 		Form(std::string name, int gradeToSign, int gradeToExec);

@@ -1,3 +1,4 @@
+#include	"Bureaucrat.hpp"
 #include	"Form.hpp"
 
 static void	print_exception(std::exception const &e)
