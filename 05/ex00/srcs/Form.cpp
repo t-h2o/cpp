@@ -1,7 +1,8 @@
 #include	"Form.hpp"
 
-Form::Form(void) : _name("Name"),
-	_isSigned(false)
+Form::Form(int gradeToSign) : _name("Name"),
+	_isSigned(false),
+	_gradeToSign(gradeToSign)
 {
 	return ;
 }
@@ -26,6 +27,11 @@ bool		Form::isSign(void) const
 	return this->_isSigned;
 }
 
+int			Form::getGradeToSign(void) const
+{
+	return this->_gradeToSign;
+}
+
 std::ostream &operator<<(std::ostream &output, Form &form)
 {
 	output << "Form \""
@@ -38,6 +44,9 @@ std::ostream &operator<<(std::ostream &output, Form &form)
 		output << "isn't signed";
 
 	output
+		<< " (Grade to sign: "
+		<< form.getGradeToSign()
+		<< ")"
 		<< std::endl;
 
 	return output;
