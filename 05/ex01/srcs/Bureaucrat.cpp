@@ -25,12 +25,12 @@ void	Bureaucrat::_check_grade(void)
 	catch (const Bureaucrat::ExceptionGradeTooLow &e)
 	{
 		print_exception(e, this->_grade);
-		this->_grade = 150;
+		exit(0);
 	}
 	catch (const Bureaucrat::ExceptionGradeTooHigh &e)
 	{
 		print_exception(e, this->_grade);
-		this->_grade = 1;
+		exit(0);
 	}
 }
 

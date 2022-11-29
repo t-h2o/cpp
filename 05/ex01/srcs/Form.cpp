@@ -24,10 +24,12 @@ void	Form::_check_grade(void) const
 	catch (const Form::ExceptionGradeTooLow &e)
 	{
 		print_exception(e);
+		exit(0);
 	}
 	catch (const Form::ExceptionGradeTooHigh &e)
 	{
 		print_exception(e);
+		exit(0);
 	}
 }
 
