@@ -1,5 +1,4 @@
 #include	"Bureaucrat.hpp"
-#include	"Form.hpp"
 
 #define		NEWLINE		std::cout << std::endl
 
@@ -58,33 +57,6 @@ static void	test_bureaucrat(void)
 	section_message("Destructor");
 }
 
-static void	test_form(void)
-{
-	section_message("Contructor");
-
-	Bureaucrat	paul("Paul", 1);
-	Bureaucrat	arnolde("Arnolde", 150);
-	Form		form("My form", 42, 84);
-	{
-		Form	overmax1("over", 151, 84);
-		Form	overmax2("over", 42, 151);
-		Form	overmin1("over", 0, 84);
-		Form	overmin2("over", 42, 0);
-	}
-
-	section_message("Display form with the operator <<");
-	std::cout << form;
-
-	section_message("Sign the form");
-	form.beSigned(arnolde);
-	arnolde.signForm(form);
-	form.beSigned(paul);
-	form.beSigned(paul);
-
-	section_message("Display form with the operator <<");
-	std::cout << form;
-}
-
 static void	test_message(std::string message, void (*f)(void))
 {
 	print_color(COL_GRE, "START of " + message);
@@ -102,5 +74,4 @@ int	main(void)
 	NEWLINE;
 
 	test_message("Test bureaucrat", &test_bureaucrat);
-	test_message("Test Form", &test_form);
 }

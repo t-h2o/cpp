@@ -1,5 +1,4 @@
 #include	"Bureaucrat.hpp"
-#include	"Form.hpp"
 
 static void	print_exception(std::exception const &e, int grade)
 {
@@ -118,11 +117,6 @@ void	Bureaucrat::incGrade(int level)
 		<< level
 		<< ")"
 		<< std::endl;
-}
-
-void	Bureaucrat::signForm(Form &form)
-{
-	form.beSigned(*this);
 }
 
 std::ostream &operator<<(std::ostream &sortie, const Bureaucrat &bureaucrat)
