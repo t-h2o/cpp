@@ -47,6 +47,12 @@ Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name(name),
 	return ;
 }
 
+Form::~Form(void)
+{
+	std::cout << "Form: destructor"
+		<< std::endl;
+}
+
 std::string	Form::getName(void) const
 {
 	return this->_name;
