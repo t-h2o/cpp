@@ -83,7 +83,9 @@ static void	test_form(void)
 
 static void	test_shurbbery(void)
 {
-	ShrubberyCreationForm	tree("My tree", 42, 84);
+	ShrubberyCreationForm	tree("My tree");
+
+	std::cout << tree;
 }
 
 static void	test_message(std::string message, void (*f)(void))

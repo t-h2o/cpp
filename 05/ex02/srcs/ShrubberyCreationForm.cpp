@@ -1,9 +1,7 @@
 #include	"ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name, int gradeToSign, int gradeToExec) :
-	Form(name, gradeToSign, gradeToExec)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string name) :
+	Form(name, 145, 137)
 {
-	//this->_check_grade();
-
 	return ;
 }

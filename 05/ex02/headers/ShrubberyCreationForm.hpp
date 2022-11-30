@@ -6,7 +6,7 @@
 class	ShrubberyCreationForm : public Form
 {
 	public:
-		ShrubberyCreationForm(std::string name, int gradeToSign, int gradeToExec);
+		ShrubberyCreationForm(std::string name);
 };
 
 #endif /* SHRUBBERY_CREATION_FORM_HPP */
