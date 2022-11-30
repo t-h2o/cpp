@@ -9,7 +9,7 @@ class	Form
 {
 	public:
 		Form(std::string name, int gradeToSign, int gradeToExec);
-		~Form(void);
+		virtual ~Form(void);
 
 		std::string	getName(void) const;
 		bool		isSign(void) const;
