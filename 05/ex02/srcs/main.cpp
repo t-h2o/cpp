@@ -1,5 +1,4 @@
 #include	"Bureaucrat.hpp"
-#include	"Form.hpp"
 
 #include	"ShrubberyCreationForm.hpp"
 
@@ -60,27 +59,6 @@ static void	test_bureaucrat(void)
 	section_message("Destructor");
 }
 
-static void	test_form(void)
-{
-	section_message("Contructor");
-
-	Bureaucrat	paul("Paul", 1);
-	Bureaucrat	arnolde("Arnolde", 150);
-	Form		form("My form", 42, 84);
-
-	section_message("Display form with the operator <<");
-	std::cout << form;
-
-	section_message("Sign the form");
-	form.beSigned(arnolde);
-	arnolde.signForm(form);
-	form.beSigned(paul);
-	form.beSigned(paul);
-
-	section_message("Display form with the operator <<");
-	std::cout << form;
-}
-
 static void	test_shurbbery(void)
 {
 	section_message("Contructor");
@@ -111,7 +89,6 @@ int	main(void)
 	NEWLINE;
 
 	test_message("Test bureaucrat", &test_bureaucrat);
-	test_message("Test Form", &test_form);
 	test_message("Test ShrubberyCreationForm", &test_shurbbery);
 	print_color(COL_GRE, "end Module 05 Exercice 01"); NEWLINE;
 }

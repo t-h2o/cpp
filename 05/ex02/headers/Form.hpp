@@ -18,6 +18,8 @@ class	Form
 
 		void		beSigned(Bureaucrat &bureaucrat);
 
+		virtual void	executeForm(Bureaucrat const &executor) = 0;
+
 		class ExceptionGradeTooLow : public std::exception
 		{
 			public:
