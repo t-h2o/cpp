@@ -83,9 +83,13 @@ static void	test_form(void)
 
 static void	test_shurbbery(void)
 {
+	section_message("Contructor");
 	ShrubberyCreationForm	tree("My tree");
 
+	section_message("print tree");
 	std::cout << tree;
+
+	section_message("Destructor");
 }
 
 static void	test_message(std::string message, void (*f)(void))
