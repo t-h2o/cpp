@@ -61,11 +61,16 @@ static void	test_bureaucrat(void)
 
 static void	test_shurbbery(void)
 {
+	Bureaucrat	paul("Paul", 1);
+
 	section_message("Contructor");
 	ShrubberyCreationForm	tree("My tree");
 
 	section_message("print tree");
 	std::cout << tree;
+
+	section_message("execute tree");
+	tree.execute(paul);
 
 	section_message("Destructor");
 }
