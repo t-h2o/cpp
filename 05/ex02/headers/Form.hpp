@@ -25,7 +25,7 @@ class	Form
 			public:
 				const char *what() const throw()
 				{
-					return ("Init with grade = 150");
+					return ("Grade too low");
 				}
 		};
 
