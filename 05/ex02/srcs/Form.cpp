@@ -1,7 +1,7 @@
 #include	"Bureaucrat.hpp"
 #include	"Form.hpp"
 
-static void	print_exception(std::exception const &e, std::string message)
+void	print_exception(std::exception const &e, std::string message)
 {
 	std::cout
 		<< COL_RED

@@ -3,6 +3,8 @@
 #ifndef	FORM_HPP
 # define FORM_HPP
 
+void	print_exception(std::exception const &e, std::string message);
+
 class	Bureaucrat;
 
 class	Form
