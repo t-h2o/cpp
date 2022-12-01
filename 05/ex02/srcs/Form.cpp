@@ -1,12 +1,11 @@
 #include	"Bureaucrat.hpp"
 #include	"Form.hpp"
 
-static void	print_exception(std::exception const &e)
+static void	print_exception(std::exception const &e, std::string message)
 {
 	std::cout
 		<< COL_RED
-		<< "grade error : "
-		<< ", "
+		<< message
 		<< e.what()
 		<< COL_RES
 		<< std::endl;
@@ -23,12 +22,12 @@ void	Form::_check_grade(void) const
 	}
 	catch (const Form::ExceptionGradeTooLow &e)
 	{
-		print_exception(e);
+		print_exception(e, "grade error: ");
 		exit(0);
 	}
 	catch (const Form::ExceptionGradeTooHigh &e)
 	{
-		print_exception(e);
+		print_exception(e, "grade error: ");
 		exit(0);
 	}
 }
