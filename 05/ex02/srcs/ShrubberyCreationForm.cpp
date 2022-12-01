@@ -1,6 +1,18 @@
 #include	"ShrubberyCreationForm.hpp"
 #include	"Bureaucrat.hpp"
 
+#define		EXIT	0
+
+static void	print_exception(std::exception const &e, std::string message)
+{
+	std::cout
+		<< COL_RED
+		<< message
+		<< e.what()
+		<< COL_RES
+		<< std::endl;
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
 	Form(target, 145, 137)
 {
@@ -20,6 +32,17 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor)
 {
+	try
+	{
+		if (executor.getGrade() > this->getGradeToExec())
+			throw Form::ExceptionGradeTooLow();
+	}
+	catch (const Form::ExceptionGradeTooLow &e)
+	{
+		print_exception(e, "Cannot execute: ");
+		if (EXIT) exit(0);
+	}
+
 	std::cout << "The ShrubberyCreationForm \""
 		<< this->getName()
 		<< "\" (grade to execute: "
