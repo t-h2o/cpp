@@ -4,6 +4,17 @@
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
 	Form(target, 145, 137)
 {
+	std::cout << "ShrubberyCreationForm: default constructor"
+		<< std::endl;
+
+	return ;
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm(void)
+{
+	std::cout << "ShrubberyCreationForm: Destructor"
+		<< std::endl;
+
 	return ;
 }
 
