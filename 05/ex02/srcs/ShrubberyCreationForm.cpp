@@ -3,16 +3,6 @@
 
 #define		EXIT	0
 
-static void	print_exception(std::exception const &e, std::string message)
-{
-	std::cout
-		<< COL_RED
-		<< message
-		<< e.what()
-		<< COL_RES
-		<< std::endl;
-}
-
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
 	Form(target, 145, 137)
 {
