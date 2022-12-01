@@ -39,8 +39,12 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor)
 	}
 	catch (const Form::ExceptionGradeTooLow &e)
 	{
-		print_exception(e, "Cannot execute: ");
-		if (EXIT) exit(0);
+		print_exception(e, "Cannot execute: \""
+				+ this->getName()
+				+ "\" by \""
+				+ executor.getName()
+				+ "\"");
+		if (EXIT) exit(0); else return ;
 	}
 
 	std::cout << "The ShrubberyCreationForm \""
