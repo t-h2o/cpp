@@ -1,6 +1,7 @@
 #include	"Bureaucrat.hpp"
 
 #include	"ShrubberyCreationForm.hpp"
+#include	"RobotomyRequestForm.hpp"
 
 #define		NEWLINE		std::cout << std::endl
 
@@ -75,6 +76,22 @@ static void	test_shurbbery(void)
 	section_message("Destructor");
 }
 
+void	test_robotomy(void)
+{
+	Bureaucrat	paul("Paul", 1);
+
+	section_message("Contructor");
+	RobotomyRequestForm	guide("Guide");
+
+	section_message("print guide");
+	std::cout << guide << std::endl;
+
+	section_message("Execution");
+	guide.execute(paul);
+
+	section_message("Destructor");
+}
+
 static void	test_message(std::string message, void (*f)(void))
 {
 	print_color(COL_GRE, "START of " + message);
@@ -95,5 +112,6 @@ int	main(void)
 
 	test_message("Test bureaucrat", &test_bureaucrat);
 	test_message("Test ShrubberyCreationForm", &test_shurbbery);
+	test_message("Test RobotomyRequestForm", &test_robotomy);
 	print_color(COL_GRE, "end Module 05 Exercice 01"); NEWLINE;
 }

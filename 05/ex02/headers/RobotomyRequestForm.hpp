@@ -10,9 +10,6 @@ class	RobotomyRequestForm : public Form
 		~RobotomyRequestForm(void);
 
 		void	execute(Bureaucrat const &executor);
-
-	private:
-		void	_plantTree(void);
 };
 
 #endif /* ROBOTOMY_REQUEST_FORM_HPP */
