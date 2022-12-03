@@ -13,7 +13,7 @@ class	ShrubberyCreationForm : public Form
 		void	execute(Bureaucrat const &executor);
 
 	private:
-		void	_plantTree(std::string target);
+		void	_plantTree(void);
 };
 
 #endif /* SHRUBBERY_CREATION_FORM_HPP */

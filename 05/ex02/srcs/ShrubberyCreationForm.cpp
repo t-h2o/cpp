@@ -47,17 +47,17 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor)
 		<< executor.getGrade()
 		<< ")"
 		<< std::endl;
-	this->_plantTree("target");
+	this->_plantTree();
 }
 
 void
-	ShrubberyCreationForm::_plantTree(std::string file)
+	ShrubberyCreationForm::_plantTree(void)
 {
 	std::fstream	newfile;
 	std::string		line;
 	std::string		filename;
 
-	filename = file + "_shrubbery";
+	filename = this->getName() + "_shrubbery";
 
 	newfile.open(filename.c_str(), std::fstream::out | std::fstream::trunc);
 	if (!newfile.is_open())
