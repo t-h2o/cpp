@@ -12,6 +12,15 @@ class	ShrubberyCreationForm : public Form
 
 		void	execute(Bureaucrat const &executor);
 
+		class ExceptionFileStream : public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+					return ("Cannot open the file <target>_shrubbery");
+				}
+		};
+
 	private:
 		void	_plantTree(void);
 };

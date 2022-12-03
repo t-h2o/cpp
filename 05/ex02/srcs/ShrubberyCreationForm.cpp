@@ -60,11 +60,18 @@ void
 	filename = this->getName() + "_shrubbery";
 
 	newfile.open(filename.c_str(), std::fstream::out | std::fstream::trunc);
-	if (!newfile.is_open())
+
+	try
 	{
-		std::cout << "Error: output file didn't open"
-			<< std::endl;
-		return ;
+		if (!newfile.is_open())
+		{
+			throw ExceptionFileStream();
+		}
+	}
+	catch (const ExceptionFileStream &e)
+	{
+		print_exception(e, "");
+		if (EXIT) exit(0); else return ;
 	}
 
 	newfile
