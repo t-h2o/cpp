@@ -72,6 +72,8 @@ static void	test_shurbbery(void)
 
 	section_message("execute tree");
 	tree.execute(paul);
+	paul.signForm(tree);
+	tree.execute(paul);
 
 	section_message("Destructor");
 }
@@ -87,6 +89,8 @@ void	test_robotomy(void)
 	std::cout << guide << std::endl;
 
 	section_message("Execution");
+	guide.execute(paul);
+	guide.beSigned(paul);
 	guide.execute(paul);
 
 	section_message("Destructor");

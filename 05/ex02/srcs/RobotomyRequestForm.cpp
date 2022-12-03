@@ -23,6 +23,13 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 void	RobotomyRequestForm::execute(Bureaucrat const &executor)
 {
+	if (!this->isSign())
+	{
+		std::cout
+			<< "It isn't sign..."
+			<< std::endl;
+		return ;
+	}
 	try
 	{
 		if (executor.getGrade() > this->getGradeToExec())
