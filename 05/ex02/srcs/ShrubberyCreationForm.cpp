@@ -67,7 +67,22 @@ void
 		return ;
 	}
 
-	newfile << "Tree" << std::endl;
+	newfile
+		<< "                                               |" << std::endl
+		<< "                                              -x-" << std::endl
+		<< "                                               |" << std::endl
+		<< "              v .   ._, |_  .," << std::endl
+		<< "           `-._\\/  .  \\ /    |/_" << std::endl
+		<< "               \\\\  _\\, y | \\//" << std::endl
+		<< "         _\\_.___\\\\, \\\\/ -.\\||" << std::endl
+		<< "           `7-,--.`._||  / / ," << std::endl
+		<< "           /'     `-. `./ / |/_.'" << std::endl
+		<< "                     |    |//" << std::endl
+		<< "                     |_    /" << std::endl
+		<< "                     |-   |" << std::endl
+		<< "                     |   =|" << std::endl
+		<< "                     |    |" << std::endl
+		<< "--------------------/ ,  . \\--------._" << std::endl;
 
 	newfile.close();
 
