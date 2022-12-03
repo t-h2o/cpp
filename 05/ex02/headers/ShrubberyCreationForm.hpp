@@ -1,6 +1,7 @@
 #ifndef	SHRUBBERY_CREATION_FORM_HPP
 # define	SHRUBBERY_CREATION_FORM_HPP
 
+# include	<fstream>
 # include	"Form.hpp"
 
 class	ShrubberyCreationForm : public Form
@@ -10,6 +11,9 @@ class	ShrubberyCreationForm : public Form
 		~ShrubberyCreationForm(void);
 
 		void	execute(Bureaucrat const &executor);
+
+	private:
+		void	_plantTree(std::string target);
 };
 
 #endif /* SHRUBBERY_CREATION_FORM_HPP */
