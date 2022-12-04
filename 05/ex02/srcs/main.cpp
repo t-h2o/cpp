@@ -99,8 +99,15 @@ void	test_robotomy(void)
 
 void	test_presidential(void)
 {
+	Bureaucrat	paul("Paul", 1);
+
 	section_message("Contructor");
 	PresidentialPardonForm	macron("Macron");
+
+	section_message("Execution");
+	macron.execute(paul);
+	macron.beSigned(paul);
+	macron.execute(paul);
 
 	section_message("Destructor");
 }
