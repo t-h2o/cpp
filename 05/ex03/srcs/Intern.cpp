@@ -15,3 +15,21 @@ Intern::~Intern(void)
 
 	return ;
 }
+
+Form	*Intern::makeForm(std::string type, std::string target)
+{
+	Form	*returnForm;
+
+	returnForm = 0;
+
+	if (type == "ShrubberyCreationForm")
+		returnForm = new ShrubberyCreationForm(target);
+
+	else if (type == "RobotomyRequestForm")
+		returnForm = new ShrubberyCreationForm(target);
+
+	else if (type == "PresidentialPardonForm")
+		returnForm = new ShrubberyCreationForm(target);
+
+	return returnForm;
+}

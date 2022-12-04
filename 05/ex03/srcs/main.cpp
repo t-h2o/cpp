@@ -120,6 +120,12 @@ void	test_intern(void)
 
 	Intern	stagiair;
 
+	Form	*formPtr;
+
+	formPtr = stagiair.makeForm("ShrubberyCreationForm", "newTree");
+
+	delete formPtr;
+
 	section_message("Destructor");
 }
 
