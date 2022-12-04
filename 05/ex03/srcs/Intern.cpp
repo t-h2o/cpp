@@ -26,10 +26,10 @@ Form	*Intern::makeForm(std::string type, std::string target)
 		returnForm = new ShrubberyCreationForm(target);
 
 	else if (type == "RobotomyRequestForm")
-		returnForm = new ShrubberyCreationForm(target);
+		returnForm = new RobotomyRequestForm(target);
 
 	else if (type == "PresidentialPardonForm")
-		returnForm = new ShrubberyCreationForm(target);
+		returnForm = new PresidentialPardonForm(target);
 
 	return returnForm;
 }
