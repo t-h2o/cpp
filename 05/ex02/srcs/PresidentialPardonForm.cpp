@@ -59,6 +59,6 @@ void	PresidentialPardonForm::execute(Bureaucrat const &executor)
 	std::cout
 		<< "\""
 		<< this->getName()
-		<< "\" has been \"Robotisé\""
+		<< "\" has been forgiven by Zaphod Beeblebrox"
 		<< std::endl;
 }
