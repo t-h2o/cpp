@@ -4,6 +4,8 @@
 #include	"RobotomyRequestForm.hpp"
 #include	"PresidentialPardonForm.hpp"
 
+#include	"Intern.hpp"
+
 #define		NEWLINE		std::cout << std::endl
 
 static void
@@ -112,6 +114,15 @@ void	test_presidential(void)
 	section_message("Destructor");
 }
 
+void	test_intern(void)
+{
+	section_message("Contructor");
+
+	Intern	stagiair;
+
+	section_message("Destructor");
+}
+
 static void	test_message(std::string message, void (*f)(void))
 {
 	print_color(COL_GRE, "START of " + message);
@@ -134,5 +145,6 @@ int	main(void)
 	test_message("Test ShrubberyCreationForm", &test_shurbbery);
 	test_message("Test RobotomyRequestForm", &test_robotomy);
 	test_message("Test PresidentialPardonForm", &test_presidential);
+	test_message("Test Intern", &test_intern);
 	print_color(COL_GRE, "end Module 05 Exercice 01"); NEWLINE;
 }
