@@ -1,4 +1,5 @@
 #include	"Intern.hpp"
+#include	"PresidentialPardonForm.hpp"
 
 Intern::Intern(void)
 {
@@ -16,20 +17,30 @@ Intern::~Intern(void)
 	return ;
 }
 
+Form	*Intern::PresidentialPardon(std::string target)
+{
+	Form *ptr;
+
+	std::cout << target << std::endl;
+	ptr = new PresidentialPardonForm(target);
+
+	return ptr;
+}
+
 Form	*Intern::makeForm(std::string type, std::string target)
 {
-	Form	*returnForm;
+	std::string	typeForm[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	Form* (Intern::*createFormFunction)(std::string formTarget) = &Intern::PresidentialPardon;
+	Form		*returnForm;
 
-	returnForm = 0;
+	for (int i = 0; i < 2; i++)
+	{
+		if (type == typeForm[i])
+		{
+			returnForm = ((*this).*(createFormFunction)) (target);
+			return returnForm;
+		}
+	}
 
-	if (type == "ShrubberyCreationForm")
-		returnForm = new ShrubberyCreationForm(target);
-
-	else if (type == "RobotomyRequestForm")
-		returnForm = new RobotomyRequestForm(target);
-
-	else if (type == "PresidentialPardonForm")
-		returnForm = new PresidentialPardonForm(target);
-
-	return returnForm;
+	return 0;
 }

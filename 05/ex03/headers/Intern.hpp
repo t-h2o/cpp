@@ -15,6 +15,8 @@ class	Intern
 		~Intern(void);
 
 		Form	*makeForm(std::string, std::string);
+
+		Form	*PresidentialPardon(std::string target);
 };
 
 #endif /* INTERN_HPP */
