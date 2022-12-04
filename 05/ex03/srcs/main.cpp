@@ -122,9 +122,29 @@ void	test_intern(void)
 
 	Form	*formPtr;
 
-	formPtr = stagiair.makeForm("ShrubberyCreationForm", "newTree");
+	{
+		section_message("ShrubberyCreationForm");
+		formPtr = stagiair.makeForm("ShrubberyCreationForm", "newTree");
+		delete formPtr;
+	}
 
-	delete formPtr;
+	{
+		section_message("RobotomyRequestForm");
+		formPtr = stagiair.makeForm("RobotomyRequestForm", "newTree");
+		delete formPtr;
+	}
+
+	{
+		section_message("PresidentialPardonForm");
+		formPtr = stagiair.makeForm("PresidentialPardonForm", "newTree");
+		delete formPtr;
+	}
+
+	{
+		section_message("bad form name");
+		formPtr = stagiair.makeForm("asdf", "newTree");
+		delete formPtr;
+	}
 
 	section_message("Destructor");
 }
