@@ -2,6 +2,7 @@
 
 #include	"ShrubberyCreationForm.hpp"
 #include	"RobotomyRequestForm.hpp"
+#include	"PresidentialPardonForm.hpp"
 
 #define		NEWLINE		std::cout << std::endl
 
@@ -96,6 +97,14 @@ void	test_robotomy(void)
 	section_message("Destructor");
 }
 
+void	test_presidential(void)
+{
+	section_message("Contructor");
+	PresidentialPardonForm	macron("Macron");
+
+	section_message("Destructor");
+}
+
 static void	test_message(std::string message, void (*f)(void))
 {
 	print_color(COL_GRE, "START of " + message);
@@ -117,5 +126,6 @@ int	main(void)
 	test_message("Test bureaucrat", &test_bureaucrat);
 	test_message("Test ShrubberyCreationForm", &test_shurbbery);
 	test_message("Test RobotomyRequestForm", &test_robotomy);
+	test_message("Test PresidentialPardonForm", &test_presidential);
 	print_color(COL_GRE, "end Module 05 Exercice 01"); NEWLINE;
 }

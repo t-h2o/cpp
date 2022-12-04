@@ -23,6 +23,7 @@ SRCS	+=	$(SRCD)/Bureaucrat.cpp
 SRCS	+=	$(SRCD)/Form.cpp
 SRCS	+=	$(SRCD)/ShrubberyCreationForm.cpp
 SRCS	+=	$(SRCD)/RobotomyRequestForm.cpp
+SRCS	+=	$(SRCD)/PresidentialPardonForm.cpp
 
 
 #	Headers
