@@ -1,0 +1,6 @@
+= Module 06
+:toc:
+
+== Subject
+
+* 42: https://cdn.intra.42.fr/pdf/pdf/52154/fr.subject.pdf[Subject.fr]
