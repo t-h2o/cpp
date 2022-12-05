@@ -1,4 +1,5 @@
 #include	<iostream>
+#include	<cstdlib>
 
 #define		COL_RED		"\033[31;1m"
 #define		COL_GRE		"\033[32;1m"
