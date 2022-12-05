@@ -1,4 +1,7 @@
 FOLDER	=	ex00
+FOLDER	+=	ex01
+FOLDER	+=	ex02
+FOLDER	+=	ex03
 
 all:
 	@$(foreach var,$(FOLDER),make -C $(var);)
