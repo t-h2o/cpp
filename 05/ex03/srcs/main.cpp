@@ -124,19 +124,19 @@ void	test_intern(void)
 
 	{
 		section_message("ShrubberyCreationForm");
-		formPtr = stagiair.makeForm("ShrubberyCreationForm", "newTree");
+		formPtr = stagiair.makeForm("ShrubberyCreation", "newTree");
 		delete formPtr;
 	}
 
 	{
 		section_message("RobotomyRequestForm");
-		formPtr = stagiair.makeForm("RobotomyRequestForm", "newTree");
+		formPtr = stagiair.makeForm("RobotomyRequest", "newRobot");
 		delete formPtr;
 	}
 
 	{
 		section_message("PresidentialPardonForm");
-		formPtr = stagiair.makeForm("PresidentialPardonForm", "newTree");
+		formPtr = stagiair.makeForm("PresidentialPardon", "newPardon");
 		delete formPtr;
 	}
 
