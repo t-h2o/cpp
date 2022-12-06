@@ -29,6 +29,9 @@ static void
 
 	section_message("Print table");
 	converter.table("42");
+	NEWLINE; converter.table("1234.1234f");
+	NEWLINE; converter.table("true");
+	NEWLINE; converter.table("bad");
 
 	section_message("Destructor");
 }

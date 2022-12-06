@@ -16,11 +16,29 @@ Convert::~Convert(void)
 
 void	Convert::table(std::string input)
 {
+	int		inputInt;
+
 	std::cout
 		<< "Converter: Print the table from \""
 		<< input
 		<< "\""
 		<< std::endl;
+
+	try
+	{
+		inputInt = stoi(input);
+	}
+	catch (const std::invalid_argument& e)
+	{
+		std::cerr
+			<< e.what()
+			<< ": cannot convert \""
+			<< input
+			<< "\""
+			<< std::endl;
+		return ;
+	}
+
 
 	std::cout
 	<< "  char: '"
@@ -29,7 +47,7 @@ void	Convert::table(std::string input)
 	<< std::endl
 
 	<< "   int: "
-	<< "42" // TODO change with a variable
+	<< inputInt
 	<< std::endl
 
 	<< " float: "
