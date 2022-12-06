@@ -7,6 +7,15 @@
 
 == Exercice 00
 
+Differents inputs for a boolean value:
+
+* Literals
+** true
+** false
+* Numeric
+** 1
+** 0
+
 ____
 * Microsoft: https://learn.microsoft.com/en-us/cpp/cpp/numeric-boolean-and-pointer-literals-cpp?view=msvc-170[Numeric, boolean, and pointer literals]
 ____
