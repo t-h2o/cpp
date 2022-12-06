@@ -9,6 +9,9 @@
 
 class	Convert
 {
+	public:
+		Convert(void);
+		~Convert(void);
 };
 
 #endif /* CONVERT_HPP */

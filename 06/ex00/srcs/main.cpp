@@ -24,7 +24,10 @@ static void
 static void
 	test_convert(void)
 {
-	section_message("Test convert");
+	section_message("Constructor");
+	Convert	converter;
+
+	section_message("Destructor");
 }
 
 static void	test_message(std::string message, void (*f)(void))

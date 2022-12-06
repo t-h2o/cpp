@@ -20,6 +20,8 @@ SRCD	=	srcs
 
 SRCS	=	$(SRCD)/main.cpp
 
+SRCS	+=	$(SRCD)/Convert.cpp
+
 
 #	Headers
 
