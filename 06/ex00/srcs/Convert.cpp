@@ -17,6 +17,7 @@ Convert::~Convert(void)
 void	Convert::table(std::string input)
 {
 	int		inputInt;
+	float	inputFloat;
 
 	std::cout
 		<< "Converter: Print the table from \""
@@ -27,6 +28,7 @@ void	Convert::table(std::string input)
 	try
 	{
 		inputInt = stoi(input);
+		inputFloat = stof(input);
 	}
 	catch (const std::invalid_argument& e)
 	{
@@ -51,7 +53,7 @@ void	Convert::table(std::string input)
 	<< std::endl
 
 	<< " float: "
-	<< "42.0f" // TODO change with a variable
+	<< inputFloat
 	<< std::endl
 
 	<< "double: "
