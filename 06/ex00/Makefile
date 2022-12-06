@@ -9,7 +9,7 @@ CFLAGS	=	-Wall
 CFLAGS	+=	-Wextra
 CFLAGS	+=	-Werror
 CFLAGS	+=	-g
-CFLAGS	+=	-std=c++98
+#CFLAGS	+=	-std=c++98
 
 OFLAGS	=	-fsanitize=address
 
