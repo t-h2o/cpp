@@ -12,6 +12,8 @@ class	Convert
 	public:
 		Convert(void);
 		~Convert(void);
+
+		void	table(std::string);
 };
 
 #endif /* CONVERT_HPP */

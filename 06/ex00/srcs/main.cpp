@@ -27,6 +27,9 @@ static void
 	section_message("Constructor");
 	Convert	converter;
 
+	section_message("Print table");
+	converter.table("42");
+
 	section_message("Destructor");
 }
 
