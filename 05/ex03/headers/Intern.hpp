@@ -17,6 +17,8 @@ class	Intern
 		Form	*makeForm(std::string, std::string);
 
 		Form	*PresidentialPardon(std::string target);
+		Form	*RobotomyRequest(std::string target);
+		Form	*ShrubberyCreation(std::string target);
 };
 
 #endif /* INTERN_HPP */

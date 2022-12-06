@@ -1,6 +1,9 @@
 #include	<iostream>
 #include	<cstdlib>
 
+#ifndef	BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
+
 #define		COL_RED		"\033[31;1m"
 #define		COL_GRE		"\033[32;1m"
 #define		COL_RES		"\033[0m"
@@ -46,3 +49,5 @@ class	Bureaucrat
 };
 
 std::ostream	&operator<<(std::ostream &sortie, Bureaucrat const &rhs);
+
+#endif /* BUREAUCRAT_HPP */
