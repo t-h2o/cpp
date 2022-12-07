@@ -112,6 +112,23 @@ int	Convert::_isDouble(std::string &input)
 	if (!isdigit(input[index]))
 		return 0;
 
+	this->_input.inDouble = strtod(input.c_str(), 0);
+	this->_input.inInt = static_cast<int>(this->_input.inDouble);
+	this->_input.inFloat = static_cast<float>(this->_input.inDouble);
+
+	if (0 <= this->_input.inInt && this->_input.inInt <= 127)
+	{
+		this->_input.inChar = static_cast<char>(this->_input.inInt);
+		if (!isprint(this->_input.inChar))
+			this->_input.display[CHAR] = "Non displayable";
+		else
+			this->_input.display[CHAR] = "'" + std::string(1, this->_input.inChar) + "'";
+	}
+
+	this->_input.display[DOUBLE] = std::to_string(this->_input.inDouble);
+	this->_input.display[FLOAT] = std::to_string(this->_input.inFloat) + "f";
+	this->_input.display[INT] = std::to_string(this->_input.inInt);
+
 	return 1;
 }
 
@@ -140,23 +157,6 @@ void	Convert::table(std::string input)
 		std::cout
 			<< "is double()"
 			<< std::endl;
-
-		this->_input.inDouble = strtod(input.c_str(), 0);
-		this->_input.inInt = static_cast<int>(this->_input.inDouble);
-		this->_input.inFloat = static_cast<float>(this->_input.inDouble);
-
-		if (0 <= this->_input.inInt && this->_input.inInt <= 127)
-		{
-			this->_input.inChar = static_cast<char>(this->_input.inInt);
-			if (!isprint(this->_input.inChar))
-				this->_input.display[CHAR] = "Non displayable";
-			else
-				this->_input.display[CHAR] = "'" + std::string(1, this->_input.inChar) + "'";
-		}
-
-		this->_input.display[DOUBLE] = std::to_string(this->_input.inDouble);
-		this->_input.display[FLOAT] = std::to_string(this->_input.inFloat) + "f";
-		this->_input.display[INT] = std::to_string(this->_input.inInt);
 	}
 	else
 	{
