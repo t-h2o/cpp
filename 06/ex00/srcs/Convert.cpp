@@ -16,22 +16,27 @@ Convert::~Convert(void)
 		<< std::endl;
 }
 
-float	Convert::_convFloat(std::string input)
+void	Convert::_convFloat(std::string input)
 {
-	(void) input;
+	std::cout << " float: ";
 
-	std::cout << _floatingKeyWord[0]
-		<< " : "
-		<< _floatingKeyWord[1]
+	for (int i = 0; i < NUMBER_KEYWORD_FLOATING; i++)
+	{
+		if (input == _floatingKeyWord[i])
+			std::cout
+				<< _floatingKeyWord[i]
+				<< std::endl;
+	}
+
+
+	std::cout
+		<< "impossible"
 		<< std::endl;
-
-	return 0.0f;
 }
 
 void	Convert::table(std::string input)
 {
 	int		inputInt;
-	float	inputFloat;
 
 	std::cout
 		<< "Converter: Print the table from \""
@@ -53,7 +58,6 @@ void	Convert::table(std::string input)
 			<< std::endl;
 		return ;
 	}
-	inputFloat = this->_convFloat(input);
 
 	std::cout
 	<< "  char: '"
@@ -63,12 +67,11 @@ void	Convert::table(std::string input)
 
 	<< "   int: "
 	<< inputInt
-	<< std::endl
+	<< std::endl;
 
-	<< " float: "
-	<< inputFloat
-	<< std::endl
+	this->_convFloat(input);
 
+	std::cout
 	<< "double: "
 	<< "42.0" // TODO change with a variable
 	<< std::endl;

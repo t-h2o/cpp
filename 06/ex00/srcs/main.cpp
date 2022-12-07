@@ -30,6 +30,14 @@ static void
 	section_message("Print table");
 	converter.table("42");
 	NEWLINE; converter.table("1234.1234f");
+
+	NEWLINE; converter.table("+inf");
+	NEWLINE; converter.table("-inf");
+	NEWLINE; converter.table("nan");
+	NEWLINE; converter.table("+inff");
+	NEWLINE; converter.table("-inff");
+	NEWLINE; converter.table("nanf");
+
 	NEWLINE; converter.table("true");
 	NEWLINE; converter.table("bad");
 
