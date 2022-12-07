@@ -71,9 +71,16 @@ static void	test_message(std::string message, void (*f)(void))
 	NEWLINE;
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	print_color(COL_GRE, "Module 06 Exercice 00"); NEWLINE;
 
-	test_message("Test convert", &test_convert);
+	if (argc < 2)
+	{
+		test_message("Test convert", &test_convert);
+		return 0;
+	}
+	Convert	converter;
+
+	converter.table(std::string(argv[1]));
 }
