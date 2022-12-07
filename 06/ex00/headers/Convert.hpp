@@ -14,6 +14,9 @@ class	Convert
 		~Convert(void);
 
 		void	table(std::string);
+
+	private:
+		static std::string const	_floatingKeyWord[2];
 };
 
 #endif /* CONVERT_HPP */
