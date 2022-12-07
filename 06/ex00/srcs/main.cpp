@@ -31,7 +31,7 @@ static void
 	converter.table("'a'");
 	NEWLINE; converter.table("'0'");
 	NEWLINE; converter.table("'e'");
-	NEWLINE; converter.table("'p'");
+	NEWLINE; converter.table("'\t'");
 
 	section_message("int");
 	converter.table("42");

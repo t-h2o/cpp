@@ -7,6 +7,15 @@
 
 == Exercice 00
 
+=== is char
+
+----
+./converter 'a'
+./converter '0'
+./converter '\0'
+./converter '\n'
+----
+
 Differents inputs for a boolean value:
 
 * Literals

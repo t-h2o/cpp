@@ -37,11 +37,13 @@ void	Convert::table(std::string input)
 		<< input
 		<< "\" ===="
 		<< std::endl;
+
 	if (this->_isChar(input))
 	{
+		this->_input.inChar = static_cast<char>(input[1]);
 		std::cout
 			<< "\tchar : '"
-			<< input[1]
+			<< this->_input.inChar
 			<< "'";
 	}
 	else
