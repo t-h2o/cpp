@@ -78,8 +78,24 @@ int	Convert::_isChar(std::string &input)
 int	Convert::_isKeyWord(std::string &input)
 {
 	for (int i = 0; i < NUMBER_KEYWORD_FLOATING; i++)
+	{
 		if (input == _floatingKeyWord[i])
+		{
+			this->_input.display[CHAR] = "impossible";
+			this->_input.display[INT] = "impossible";
+			if (i < NUMBER_KEYWORD_FLOATING / 2)
+			{
+				this->_input.display[FLOAT] = _floatingKeyWord[i + NUMBER_KEYWORD_FLOATING / 2];
+				this->_input.display[DOUBLE] = _floatingKeyWord[i];
+			}
+			else
+			{
+				this->_input.display[FLOAT] = _floatingKeyWord[i];
+				this->_input.display[DOUBLE] = _floatingKeyWord[i - NUMBER_KEYWORD_FLOATING / 2];
+			}
 			return 1;
+		}
+	}
 
 	return 0;
 }
@@ -118,25 +134,6 @@ void	Convert::table(std::string input)
 		std::cout
 			<< "is keyword()"
 			<< std::endl;
-
-		for (int i = 0; i < NUMBER_KEYWORD_FLOATING; i++)
-		{
-			if (input == _floatingKeyWord[i])
-			{
-				this->_input.display[CHAR] = "impossible";
-				this->_input.display[INT] = "impossible";
-				if (i < NUMBER_KEYWORD_FLOATING / 2)
-				{
-					this->_input.display[FLOAT] = _floatingKeyWord[i + NUMBER_KEYWORD_FLOATING / 2];
-					this->_input.display[DOUBLE] = _floatingKeyWord[i];
-				}
-				else
-				{
-					this->_input.display[FLOAT] = _floatingKeyWord[i];
-					this->_input.display[DOUBLE] = _floatingKeyWord[i - NUMBER_KEYWORD_FLOATING / 2];
-				}
-			}
-		}
 	}
 	else if (this->_isDouble(input))
 	{
