@@ -1,6 +1,6 @@
 #include	"Convert.hpp"
 
-Convert::t_floatingKeyWord const Convert::_floatingKeyWord = {"inf", 2.0f};
+Convert::t_floatingKeyWord const Convert::_floatingKeyWord[2] = {{"inf", 2.0f},{"-inf", 4.0f}};
 
 Convert::Convert(void)
 {
@@ -20,9 +20,9 @@ float	Convert::_convFloat(std::string input)
 {
 	(void) input;
 
-	std::cout << _floatingKeyWord.keyWord
+	std::cout << _floatingKeyWord[0].keyWord
 		<< " : "
-		<< _floatingKeyWord.value
+		<< _floatingKeyWord[0].value
 		<< std::endl;
 
 	return 0.0f;

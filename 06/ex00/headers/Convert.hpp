@@ -7,6 +7,8 @@
 # define	COL_GRE		"\033[32;1m"
 # define	COL_RES		"\033[0m"
 
+# define	NUMBER_KEYWORD_FLOATING	1
+
 class	Convert
 {
 	public:
@@ -21,7 +23,8 @@ class	Convert
 		} t_floatingKeyWord;
 
 	private:
-		static t_floatingKeyWord const	_floatingKeyWord;
+
+		static t_floatingKeyWord const	_floatingKeyWord[2];
 
 		float	_convFloat(std::string);
 };
