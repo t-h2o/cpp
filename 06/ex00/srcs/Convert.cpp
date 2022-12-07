@@ -1,6 +1,6 @@
 #include	"Convert.hpp"
 
-Convert::t_floatingKeyWord const Convert::_floatingKeyWord[2] = {{"inf", 2.0f},{"-inf", 4.0f}};
+std::string const Convert::_floatingKeyWord[2] = {"inf", "+inf"};
 
 Convert::Convert(void)
 {
@@ -14,18 +14,6 @@ Convert::~Convert(void)
 	std::cout
 		<< "Convert: destructor"
 		<< std::endl;
-}
-
-float	Convert::_convFloat(std::string input)
-{
-	(void) input;
-
-	std::cout << _floatingKeyWord[0].keyWord
-		<< " : "
-		<< _floatingKeyWord[0].value
-		<< std::endl;
-
-	return 0.0f;
 }
 
 void	Convert::table(std::string input)
@@ -42,6 +30,7 @@ void	Convert::table(std::string input)
 	try
 	{
 		inputInt = stoi(input);
+		inputFloat = stof(input);
 	}
 	catch (const std::invalid_argument& e)
 	{
@@ -53,7 +42,6 @@ void	Convert::table(std::string input)
 			<< std::endl;
 		return ;
 	}
-	inputFloat = this->_convFloat(input);
 
 	std::cout
 	<< "  char: '"

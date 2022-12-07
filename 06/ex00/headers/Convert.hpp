@@ -7,8 +7,6 @@
 # define	COL_GRE		"\033[32;1m"
 # define	COL_RES		"\033[0m"
 
-# define	NUMBER_KEYWORD_FLOATING	1
-
 class	Convert
 {
 	public:
@@ -17,16 +15,8 @@ class	Convert
 
 		void	table(std::string);
 
-		typedef	struct	s_floatingKeyWord {
-			std::string	keyWord;
-			float		value;
-		} t_floatingKeyWord;
-
 	private:
-
-		static t_floatingKeyWord const	_floatingKeyWord[2];
-
-		float	_convFloat(std::string);
+		static std::string const	_floatingKeyWord[2];
 };
 
 #endif /* CONVERT_HPP */
