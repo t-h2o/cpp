@@ -39,6 +39,24 @@ int	Convert::_isKeyWord(std::string &input)
 	return 0;
 }
 
+int	Convert::_isInt(std::string &input)
+{
+	int	index;
+
+	index = 0;
+
+	if (input[index] == '+' || input[index] == '-')
+		++index;
+
+	if (!isdigit(input[index]))
+		return 0;
+
+	while (isdigit(input[index]))
+		++index;
+
+	return 1;
+}
+
 void	Convert::table(std::string input)
 {
 	memset(&(this->_input), 0, sizeof(t_input));
@@ -64,6 +82,7 @@ void	Convert::table(std::string input)
 	else if (this->_isKeyWord(input))
 	{
 		for (int i = 0; i < NUMBER_KEYWORD_FLOATING; i++)
+		{
 			if (input == _floatingKeyWord[i])
 			{
 				this->_input.display[CHAR] = "impossible";
@@ -79,6 +98,19 @@ void	Convert::table(std::string input)
 					this->_input.display[DOUBLE] = _floatingKeyWord[i - NUMBER_KEYWORD_FLOATING / 2];
 				}
 			}
+		}
+	}
+	else if (this->_isInt(input))
+	{
+		this->_input.inInt = static_cast<int>(input.c_str()[0]);
+
+		this->_input.inFloat = static_cast<float>(this->_input.inInt);
+		this->_input.inDouble = static_cast<double>(this->_input.inFloat);
+
+		//this->_input.display[CHAR] = "'" + std::string(1, this->_input.inChar) + "'";
+		this->_input.display[INT] = std::to_string(this->_input.inInt);
+		this->_input.display[FLOAT] = std::to_string(this->_input.inFloat);
+		this->_input.display[DOUBLE] = std::to_string(this->_input.inDouble);
 	}
 
 	else
