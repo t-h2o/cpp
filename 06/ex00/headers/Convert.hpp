@@ -13,6 +13,7 @@ typedef struct s_input
 	char	inChar;
 	int		inInt;
 	float	inFloat;
+	double	inDouble;
 } t_input;
 
 class	Convert
