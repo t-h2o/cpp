@@ -41,6 +41,8 @@ int	Convert::_isKeyWord(std::string &input)
 
 void	Convert::table(std::string input)
 {
+	memset(&(this->_input), 0, sizeof(t_input));
+
 	std::cout
 		<< "==== Try: \""
 		<< input
