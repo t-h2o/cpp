@@ -43,7 +43,6 @@ void	Convert::table(std::string input)
 		return ;
 	}
 
-
 	std::cout
 	<< "  char: '"
 	<< "*" // TODO change with a variable
