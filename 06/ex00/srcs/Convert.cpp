@@ -39,7 +39,7 @@ int	Convert::_isKeyWord(std::string &input)
 	return 0;
 }
 
-int	Convert::_isInt(std::string &input)
+int	Convert::_isDouble(std::string &input)
 {
 	int	index;
 
@@ -50,9 +50,6 @@ int	Convert::_isInt(std::string &input)
 
 	if (!isdigit(input[index]))
 		return 0;
-
-	while (isdigit(input[index]))
-		++index;
 
 	return 1;
 }
@@ -69,18 +66,29 @@ void	Convert::table(std::string input)
 
 	if (this->_isChar(input))
 	{
+		std::cout
+			<< "is char()"
+			<< std::endl;
+
 		this->_input.inChar = static_cast<char>(input[1]);
 		this->_input.inInt = static_cast<int>(this->_input.inChar);
 		this->_input.inFloat = static_cast<float>(this->_input.inInt);
 		this->_input.inDouble = static_cast<double>(this->_input.inFloat);
 
-		this->_input.display[CHAR] = "'" + std::string(1, this->_input.inChar) + "'";
+		if (!isprint(this->_input.inChar))
+			this->_input.display[CHAR] = "Non displayable";
+		else
+			this->_input.display[CHAR] = "'" + std::string(1, this->_input.inChar) + "'";
 		this->_input.display[INT] = std::to_string(this->_input.inInt);
-		this->_input.display[FLOAT] = std::to_string(this->_input.inFloat);
+		this->_input.display[FLOAT] = std::to_string(this->_input.inFloat) + "f";
 		this->_input.display[DOUBLE] = std::to_string(this->_input.inDouble);
 	}
 	else if (this->_isKeyWord(input))
 	{
+		std::cout
+			<< "is keyword()"
+			<< std::endl;
+
 		for (int i = 0; i < NUMBER_KEYWORD_FLOATING; i++)
 		{
 			if (input == _floatingKeyWord[i])
@@ -100,19 +108,29 @@ void	Convert::table(std::string input)
 			}
 		}
 	}
-	else if (this->_isInt(input))
+	else if (this->_isDouble(input))
 	{
-		this->_input.inInt = static_cast<int>(input.c_str()[0]);
+		std::cout
+			<< "is double()"
+			<< std::endl;
 
-		this->_input.inFloat = static_cast<float>(this->_input.inInt);
-		this->_input.inDouble = static_cast<double>(this->_input.inFloat);
+		this->_input.inDouble = strtod(input.c_str(), 0);
+		this->_input.inInt = static_cast<int>(this->_input.inDouble);
+		this->_input.inFloat = static_cast<float>(this->_input.inDouble);
 
-		//this->_input.display[CHAR] = "'" + std::string(1, this->_input.inChar) + "'";
-		this->_input.display[INT] = std::to_string(this->_input.inInt);
-		this->_input.display[FLOAT] = std::to_string(this->_input.inFloat);
+		if (0 <= this->_input.inInt && this->_input.inInt <= 127)
+		{
+			this->_input.inChar = static_cast<char>(this->_input.inInt);
+			if (!isprint(this->_input.inChar))
+				this->_input.display[CHAR] = "Non displayable";
+			else
+				this->_input.display[CHAR] = "'" + std::string(1, this->_input.inChar) + "'";
+		}
+
 		this->_input.display[DOUBLE] = std::to_string(this->_input.inDouble);
+		this->_input.display[FLOAT] = std::to_string(this->_input.inFloat) + "f";
+		this->_input.display[INT] = std::to_string(this->_input.inInt);
 	}
-
 	else
 	{
 		std::cout
@@ -120,18 +138,19 @@ void	Convert::table(std::string input)
 			<< std::endl;
 		return ;
 	}
+
 	std::cout
-		<< "\t  char : "
+		<< "\t   char : "
 		<< this->_input.display[CHAR]
 		<< std::endl;
 
 	std::cout
-		<< "\t   int : "
+		<< "\t    int : "
 		<< this->_input.display[INT]
 		<< std::endl;
 
 	std::cout
-		<< "\t float : "
+		<< "\t  float : "
 		<< this->_input.display[FLOAT]
 		<< std::endl;
 

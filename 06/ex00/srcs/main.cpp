@@ -33,6 +33,11 @@ static void
 	NEWLINE; converter.table("'e'");
 	NEWLINE; converter.table("'\t'");
 
+	section_message("double");
+	NEWLINE; converter.table("42.12345678");
+	NEWLINE; converter.table("0.0000000");
+	NEWLINE; converter.table("-1.6030000");
+
 	section_message("int");
 	converter.table("42");
 	NEWLINE; converter.table("1234");
