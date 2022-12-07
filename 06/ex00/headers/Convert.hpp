@@ -8,12 +8,22 @@
 # define	COL_RES		"\033[0m"
 
 # define	NUMBER_KEYWORD_FLOATING	6
+
+enum	e_display {
+	CHAR,
+	INT,
+	FLOAT,
+	DOUBLE
+};
+
 typedef struct s_input
 {
 	char	inChar;
 	int		inInt;
 	float	inFloat;
 	double	inDouble;
+
+	std::string	display[4];
 } t_input;
 
 class	Convert
@@ -30,6 +40,7 @@ class	Convert
 		t_input	_input;
 
 		int	_isChar(std::string&);
+		int	_isKeyWord(std::string&);
 };
 
 #endif /* CONVERT_HPP */
