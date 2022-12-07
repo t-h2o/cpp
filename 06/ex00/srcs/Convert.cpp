@@ -4,6 +4,9 @@ std::string const Convert::_floatingKeyWord[NUMBER_KEYWORD_FLOATING] = {"-inf", 
 
 Convert::Convert(void)
 {
+	for (int i = 0; i < 4; i++)
+		this->_input.display[i] = "";
+
 	std::cout
 		<< "Convert: default constructor"
 		<< std::endl;
@@ -56,8 +59,6 @@ int	Convert::_isDouble(std::string &input)
 
 void	Convert::table(std::string input)
 {
-	memset(&(this->_input), 0, sizeof(t_input));
-
 	std::cout
 		<< "==== Try: \""
 		<< input
