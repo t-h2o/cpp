@@ -15,6 +15,11 @@ class	Convert
 
 		void	table(std::string);
 
+		typedef	struct	s_floatingKeyWord {
+			std::string	keyWord;
+			float		value;
+		} t_floatingKeyWord;
+
 	private:
 		static std::string const	_floatingKeyWord[2];
 };
