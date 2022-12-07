@@ -16,63 +16,38 @@ Convert::~Convert(void)
 		<< std::endl;
 }
 
-void	Convert::_convFloat(std::string input)
+// 'a'
+// is char     -> return 1
+// is not char -> return 0
+int	Convert::_isChar(std::string &input)
 {
-	std::cout << " float: ";
+	if (input.length() != 3)
+		return 0;
 
-	for (int i = 0; i < NUMBER_KEYWORD_FLOATING; i++)
-	{
-		if (input == _floatingKeyWord[i])
-			std::cout
-				<< _floatingKeyWord[i]
-				<< std::endl;
-	}
+	if (input[0] != '\'' || input[2] != '\'')
+		return 0;
 
-
-	std::cout
-		<< "impossible"
-		<< std::endl;
+	return 1;
 }
 
 void	Convert::table(std::string input)
 {
-	int		inputInt;
-
 	std::cout
-		<< "Converter: Print the table from \""
+		<< "==== Try: \""
 		<< input
-		<< "\""
+		<< "\" ===="
 		<< std::endl;
-
-	try
+	if (this->_isChar(input))
 	{
-		inputInt = stoi(input);
+		std::cout
+			<< "\tchar : '"
+			<< input[1]
+			<< "'";
 	}
-	catch (const std::invalid_argument& e)
+	else
 	{
-		std::cerr
-			<< e.what()
-			<< ": cannot convert \""
-			<< input
-			<< "\""
+		std::cout
+			<< "cannot define the type"
 			<< std::endl;
-		return ;
 	}
-
-	std::cout
-	<< "  char: '"
-	<< "*" // TODO change with a variable
-	<< "'"
-	<< std::endl
-
-	<< "   int: "
-	<< inputInt
-	<< std::endl;
-
-	this->_convFloat(input);
-
-	std::cout
-	<< "double: "
-	<< "42.0" // TODO change with a variable
-	<< std::endl;
 }

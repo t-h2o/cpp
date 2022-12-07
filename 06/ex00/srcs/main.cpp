@@ -27,11 +27,20 @@ static void
 	section_message("Constructor");
 	Convert	converter;
 
-	section_message("Print table");
-	converter.table("42");
-	NEWLINE; converter.table("1234.1234f");
+	section_message("char");
+	converter.table("'a'");
+	NEWLINE; converter.table("'0'");
+	NEWLINE; converter.table("'e'");
+	NEWLINE; converter.table("'p'");
 
-	NEWLINE; converter.table("+inf");
+	section_message("int");
+	converter.table("42");
+	NEWLINE; converter.table("1234");
+	NEWLINE; converter.table("-34");
+	NEWLINE; converter.table("0");
+
+	section_message("float keyword");
+	converter.table("+inf");
 	NEWLINE; converter.table("-inf");
 	NEWLINE; converter.table("nan");
 	NEWLINE; converter.table("+inff");

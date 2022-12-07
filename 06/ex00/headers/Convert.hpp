@@ -19,7 +19,7 @@ class	Convert
 	private:
 		static std::string const	_floatingKeyWord[NUMBER_KEYWORD_FLOATING];
 
-		void	_convFloat(std::string);
+		int	_isChar(std::string&);
 };
 
 #endif /* CONVERT_HPP */
