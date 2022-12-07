@@ -22,6 +22,8 @@ class	Convert
 
 	private:
 		static t_floatingKeyWord const	_floatingKeyWord;
+
+		float	_convFloat(std::string);
 };
 
 #endif /* CONVERT_HPP */
