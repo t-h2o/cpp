@@ -1,6 +1,6 @@
 #include	"Convert.hpp"
 
-std::string const Convert::_floatingKeyWord[2] = {"inf", "+inf"};
+std::string const Convert::_floatingKeyWord[NUMBER_KEYWORD_FLOATING] = {"-inf", "+inf", "nan", "-inff", "+inff", "nanf"};
 
 Convert::Convert(void)
 {
