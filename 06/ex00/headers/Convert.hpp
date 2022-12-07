@@ -17,6 +17,8 @@ class	Convert
 
 	private:
 		static std::string const	_floatingKeyWord[2];
+
+		float	_convFloat(std::string);
 };
 
 #endif /* CONVERT_HPP */
