@@ -7,6 +7,8 @@
 
 == Exercice 00
 
+image::assets/ex00.png[schema]
+
 Differents inputs for a boolean value:
 
 * Literals

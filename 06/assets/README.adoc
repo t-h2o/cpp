@@ -1,0 +1,30 @@
+= Title
+
+[plantuml, target=ex00, format=png]
+....
+@startuml
+
+skinparam defaultFontName JetBrains Mono ExtraBold
+
+start
+
+:set argv[1] as string input;
+if (input is a char ?) then (yes)
+  :convert input to char;
+(no) elseif (input is an integer ?) then (yes)
+    :convert input to int;
+(no) elseif (input is a float ?) then (yes)
+      :convert input to float;
+(no) elseif (input is a double ?) then (yes)
+        :convert input to double;
+else (no)
+        : imposible;
+        stop
+endif
+
+:Convert all data;
+
+stop 
+
+@enduml
+....
