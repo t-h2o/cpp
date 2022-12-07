@@ -42,6 +42,7 @@ void	Convert::table(std::string input)
 	{
 		this->_input.inChar = static_cast<char>(input[1]);
 		this->_input.inInt = static_cast<int>(this->_input.inChar);
+		this->_input.inFloat = static_cast<float>(this->_input.inInt);
 	}
 	else
 	{
@@ -51,13 +52,18 @@ void	Convert::table(std::string input)
 		return ;
 	}
 	std::cout
-		<< "\tchar : '"
+		<< "\t  char : '"
 		<< this->_input.inChar
 		<< "'"
 		<< std::endl;
 
 	std::cout
-		<< "\t int : "
+		<< "\t   int : "
 		<< this->_input.inInt
+		<< std::endl;
+
+	std::cout
+		<< "\t float : "
+		<< this->_input.inFloat
 		<< std::endl;
 }
