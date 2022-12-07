@@ -42,6 +42,8 @@ class	Convert
 		int	_isChar(std::string&);
 		int	_isKeyWord(std::string&);
 		int	_isDouble(std::string&);
+
+		void	_displayData(void);
 };
 
 #endif /* CONVERT_HPP */

@@ -25,6 +25,29 @@ Convert::~Convert(void)
 		<< std::endl;
 }
 
+void	Convert::_displayData(void)
+{
+	std::cout
+		<< "\t   char : "
+		<< this->_input.display[CHAR]
+		<< std::endl;
+
+	std::cout
+		<< "\t    int : "
+		<< this->_input.display[INT]
+		<< std::endl;
+
+	std::cout
+		<< "\t  float : "
+		<< this->_input.display[FLOAT]
+		<< std::endl;
+
+	std::cout
+		<< "\t double : "
+		<< this->_input.display[DOUBLE]
+		<< std::endl;
+}
+
 // 'a'
 // is char     -> return 1
 // is not char -> return 0
@@ -145,24 +168,5 @@ void	Convert::table(std::string input)
 			<< std::endl;
 		return ;
 	}
-
-	std::cout
-		<< "\t   char : "
-		<< this->_input.display[CHAR]
-		<< std::endl;
-
-	std::cout
-		<< "\t    int : "
-		<< this->_input.display[INT]
-		<< std::endl;
-
-	std::cout
-		<< "\t  float : "
-		<< this->_input.display[FLOAT]
-		<< std::endl;
-
-	std::cout
-		<< "\t double : "
-		<< this->_input.display[DOUBLE]
-		<< std::endl;
+	this->_displayData();
 }
