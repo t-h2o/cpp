@@ -41,15 +41,23 @@ void	Convert::table(std::string input)
 	if (this->_isChar(input))
 	{
 		this->_input.inChar = static_cast<char>(input[1]);
-		std::cout
-			<< "\tchar : '"
-			<< this->_input.inChar
-			<< "'";
+		this->_input.inInt = static_cast<int>(this->_input.inChar);
 	}
 	else
 	{
 		std::cout
 			<< "cannot define the type"
 			<< std::endl;
+		return ;
 	}
+	std::cout
+		<< "\tchar : '"
+		<< this->_input.inChar
+		<< "'"
+		<< std::endl;
+
+	std::cout
+		<< "\t int : "
+		<< this->_input.inInt
+		<< std::endl;
 }
