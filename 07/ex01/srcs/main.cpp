@@ -1,4 +1,7 @@
 #include	<iostream>
+#include	"color.hpp"
+
+#define	NEWLINE	std::cout << std::endl;
 
 class MyIter
 {
@@ -14,18 +17,15 @@ class MyIter
 
 static void	test(void)
 {
+	section("Iter with a string"); NEWLINE; NEWLINE;
 	std::string	value;
-
 	value = "my value";
-
 	MyIter::iter(value);
 }
 
 int	main(void)
 {
-	std::cout
-		<< "Module 07 : Exercice 01 : Iter"
-		<< std::endl;
+	title("Module 07 : Exercice 01 : Iter"); NEWLINE; NEWLINE;
 
 	test();
 
