@@ -3,22 +3,19 @@
 
 #define	NEWLINE	std::cout << std::endl;
 
+template<typename T>
+static void	print(T const value)
+{
+	std::cout
+		<< value
+		<< std::endl;
+}
+
 class MyIter
 {
 	public:
 		template<typename T>
-		static void	print(T const value, unsigned int index)
-		{
-			std::cout
-				<< "\t"
-				<< index
-				<< " : "
-				<< value
-				<< std::endl;
-		}
-
-		template<typename T>
-		static void	iter(T const * values, unsigned int size)
+		static void	iter(T const * values, unsigned int size, void (*functionptr)(T))
 		{
 			std::cout << "Iter function called: "
 				<< values
@@ -26,9 +23,7 @@ class MyIter
 				<< size
 				<< std::endl;
 			for (unsigned int index = 0; index < size; index++)
-			{
-				MyIter::print<T>(values[index], index);
-			}
+				(*functionptr)(values[index]);
 		}
 };
 
@@ -38,7 +33,7 @@ static void	test(void)
 	std::string	values[2];
 	values[0] = "my first value";
 	values[1] = "my seconde value";
-	MyIter::iter<std::string>(values, 2);
+	MyIter::iter<std::string>(values, 2, &print);
 }
 
 int	main(void)
