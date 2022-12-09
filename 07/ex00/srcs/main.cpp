@@ -10,6 +10,14 @@ class	Mytemplates
 				return x;
 			return y;
 		}
+
+		template<typename TYPE>
+		static TYPE const &	min(TYPE const & x, TYPE const & y)
+		{
+			if (x <= y)
+				return x;
+			return y;
+		}
 };
 
 static void	test(void)
@@ -19,6 +27,7 @@ static void	test(void)
 
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "max( a, b ) = " << Mytemplates::max<int>( a, b ) << std::endl;
+	std::cout << "min( a, b ) = " << Mytemplates::min<int>( a, b ) << std::endl;
 }
 
 int	main(void)
