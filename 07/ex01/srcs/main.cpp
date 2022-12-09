@@ -7,6 +7,17 @@ class MyIter
 {
 	public:
 		template<typename T>
+		static void	print(T const value, unsigned int i)
+		{
+			std::cout
+				<< "\t"
+				<< i
+				<< " : "
+				<< value
+				<< std::endl;
+		}
+
+		template<typename T>
 		static void	iter(T const * values, unsigned int size)
 		{
 			std::cout << "Iter function called: "
@@ -16,12 +27,7 @@ class MyIter
 				<< std::endl;
 			for (unsigned int i = 0; i < size; i++)
 			{
-				std::cout
-					<< "\t"
-					<< i
-					<< " : "
-					<< values[i]
-					<< std::endl;
+				MyIter::print<T>(values[i], i);
 			}
 		}
 };
