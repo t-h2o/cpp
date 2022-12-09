@@ -7,11 +7,11 @@ class MyIter
 {
 	public:
 		template<typename T>
-		static void	print(T const value, unsigned int i)
+		static void	print(T const value, unsigned int index)
 		{
 			std::cout
 				<< "\t"
-				<< i
+				<< index
 				<< " : "
 				<< value
 				<< std::endl;
@@ -25,9 +25,9 @@ class MyIter
 				<< ", "
 				<< size
 				<< std::endl;
-			for (unsigned int i = 0; i < size; i++)
+			for (unsigned int index = 0; index < size; index++)
 			{
-				MyIter::print<T>(values[i], i);
+				MyIter::print<T>(values[index], index);
 			}
 		}
 };
