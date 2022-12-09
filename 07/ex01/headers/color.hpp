@@ -5,6 +5,8 @@
 # define	COL_GRE		"\033[32;1m"
 # define	COL_RES		"\033[0m"
 
+# define	NEWLINE		std::cout << std::endl;
+
 # include	<iostream>
 
 void	title(std::string);
