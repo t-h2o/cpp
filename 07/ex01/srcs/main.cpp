@@ -29,11 +29,41 @@ class MyIter
 
 static void	test(void)
 {
-	section("Iter into a string table"); NEWLINE; NEWLINE;
-	std::string	values[2];
-	values[0] = "my first value";
-	values[1] = "my seconde value";
-	MyIter::iter<std::string>(values, 2, &print);
+	{
+		section("Iter into a string table"); NEWLINE; NEWLINE;
+		std::string	values[3];
+		values[0] = "my first value";
+		values[1] = "my seconde value";
+		values[2] = "my third value";
+		MyIter::iter<std::string>(values, 3, &print);
+	}
+	NEWLINE;
+	{
+		section("Iter into an integer table"); NEWLINE; NEWLINE;
+		int	values[3];
+		values[0] = 42;
+		values[1] = 12;
+		values[2] = -123456;
+		MyIter::iter<int>(values, 3, &print);
+	}
+	NEWLINE;
+	{
+		section("Iter into a float table"); NEWLINE; NEWLINE;
+		float	values[3];
+		values[0] = 42.1234f;
+		values[1] = 12.f;
+		values[2] = -123456.9876f;
+		MyIter::iter<float>(values, 3, &print);
+	}
+	NEWLINE;
+	{
+		section("Iter into a double table"); NEWLINE; NEWLINE;
+		double	values[3];
+		values[0] = 42.1234;
+		values[1] = 12;
+		values[2] = -123456.9876;
+		MyIter::iter<double>(values, 3, &print);
+	}
 }
 
 int	main(void)
