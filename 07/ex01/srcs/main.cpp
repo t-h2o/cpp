@@ -32,7 +32,7 @@ static void	test(void)
 	std::string	values[2];
 	values[0] = "my first value";
 	values[1] = "my seconde value";
-	MyIter::iter(values, 2);
+	MyIter::iter<std::string>(values, 2);
 }
 
 int	main(void)
