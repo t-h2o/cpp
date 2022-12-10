@@ -1,10 +1,9 @@
 #include	<iostream>
+#include	"color.hpp"
 
 int	main(void)
 {
-	std::cout
-		<< "Module 07 : Exercice 02 : Array"
-		<< std::endl;
+	title("Module 07 : Exercice 02 : Array");
 
 	return 0;
 }
