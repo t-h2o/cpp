@@ -30,3 +30,16 @@ int	&Arint::operator[](unsigned int position) const
 		throw Arint::ExceptionOverrange();
 	return this->_myList[position];
 }
+
+Arint	&Arint::operator=(Arint const &other)
+{
+	message("Arint: operator =");
+
+	if (this == &other)
+	{
+		message("This and other are the same");
+		return *this;
+	}
+
+	return *this;
+}

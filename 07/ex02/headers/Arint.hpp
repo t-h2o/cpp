@@ -15,6 +15,7 @@ class Arint
 		unsigned int size(void) const;
 
 		int	&operator[](unsigned int) const;
+		Arint	&operator=(Arint const &other);
 
 		class ExceptionOverrange : public std::exception
 		{
