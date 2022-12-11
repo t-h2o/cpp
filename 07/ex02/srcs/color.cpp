@@ -23,3 +23,10 @@ void	section(std::string section)
 	NEWLINE;
 	NEWLINE;
 }
+
+void	message(std::string message)
+{
+	std::cout
+		<< message
+		<< std::endl;
+}

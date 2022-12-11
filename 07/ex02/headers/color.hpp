@@ -11,5 +11,6 @@
 
 void	title(std::string);
 void	section(std::string);
+void	message(std::string);
 
 #endif /* COLOR_HPP */
