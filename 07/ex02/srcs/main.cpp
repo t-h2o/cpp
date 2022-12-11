@@ -90,6 +90,16 @@ static void	test(void)
 		Arint<int>	qwer(arrint);
 		trycatch_print(asdf, 4);
 	}
+
+	section("string array of 2 elements");
+	{
+		Arint<std::string>	two(2);
+
+		trycatch<std::string>(two, 0, "first");
+		trycatch<std::string>(two, 1, "second");
+		trycatch<std::string>(two, 2, "out");
+		trycatch_print(two, 0);
+	}
 }
 
 int	main(void)
