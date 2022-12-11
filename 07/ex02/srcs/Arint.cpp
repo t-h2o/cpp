@@ -26,5 +26,7 @@ unsigned int Arint::getLength(void) const
 
 int	&Arint::operator[](unsigned int position) const
 {
+	if (this->getLength() <= position)
+		throw Arint::ExceptionOverrange();
 	return this->_myList[position];
 }

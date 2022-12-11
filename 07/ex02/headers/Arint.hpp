@@ -16,6 +16,15 @@ class Arint
 
 		int	&operator[](unsigned int) const;
 
+		class ExceptionOverrange : public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+					return ("Arint: try to get value overrange");
+				}
+		};
+
 	private:
 		unsigned int const	_length;
 		int					*_myList;
