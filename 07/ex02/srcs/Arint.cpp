@@ -1,16 +1,16 @@
 #include	"Arint.hpp"
 
-Arint::Arint(void) : _length(0)
+Arint::Arint(void) : _size(0)
 {
 	message("Arint: default constructor (0 element)");
-	this->_myList = new int[this->_length];
+	this->_myList = new int[this->_size];
 }
 
-Arint::Arint(unsigned int nElements) : _length(nElements)
+Arint::Arint(unsigned int nElements) : _size(nElements)
 {
 	message("Arint: constructor with n elements");
 
-	this->_myList = new int[this->_length];
+	this->_myList = new int[this->_size];
 }
 
 Arint::~Arint(void)
@@ -19,14 +19,14 @@ Arint::~Arint(void)
 	delete [] this->_myList;
 }
 
-unsigned int Arint::getLength(void) const
+unsigned int Arint::size(void) const
 {
-	return this->_length;
+	return this->_size;
 }
 
 int	&Arint::operator[](unsigned int position) const
 {
-	if (this->getLength() <= position)
+	if (this->size() <= position)
 		throw Arint::ExceptionOverrange();
 	return this->_myList[position];
 }

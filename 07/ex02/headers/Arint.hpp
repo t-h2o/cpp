@@ -12,7 +12,7 @@ class Arint
 		Arint(unsigned int nElements);
 		~Arint(void);
 
-		unsigned int getLength(void) const;
+		unsigned int size(void) const;
 
 		int	&operator[](unsigned int) const;
 
@@ -26,7 +26,7 @@ class Arint
 		};
 
 	private:
-		unsigned int const	_length;
+		unsigned int const	_size;
 		int					*_myList;
 };
 
