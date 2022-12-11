@@ -10,6 +10,7 @@ class Arint
 	public:
 		Arint(void);
 		Arint(unsigned int nElements);
+		Arint(Arint const &other);
 		~Arint(void);
 
 		unsigned int size(void) const;

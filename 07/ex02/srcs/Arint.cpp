@@ -13,6 +13,13 @@ Arint::Arint(unsigned int nElements) : _size(nElements)
 	this->_myList = new int[this->_size];
 }
 
+Arint::Arint(Arint const &other) : _size(0), _myList(0)
+{
+	message("Arint: copy constructor");
+
+	*this = other;
+}
+
 Arint::~Arint(void)
 {
 	message("Arint: destructor");
