@@ -33,12 +33,15 @@ static void	trycatch(Arint &myarray, unsigned int position, T value)
 
 static void	test(void)
 {
+	section("Empty int array");
 	{
 		Arint	arrempty;
 
 		trycatch<int>(arrempty, 0, 42);
 		trycatch<int>(arrempty, 12, 42);
 	}
+
+	section("int array of 5 elements");
 	{
 		Arint	arrint(5);
 
