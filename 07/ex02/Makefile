@@ -21,7 +21,6 @@ SRCD	=	srcs
 
 SRCS	=	$(SRCD)/main.cpp
 SRCS	+=	$(SRCD)/color.cpp
-SRCS	+=	$(SRCD)/Arint.cpp
 
 
 #	Headers

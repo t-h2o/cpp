@@ -5,6 +5,7 @@
 
 # include	"color.hpp"
 
+template <typename T>
 class Arint
 {
 	public:
@@ -15,7 +16,7 @@ class Arint
 
 		unsigned int size(void) const;
 
-		int	&operator[](unsigned int) const;
+		T	&operator[](unsigned int) const;
 		Arint	&operator=(Arint const &other);
 
 		class ExceptionOverrange : public std::exception
@@ -29,7 +30,9 @@ class Arint
 
 	private:
 		unsigned int	_size;
-		int				*_myList;
+		T				*_myList;
 };
+
+#include "../srcs/Arint.cpp"
 
 #endif	/* MY_ARRAY_HPP */

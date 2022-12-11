@@ -3,7 +3,7 @@
 #include	"Arint.hpp"
 
 template<typename T>
-static void	trycatch(Arint &myarray, unsigned int position, T value)
+static void	trycatch(Arint<T> &myarray, unsigned int position, T value)
 {
 	std::cout
 		<< "Try position: "
@@ -31,7 +31,8 @@ static void	trycatch(Arint &myarray, unsigned int position, T value)
 	}
 }
 
-static void	trycatch_print(Arint &myarray, unsigned int position)
+template<typename T>
+static void	trycatch_print(Arint<T> &myarray, unsigned int position)
 {
 	std::cout
 		<< "Try to print position: "
@@ -62,7 +63,7 @@ static void	test(void)
 {
 	section("Empty int array");
 	{
-		Arint	arrempty;
+		Arint<int>	arrempty;
 
 		trycatch<int>(arrempty, 0, 42);
 		trycatch<int>(arrempty, 12, 42);
@@ -70,7 +71,7 @@ static void	test(void)
 
 	section("int array of 5 elements");
 	{
-		Arint	arrint(5);
+		Arint<int>	arrint(5);
 
 		trycatch<int>(arrint, 4, 42);
 		trycatch<int>(arrint, 5, 42);
@@ -81,12 +82,12 @@ static void	test(void)
 		arrint = arrint;
 
 		section("\tasdf = arrint");
-		Arint	asdf;
+		Arint<int>	asdf;
 		asdf = arrint;
 		trycatch_print(asdf, 4);
 
 		section("\tqwer(arrint)");
-		Arint	qwer(arrint);
+		Arint<int>	qwer(arrint);
 		trycatch_print(asdf, 4);
 	}
 }
