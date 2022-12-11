@@ -5,7 +5,9 @@
 int	main(void)
 {
 	title("Module 07 : Exercice 02 : Array");
-	Arint	arrint;
+
+	Arint	arrempty;
+	Arint	arrint(5);
 
 	return 0;
 }

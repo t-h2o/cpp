@@ -9,6 +9,7 @@ class Arint
 {
 	public:
 		Arint(void);
+		Arint(unsigned int nElements);
 		~Arint(void);
 
 	private:

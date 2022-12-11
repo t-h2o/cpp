@@ -6,6 +6,13 @@ Arint::Arint(void)
 	this->_myList = new int[0];
 }
 
+Arint::Arint(unsigned int nElements)
+{
+	message("Arint: constructor with n elements");
+
+	this->_myList = new int[nElements];
+}
+
 Arint::~Arint(void)
 {
 	message("Arint: destructor");
