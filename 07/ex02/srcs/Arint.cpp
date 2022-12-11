@@ -41,5 +41,13 @@ Arint	&Arint::operator=(Arint const &other)
 		return *this;
 	}
 
+	delete [] this->_myList;
+
+	this->_size = other.size();
+	this->_myList = new int[this->size()];
+
+	for (unsigned int i = 0; i < this->size(); i++)
+		this->_myList[i] = other[i];
+
 	return *this;
 }
