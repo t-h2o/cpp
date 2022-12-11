@@ -23,3 +23,8 @@ unsigned int Arint::getLength(void) const
 {
 	return this->_length;
 }
+
+int	&Arint::operator[](unsigned int position) const
+{
+	return this->_myList[position];
+}

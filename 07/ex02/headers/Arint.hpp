@@ -14,6 +14,8 @@ class Arint
 
 		unsigned int getLength(void) const;
 
+		int	&operator[](unsigned int) const;
+
 	private:
 		unsigned int const	_length;
 		int					*_myList;

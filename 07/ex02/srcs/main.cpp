@@ -9,5 +9,8 @@ int	main(void)
 	Arint	arrempty;
 	Arint	arrint(5);
 
+	arrint[1] = 42;
+	std::cout << arrint[1] << std::endl;
+
 	return 0;
 }
