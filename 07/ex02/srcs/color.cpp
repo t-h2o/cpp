@@ -31,12 +31,11 @@ void	message(std::string message)
 		<< std::endl;
 }
 
-void	print_exception(std::exception &e, std::string message)
+void	print_exception(std::exception &e)
 {
 	std::cout
 		<< COL_RED
 		<< e.what()
-		<< message
 		<< COL_RES
 		<< std::endl;
 }

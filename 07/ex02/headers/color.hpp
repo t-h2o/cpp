@@ -13,6 +13,6 @@ void	title(std::string);
 void	section(std::string);
 void	message(std::string);
 
-void	print_exception(std::exception &, std::string);
+void	print_exception(std::exception &);
 
 #endif /* COLOR_HPP */

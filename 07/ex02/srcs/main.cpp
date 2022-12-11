@@ -20,10 +20,7 @@ static void	trycatch(Arint &myarray, unsigned int position, T value)
 	}
 	catch (std::exception &e)
 	{
-		print_exception(e, "; size = "
-			+ std::to_string(myarray.size())
-			+ ", position = "
-			+ std::to_string(position));
+		print_exception(e);
 	}
 }
 
