@@ -2,7 +2,8 @@
 #include	"color.hpp"
 #include	"Arint.hpp"
 
-static void	trycatch(Arint &myarray, unsigned int position, int value)
+template<typename T>
+static void	trycatch(Arint &myarray, unsigned int position, T value)
 {
 	try
 	{
@@ -31,16 +32,16 @@ static void	test(void)
 	{
 		Arint	arrempty;
 
-		trycatch(arrempty, 0, 42);
-		trycatch(arrempty, 12, 42);
+		trycatch<int>(arrempty, 0, 42);
+		trycatch<int>(arrempty, 12, 42);
 	}
 	{
 		Arint	arrint(5);
 
-		trycatch(arrint, 4, 42);
-		trycatch(arrint, 5, 42);
-		trycatch(arrint, 0, 42);
-		trycatch(arrint, -1, 42);
+		trycatch<int>(arrint, 4, 42);
+		trycatch<int>(arrint, 5, 42);
+		trycatch<int>(arrint, 0, 42);
+		trycatch<int>(arrint, -1, 42);
 	}
 }
 
