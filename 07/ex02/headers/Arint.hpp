@@ -10,6 +10,9 @@ class Arint
 	public:
 		Arint(void);
 		~Arint(void);
+
+	private:
+		int	*_myList;
 };
 
 #endif	/* MY_ARRAY_HPP */
