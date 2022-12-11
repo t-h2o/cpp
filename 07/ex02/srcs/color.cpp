@@ -27,7 +27,9 @@ void	section(std::string section)
 void	message(std::string message)
 {
 	std::cout
+		<< COL_YEL
 		<< message
+		<< COL_RES
 		<< std::endl;
 }
 
