@@ -5,6 +5,13 @@
 template<typename T>
 static void	trycatch(Arint &myarray, unsigned int position, T value)
 {
+	std::cout
+		<< "Try position: "
+		<< position
+		<< " size = "
+		<< myarray.size()
+		<< std::endl;
+
 	try
 	{
 		myarray[position] = value;
