@@ -12,8 +12,11 @@ class Arint
 		Arint(unsigned int nElements);
 		~Arint(void);
 
+		unsigned int getLength(void) const;
+
 	private:
-		int	*_myList;
+		unsigned int const	_length;
+		int					*_myList;
 };
 
 #endif	/* MY_ARRAY_HPP */
