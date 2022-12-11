@@ -27,8 +27,8 @@ class Arint
 		};
 
 	private:
-		unsigned int const	_size;
-		int					*_myList;
+		unsigned int	_size;
+		int				*_myList;
 };
 
 #endif	/* MY_ARRAY_HPP */
