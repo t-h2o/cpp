@@ -8,13 +8,14 @@ static void	fill_vec(std::vector<int> &vec)
 		vec.push_back((i * i) % 1000);
 }
 
-static void	easy_find(std::vector<int> &vec, int number)
+template <typename T>
+static void	easy_find(T &container, int number)
 {
-	std::vector<int>::iterator	iter;
+	typename T::iterator	iter;
 
-	iter = find(vec.begin(), vec.end(), number);
+	iter = find(container.begin(), container.end(), number);
 
-	if (iter != vec.end())
+	if (iter != container.end())
 	{
 		std::cout
 			<< "Easy finds \""
