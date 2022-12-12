@@ -1,6 +1,9 @@
 #ifndef	SPAN_HPP
 # define SPAN_HPP
 
+# include	"color.hpp"
+# include	<stdlib.h>
+
 class	Span
 {
 	public:

@@ -1,6 +1,4 @@
-#include	"color.hpp"
 #include	"Span.hpp"
-#include	<stdlib.h>
 
 Span::Span(unsigned int nElements) : _size(nElements), _length(0)
 {
