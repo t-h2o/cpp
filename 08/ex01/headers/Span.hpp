@@ -9,6 +9,15 @@ class	Span
 
 		void	addNumber(int number);
 
+		class	ExceptionCannotAddNumber : public std::exception
+		{
+			public:
+				const char	*what() const throw ()
+				{
+					return "Cannot add number";
+				}
+		};
+
 	private:
 		unsigned int	_size;
 		unsigned int	_length;

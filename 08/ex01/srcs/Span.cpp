@@ -21,7 +21,7 @@ void	Span::addNumber(int number)
 {
 	if (_length == _size)
 	{
-		message("Span: cannot add number");
+		throw Span::ExceptionCannotAddNumber();
 		return ;
 	}
 
