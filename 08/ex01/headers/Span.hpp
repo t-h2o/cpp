@@ -13,6 +13,7 @@ class	Span
 		void	addNumber(int number);
 
 		int		shortestSpan(void);
+		int		longestSpan(void);
 
 		class	ExceptionCannotAddNumber : public std::exception
 		{

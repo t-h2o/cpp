@@ -17,7 +17,8 @@ static void	test(void)
 		{
 			print_exception(e);
 		}
-		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << "shortest: " << sp.shortestSpan() << std::endl;
+		std::cout << " longest: " << sp.longestSpan() << std::endl;
 	}
 
 	section("two elements");
@@ -27,7 +28,8 @@ static void	test(void)
 		sp.addNumber(5);
 		sp.addNumber(7);
 
-		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << "shortest: " << sp.shortestSpan() << std::endl;
+		std::cout << " longest: " << sp.longestSpan() << std::endl;
 	}
 }
 

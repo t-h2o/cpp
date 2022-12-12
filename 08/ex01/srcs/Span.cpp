@@ -50,3 +50,25 @@ int		Span::shortestSpan(void)
 
 	return shortest;
 }
+
+int		Span::longestSpan(void)
+{
+	unsigned int	longest(0);
+	unsigned int	diff;
+
+	if (_length <= 1)
+		return 0;
+
+	if (_length == 2)
+		return abs(this->_list[0] - this->_list[1]);
+
+	for (unsigned int i = 0; i < this->_length; i++)
+		for (unsigned int j = i + 1; j < this->_length; j++)
+		{
+			diff = abs(this->_list[i] - this->_list[j]);
+			if (longest < diff)
+				longest = diff;
+		}
+
+	return longest;
+}
