@@ -9,6 +9,8 @@ class	Span
 
 		void	addNumber(int number);
 
+		int		shortestSpan(void);
+
 		class	ExceptionCannotAddNumber : public std::exception
 		{
 			public:
