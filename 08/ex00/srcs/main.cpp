@@ -41,7 +41,10 @@ int	main(void)
 
 	fill_vec(vec);
 
+	section("Not in the vector");
 	easy_find(vec, 234);
+
+	section("In the vector");
 	easy_find(vec, 344);
 
 	return 0;
