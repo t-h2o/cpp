@@ -8,6 +8,7 @@ class	Span
 {
 	public:
 		Span(unsigned int);
+		Span(Span const &);
 		~Span(void);
 
 		void	addNumber(int number);

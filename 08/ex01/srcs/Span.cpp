@@ -9,6 +9,13 @@ Span::Span(unsigned int nElements) : _size(nElements), _length(0)
 	(void) nElements;
 }
 
+Span::Span(Span const &other) : _size(0), _length(0), _list(0)
+{
+	message("Span: copy constructor");
+
+	*this = other;
+}
+
 Span::~Span(void)
 {
 	message("Span: destructor");
