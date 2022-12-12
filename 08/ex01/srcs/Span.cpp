@@ -5,8 +5,6 @@ Span::Span(unsigned int nElements) : _size(nElements), _length(0)
 	message("Span: constructor");
 
 	this->_list = new int[this->_size];
-
-	(void) nElements;
 }
 
 Span::Span(Span const &other) : _size(0), _length(0), _list(0)
