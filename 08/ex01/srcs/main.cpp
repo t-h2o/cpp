@@ -6,7 +6,8 @@ static void	test(void)
 {
 	Span	sp(5);
 
-	(void)sp;
+	for (int i = 0; i < 6; i++)
+		sp.addNumber(42 * i);
 }
 
 int	main(void)

@@ -7,8 +7,11 @@ class	Span
 		Span(unsigned int);
 		~Span(void);
 
+		void	addNumber(int number);
+
 	private:
 		unsigned int	_size;
+		unsigned int	_length;
 		int				*_list;
 };
 
