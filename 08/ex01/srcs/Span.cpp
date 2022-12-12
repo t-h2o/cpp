@@ -72,3 +72,9 @@ int		Span::longestSpan(void)
 
 	return longest;
 }
+
+void	Span::fillSpan(void)
+{
+	while (this->_length < this->_size)
+		this->addNumber(42);
+}

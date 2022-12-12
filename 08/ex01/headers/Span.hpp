@@ -15,6 +15,8 @@ class	Span
 		int		shortestSpan(void);
 		int		longestSpan(void);
 
+		void	fillSpan(void);
+
 		class	ExceptionCannotAddNumber : public std::exception
 		{
 			public:
