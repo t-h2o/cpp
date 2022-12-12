@@ -78,3 +78,25 @@ void	Span::fillSpan(void)
 	while (this->_length < this->_size)
 		this->addNumber(42);
 }
+
+Span	&Span::operator=(Span const &other)
+{
+	if (this == &other)
+	{
+		message("Span: operator =, They are the same");
+		return *this;
+	}
+	message("Span: operator =");
+
+	this->_size = other._size;
+	this->_length = other._length;
+
+	delete [] this->_list;
+
+	this->_list = new int [this->_size];
+
+	for (unsigned int index = 0; index < _length; index++)
+		this->_list[index] = other._list[index];
+
+	return *this;
+}

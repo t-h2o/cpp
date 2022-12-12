@@ -17,6 +17,8 @@ class	Span
 
 		void	fillSpan(void);
 
+		Span	&operator=(Span const &);
+
 		class	ExceptionCannotAddNumber : public std::exception
 		{
 			public:
