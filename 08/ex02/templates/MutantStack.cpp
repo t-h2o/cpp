@@ -38,3 +38,24 @@ typename Container::iterator MutantStack<T, Container>::begin(void)
 	message("MutantStack: begin");
 	return this->c.begin();
 }
+
+template <typename T, typename Container>
+typename Container::iterator MutantStack<T, Container>::end(void)
+{
+	message("MutantStack: end");
+	return this->c.end();
+}
+
+template <typename T, typename Container>
+typename Container::const_iterator MutantStack<T, Container>::begin(void) const
+{
+	message("MutantStack: begin");
+	return this->c.begin();
+}
+
+template <typename T, typename Container>
+typename Container::const_iterator MutantStack<T, Container>::end(void) const
+{
+	message("MutantStack: end");
+	return this->c.end();
+}

@@ -15,6 +15,10 @@ class	MutantStack : public std::stack<T>
 		MutantStack &operator=(MutantStack const &);
 
 		typename Container::iterator begin(void);
+		typename Container::iterator end(void);
+
+		typename Container::const_iterator begin(void) const;
+		typename Container::const_iterator end(void) const;
 };
 
 # include "../templates/MutantStack.cpp"
