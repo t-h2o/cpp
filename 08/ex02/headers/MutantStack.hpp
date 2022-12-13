@@ -11,6 +11,6 @@ class	MutantStack : public std::stack<T>
 		MutantStack(void);
 };
 
-# include "../srcs/MutantStack.cpp"
+# include "../templates/MutantStack.cpp"
 
 #endif /* MUTANT_STACK_HPP */
