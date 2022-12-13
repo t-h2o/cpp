@@ -33,6 +33,15 @@ static void	test_mutantstack(void)
 			std::cout << "Top of the copy stack : " << copy_numbers.top() << std::endl;
 			copy_numbers.pop();
 		}
+
+		copy_numbers = numbers;
+
+		while (!copy_numbers.empty())
+		{
+			section("\tprint top and pop");
+			std::cout << "Top of the copy stack : " << copy_numbers.top() << std::endl;
+			copy_numbers.pop();
+		}
 	}
 
 	while (!numbers.empty())

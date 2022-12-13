@@ -18,3 +18,16 @@ MutantStack<T>::~MutantStack(void)
 {
 	message("MutantStack: destructor");
 }
+
+template <typename T>
+MutantStack<T>	&MutantStack<T>::operator=(MutantStack const &other)
+{
+	message("MutantStack: operator =");
+
+	if (this == &other)
+		return *this;
+
+	this->c = other.c;
+
+	return *this;
+}

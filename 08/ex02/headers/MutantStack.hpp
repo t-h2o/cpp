@@ -11,6 +11,8 @@ class	MutantStack : public std::stack<T>
 		MutantStack(void);
 		MutantStack(MutantStack const &);
 		~MutantStack(void);
+
+		MutantStack &operator=(MutantStack const &);
 };
 
 # include "../templates/MutantStack.cpp"
