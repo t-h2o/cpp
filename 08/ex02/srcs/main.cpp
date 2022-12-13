@@ -57,6 +57,18 @@ static void	test_mutantstack(void)
 		std::cout << "-> " << *iterNumbers << std::endl;
 	}
 
+	{
+		std::deque<int>::const_iterator iterNumbers = numbers.begin();
+		section("\tprint the first number");
+		std::cout << "-> " << *iterNumbers << std::endl;
+	}
+
+	{
+		std::deque<int>::const_iterator iterNumbers = numbers.end() - 1;
+		section("\tprint the last number");
+		std::cout << "-> " << *iterNumbers << std::endl;
+	}
+
 
 	while (!numbers.empty())
 	{

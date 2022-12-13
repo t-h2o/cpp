@@ -48,13 +48,13 @@ typename Container::iterator MutantStack<T, Container>::end(void)
 template <typename T, typename Container>
 typename Container::const_iterator MutantStack<T, Container>::begin(void) const
 {
-	message("MutantStack: begin");
+	message("MutantStack: begin (const iterator)");
 	return this->c.begin();
 }
 
 template <typename T, typename Container>
 typename Container::const_iterator MutantStack<T, Container>::end(void) const
 {
-	message("MutantStack: end");
+	message("MutantStack: end (const iterator)");
 	return this->c.end();
 }
