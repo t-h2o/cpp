@@ -24,6 +24,17 @@ static void	test_mutantstack(void)
 	section("\tPush 10 on the top");
 	numbers.push(10);
 
+	{
+		MutantStack<int>	copy_numbers(numbers);
+
+		while (!copy_numbers.empty())
+		{
+			section("\tprint top and pop");
+			std::cout << "Top of the copy stack : " << copy_numbers.top() << std::endl;
+			copy_numbers.pop();
+		}
+	}
+
 	while (!numbers.empty())
 	{
 		section("\tprint top and pop");
