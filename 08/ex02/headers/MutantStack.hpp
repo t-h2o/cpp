@@ -4,14 +4,13 @@
 # include	<stack>
 # include	"color.hpp"
 
-template <typename T, typename Container = std::deque<T> >
-class	MutantStack : public std::stack<T, Container>
+template <typename T>
+class	MutantStack : public std::stack<T>
 {
 	public:
-		MutantStack(void) : std::stack<T, Container>()
-		{
-			message("MutantStack: default constructor");
-		};
+		MutantStack(void);
 };
+
+# include "../srcs/MutantStack.cpp"
 
 #endif /* MUTANT_STACK_HPP */
