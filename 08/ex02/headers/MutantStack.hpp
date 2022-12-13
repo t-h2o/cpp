@@ -9,6 +9,7 @@ class	MutantStack : public std::stack<T>
 {
 	public:
 		MutantStack(void);
+		~MutantStack(void);
 };
 
 # include "../templates/MutantStack.cpp"
