@@ -31,3 +31,10 @@ MutantStack<T, Container>	&MutantStack<T, Container>::operator=(MutantStack cons
 
 	return *this;
 }
+
+template <typename T, typename Container>
+typename Container::iterator MutantStack<T, Container>::begin(void)
+{
+	message("MutantStack: begin");
+	return this->c.begin();
+}

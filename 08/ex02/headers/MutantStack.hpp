@@ -14,11 +14,7 @@ class	MutantStack : public std::stack<T>
 
 		MutantStack &operator=(MutantStack const &);
 
-		typename Container::iterator begin(void)
-		{
-			message("MutantStack: begin");
-			return this->c.begin();
-		}
+		typename Container::iterator begin(void);
 };
 
 # include "../templates/MutantStack.cpp"
