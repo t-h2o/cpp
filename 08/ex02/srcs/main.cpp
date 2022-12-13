@@ -2,10 +2,34 @@
 #include	<list>
 #include	<stack>
 #include	"color.hpp"
+#include	"MutantStack.hpp"
 
 static void	print_int(int number)
 {
 	std::cout << number << std::endl;
+}
+
+static void	test_mutantstack(void)
+{
+	section("Try mutant stack container (LIFO)");
+
+	MutantStack<int>	numbers;
+
+	section("\tPush 5 on the top");
+	numbers.push(5);
+
+	section("\tPush 8 on the top");
+	numbers.push(8);
+
+	section("\tPush 10 on the top");
+	numbers.push(10);
+
+	while (!numbers.empty())
+	{
+		section("\tprint top and pop");
+		std::cout << "Top of the stack : " << numbers.top() << std::endl;
+		numbers.pop();
+	}
 }
 
 static void	test_stack(void)
@@ -61,6 +85,7 @@ int	main(void)
 
 	test_list();
 	test_stack();
+	test_mutantstack();
 
 	return 0;
 }
