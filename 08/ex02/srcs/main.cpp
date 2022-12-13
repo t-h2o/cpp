@@ -1,10 +1,34 @@
 #include	<iostream>
 #include	<list>
+#include	<stack>
 #include	"color.hpp"
 
 static void	print_int(int number)
 {
 	std::cout << number << std::endl;
+}
+
+static void	test_stack(void)
+{
+	section("Try stack container (LIFO)");
+
+	std::stack<int>	numbers;
+
+	section("\tPush 5 on the top");
+	numbers.push(5);
+
+	section("\tPush 8 on the top");
+	numbers.push(8);
+
+	section("\tPush 10 on the top");
+	numbers.push(10);
+
+	while (!numbers.empty())
+	{
+		section("\tprint top and pop");
+		std::cout << "Top of the stack : " << numbers.top() << std::endl;
+		numbers.pop();
+	}
 }
 
 static void	test_list(void)
@@ -36,6 +60,7 @@ int	main(void)
 	title("Module 8 : exercice 02 : mstack");
 
 	test_list();
+	test_stack();
 
 	return 0;
 }
