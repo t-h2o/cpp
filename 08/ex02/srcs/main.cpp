@@ -44,6 +44,9 @@ static void	test_mutantstack(void)
 		}
 	}
 
+	section("\tprint the first number");
+	std::cout << "-> " << *(numbers.begin()) << std::endl;
+
 	while (!numbers.empty())
 	{
 		section("\tprint top and pop");

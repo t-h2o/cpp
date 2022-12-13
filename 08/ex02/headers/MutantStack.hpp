@@ -13,6 +13,12 @@ class	MutantStack : public std::stack<T>
 		~MutantStack(void);
 
 		MutantStack &operator=(MutantStack const &);
+
+		typename Container::iterator begin(void)
+		{
+			message("MutantStack: begin");
+			return this->c.begin();
+		}
 };
 
 # include "../templates/MutantStack.cpp"
