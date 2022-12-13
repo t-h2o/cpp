@@ -1,26 +1,26 @@
 #include	"MutantStack.hpp"
 
-template <typename T>
-MutantStack<T>::MutantStack(void) : std::stack<T>()
+template <typename T, typename Container>
+MutantStack<T, Container>::MutantStack(void) : std::stack<T, Container>()
 {
 	message("MutantStack: default constructor");
 }
 
-template <typename T>
-MutantStack<T>::MutantStack(MutantStack const &other)
+template <typename T, typename Container>
+MutantStack<T, Container>::MutantStack(MutantStack const &other)
 {
 	message("MutantStack: copy constructor");
 	*this = other;
 }
 
-template <typename T>
-MutantStack<T>::~MutantStack(void)
+template <typename T, typename Container>
+MutantStack<T, Container>::~MutantStack(void)
 {
 	message("MutantStack: destructor");
 }
 
-template <typename T>
-MutantStack<T>	&MutantStack<T>::operator=(MutantStack const &other)
+template <typename T, typename Container>
+MutantStack<T, Container>	&MutantStack<T, Container>::operator=(MutantStack const &other)
 {
 	message("MutantStack: operator =");
 
