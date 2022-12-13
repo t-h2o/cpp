@@ -7,10 +7,9 @@ MutantStack<T, Container>::MutantStack(void) : std::stack<T, Container>()
 }
 
 template <typename T, typename Container>
-MutantStack<T, Container>::MutantStack(MutantStack const &other)
+MutantStack<T, Container>::MutantStack(MutantStack const &other) : std::stack<T, Container>(other)
 {
 	message("MutantStack: copy constructor");
-	*this = other;
 }
 
 template <typename T, typename Container>
