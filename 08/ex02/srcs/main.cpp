@@ -1,6 +1,7 @@
 #include	<iostream>
 #include	<list>
 #include	<stack>
+#include	<algorithm>
 #include	"color.hpp"
 #include	"MutantStack.hpp"
 
