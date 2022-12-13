@@ -58,3 +58,17 @@ typename Container::const_iterator MutantStack<T, Container>::end(void) const
 	message("MutantStack: end (const iterator)");
 	return this->c.end();
 }
+
+template <typename T, typename Container>
+typename Container::reverse_iterator MutantStack<T, Container>::rbegin(void)
+{
+	message("MutantStack: reverse begin");
+	return this->c.rbegin();
+}
+
+template <typename T, typename Container>
+typename Container::reverse_iterator MutantStack<T, Container>::rend(void)
+{
+	message("MutantStack: reverse end");
+	return this->c.rend();
+}

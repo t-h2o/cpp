@@ -69,6 +69,18 @@ static void	test_mutantstack(void)
 		std::cout << "-> " << *iterNumbers << std::endl;
 	}
 
+	{
+		std::deque<int>::reverse_iterator iterNumbers = numbers.rbegin();
+		section("\tprint the \"reverse begin\"");
+		std::cout << "-> " << *iterNumbers << std::endl;
+	}
+
+	{
+		std::deque<int>::reverse_iterator iterNumbers = numbers.rend() - 1;
+		section("\tprint the \"reverse end\"");
+		std::cout << "-> " << *iterNumbers << std::endl;
+	}
+
 
 	while (!numbers.empty())
 	{

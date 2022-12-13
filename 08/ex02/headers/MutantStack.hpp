@@ -19,6 +19,9 @@ class	MutantStack : public std::stack<T>
 
 		typename Container::const_iterator begin(void) const;
 		typename Container::const_iterator end(void) const;
+
+		typename Container::reverse_iterator rbegin(void);
+		typename Container::reverse_iterator rend(void);
 };
 
 # include "../templates/MutantStack.cpp"
