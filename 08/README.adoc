@@ -1,0 +1,10 @@
+= Module 08
+:toc:
+
+== Subject
+
+* 42: https://cdn.intra.42.fr/pdf/pdf/52157/fr.subject.pdf[Subject.fr]
+
+== Exercice 1
+
+* algorith: https://cplusplus.com/reference/algorithm/find/[find]
