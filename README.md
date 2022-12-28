@@ -1,6 +1,7 @@
 # 42 CPP
 
-> I suggest you to start with the [EPFL videos](https://www.youtube.com/channel/UClwtSrNs_BCRHGs_ZSg4GbQ)
+> I suggest you to start with the [EPFL videos](https://www.youtube.com/channel/UClwtSrNs_BCRHGs_ZSg4GbQ).
+  Read object-oriented programming [articles](https://en.wikipedia.org/wiki/Index_of_object-oriented_programming_articles)
 
 ## Module 00
 
