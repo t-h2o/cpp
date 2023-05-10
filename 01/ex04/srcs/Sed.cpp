@@ -25,7 +25,7 @@ int
 	std::string		line;
 
 	// Open the input file
-	fs[I].open(file, std::fstream::in);
+	fs[I].open(file.c_str(), std::fstream::in);
 	if (!fs[I].is_open())
 	{
 		std::cerr << "Error: input file didn't open"
@@ -34,7 +34,7 @@ int
 	}
 
 	// Create the output file
-	fs[O].open(file + ".replace", std::fstream::out | std::fstream::trunc);
+	fs[O].open(std::string(file + ".replace").c_str(), std::fstream::out | std::fstream::trunc);
 	if (!fs[O].is_open())
 	{
 		std::cout << "Error: output file didn't open"
